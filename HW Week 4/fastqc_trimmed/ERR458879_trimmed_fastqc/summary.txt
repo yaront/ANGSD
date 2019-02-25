@@ -1,0 +1,11 @@
+PASS	Basic Statistics	ERR458879_trimmed.fq.gz
+PASS	Per base sequence quality	ERR458879_trimmed.fq.gz
+WARN	Per tile sequence quality	ERR458879_trimmed.fq.gz
+PASS	Per sequence quality scores	ERR458879_trimmed.fq.gz
+FAIL	Per base sequence content	ERR458879_trimmed.fq.gz
+PASS	Per sequence GC content	ERR458879_trimmed.fq.gz
+PASS	Per base N content	ERR458879_trimmed.fq.gz
+WARN	Sequence Length Distribution	ERR458879_trimmed.fq.gz
+PASS	Sequence Duplication Levels	ERR458879_trimmed.fq.gz
+PASS	Overrepresented sequences	ERR458879_trimmed.fq.gz
+PASS	Adapter Content	ERR458879_trimmed.fq.gz

@@ -1,0 +1,8 @@
+PASS	Basic Statistics	ERR458878.bwa.mapped.bam
+PASS	Genome Coverage	ERR458878.bwa.mapped.bam
+PASS	Chromosome Read Density	ERR458878.bwa.mapped.bam
+PASS	Soft Clip Length Distributions	ERR458878.bwa.mapped.bam
+PASS	Indel Frequencies	ERR458878.bwa.mapped.bam
+PASS	SNP Frequencies	ERR458878.bwa.mapped.bam
+PASS	SNP Frequencies by Type	ERR458878.bwa.mapped.bam
+PASS	Mapping Quality Distribution	ERR458878.bwa.mapped.bam

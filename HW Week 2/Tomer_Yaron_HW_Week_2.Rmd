@@ -1,0 +1,165 @@
+---
+title: "ANGSD - HW Week 2"
+author: "Tomer M. Yaron"
+date: "1/18/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown - HW 1 - Tomer M. Yaron
+
+### 1 - Logging in to the server:
+
+```{cars}
+ssh toy2005@pascal.med.cornell.edu
+ssh buddy.pbtech
+```
+
+Create a directory for the class:
+
+```{cars}
+mkdir angsd
+cd angsd
+mkdir databases
+```
+
+### 2 - Getting the relevant files:
+
+```{cars}
+cd databases
+wget ftp://hgdownload.soe.ucsc.edu/goldenPath/sacCer1/bigZips/sacCer1.chrom.sizes
+wget ftp://hgdownload.soe.ucsc.edu/goldenPath/sacCer2/bigZips/sacCer2.chrom.sizes
+wget ftp://hgdownload.cse.ucsc.edu/goldenPath/sacCer3/bigZips/sacCer3.chrom.sizes
+```
+
+### 3 - Comparing files:
+
+```{cars}
+paste sacCer1.chrom.sizes sacCer2.chrom.sizes sacCer3.chrom.sizes
+```
+
+chr1	230208	chrIV	1531919	chrIV	1531933  
+chr10	745446	chrXV	1091289	chrXV	1091291  
+chr11	666445	chrVII	1090947	chrVII	1090940  
+chr12	1078173	chrXII	1078175	chrXII	1078177  
+chr13	924430	chrXVI	948062	chrXVI	948066  
+chr14	784328	chrXIII	924429	chrXIII	924431  
+chr15	1091285	chrII	813178	chrII	813184  
+chr16	948060	chrXIV	784333	chrXIV	784333  
+chr2	813136	chrX	745742	chrX	745751  
+chr3	316613	chrXI	666454	chrXI	666816  
+chr4	1531914	chrV	576869	chrV	576874  
+chr5	576869	chrVIII	562643	chrVIII	562643  
+chr6	270148	chrIX	439885	chrIX	439888  
+chr7	1090944	chrIII	316617	chrIII	316620  
+chr8	562639	chrVI	270148	chrVI	270161  
+chr9	439885	chrI	230208	chrI	230218  
+chrM	85779	chrM	85779	chrM	85779  
+	2micron	6318  
+
+--------------------------------------
+
+But it is not a comfortable way to compare the tables, so we will print them separately.
+
+
+```{cars}
+cat sacCer1.chrom.sizes
+```
+
+chr1	230208  
+chr10	745446  
+chr11	666445  
+chr12	1078173  
+chr13	924430  
+chr14	784328  
+chr15	1091285  
+chr16	948060  
+chr2	813136  
+chr3	316613  
+chr4	1531914  
+chr5	576869  
+chr6	270148  
+chr7	1090944  
+chr8	562639  
+chr9	439885  
+chrM	85779  
+
+```{cars}
+cat sacCer2.chrom.sizes
+```
+
+chrIV	1531919  
+chrXV	1091289  
+chrVII	1090947  
+chrXII	1078175  
+chrXVI	948062  
+chrXIII	924429  
+chrII	813178  
+chrXIV	784333  
+chrX	745742  
+chrXI	666454  
+chrV	576869  
+chrVIII	562643  
+chrIX	439885  
+chrIII	316617  
+chrVI	270148  
+chrI	230208  
+chrM	85779  
+2micron	6318  
+
+```{cars}
+cat sacCer3.chrom.sizes
+```
+
+chrIV	1531933  
+chrXV	1091291  
+chrVII	1090940  
+chrXII	1078177  
+chrXVI	948066  
+chrXIII	924431  
+chrII	813184  
+chrXIV	784333  
+chrX	745751  
+chrXI	666816  
+chrV	576874  
+chrVIII	562643  
+chrIX	439888  
+chrIII	316620  
+chrVI	270161  
+chrI	230218  
+chrM	85779  
+
+--------------------------------------
+
+As we can see, there are two major differences between the files:  
+  1. Assembly #1 uses Arabic numbers (0-9), and assemblies #2 and #3 use Roman numbers (I,V,X...).  
+  2. In assembly #2 there is another chromosome (which is actually a plasmid) called 2micron, which does not appear in assemblies #1 and #3.
+
+
+### 4 - Printing values in a table
+
+| Chromosome | Assembly #1 | Assembly #2 | Assembly #3 |
+|------------|-------------|-------------|-------------|
+| chr1 | 230208 | 230208 | 230218 
+| chr2 | 813136	 | 	813178 | 813184 |
+| chr3 | 316613	 | 	316617 | 316620 |
+| chr4 | 1531914	 | 	1531919 | 1531933|
+| chr5 | 576869	 | 	576869 | 576874 |
+| chr6 | 270148	 | 	270148 | 270161 |
+| chr7 | 1090944	 | 	1090947 | 1090940 |
+| chr8 | 562639	 | 	562643 | 562643 |
+| chr9 | 439885	 | 	439885 | 439888 |
+| chr10 | 745446	 | 	745742 | 745751 |
+| chr11 | 666445	 | 	666454 | 666816 |
+| chr12 | 1078173	 | 	1078175 | 1078177 |
+| chr13 | 924430	 | 	924429 | 924431 |
+| chr14 | 784328	 | 	784333 | 784333 |
+| chr15 | 1091285	 | 	1091289 | 1091291 |
+| chr16 | 948060	 | 	948062 | 948066 |
+| chrM | 85779	 | 	85779 | 85779 |
+| 2micron | |	6318 | | 
+
+
