@@ -22,9 +22,16 @@ for f in ./databases/alignment/*.sortedByCoord.out.bam
   do featureCounts -t exon -f -a ./databases/sacCer3.gtf -o /athena/elementolab/scratch/toy2005/angsd/hw6/counts/$(echo $f | cut -d"/" -f4 | cut -d"." -f1)_counts.txt $f
 done
 
+for f in ./databases/alignment/*.sortedByCoord.out.bam
+  do featureCounts -t exon -O -f -a ./databases/sacCer3.gtf -o /athena/elementolab/scratch/toy2005/angsd/hw6/counts_overlap/$(echo $f | cut -d"/" -f4 | cut -d"." -f1)_counts.txt $f
+done
+
 scp -r toy2005@pascal.med.cornell.edu:/athena/elementolab/scratch/toy2005/angsd/hw6/counts ./
+scp -r toy2005@pascal.med.cornell.edu:/athena/elementolab/scratch/toy2005/angsd/hw6/counts_overlap ./
 
 ```
+
+
 
 _____________________________________________________________________
 
@@ -37,6 +44,7 @@ library(reshape2)
 
 file_names <- dir('./counts/', pattern =".summary")
 m <- matrix(0, ncol = 3, nrow = length(file_names))
+
 exon_counts <- data.frame(m)
 colnames(exon_counts) <- c('Assigned','Unassigned_NoFeatures','Unassigned_Ambiguity')
 rownames(exon_counts) <- lapply(strsplit(file_names,'_A'), function(x) x[1])
@@ -48,6 +56,20 @@ for (f in file_names){
     exon_counts[sample,att] <- counts[att,]
   }
 }
+
+file_names_overlap <- dir('./counts_overlap/', pattern =".summary")
+exon_counts_overlap <- data.frame(m)
+colnames(exon_counts_overlap) <- c('Assigned','Unassigned_NoFeatures','Unassigned_Ambiguity')
+rownames(exon_counts_overlap) <- lapply(strsplit(file_names_overlap,'_A'), function(x) x[1])
+
+for (f in file_names_overlap){
+  sample <- strsplit(f,'_A')[[1]][1]
+  counts <- read.table(paste0('./counts_overlap/',f), row.names = 1, header = TRUE)
+  for (att in colnames(exon_counts_overlap)){
+    exon_counts_overlap[sample,att] <- counts[att,]
+  }
+}
+
 
 class_exon_counts <- data.frame(m)
 colnames(class_exon_counts) <- c('Assigned','Unassigned_NoFeatures','Unassigned_Ambiguity')
@@ -63,16 +85,22 @@ for (f in colnames(original_class_exon_counts)){
 
 exon_counts$Category  <- row.names(exon_counts)
 exon_counts_melt <- melt(exon_counts, value.name="Count", variable.name="Variable")
-ggplot(data=exon_counts_melt, aes(x=Category, y=Count, fill=Variable)) + geom_bar(stat="identity", position=position_dodge())
+ggplot(data=exon_counts_melt, aes(x=Category, y=Count, fill=Variable)) + geom_bar(stat="identity", position=position_dodge()) + ggtitle("Reads Counts Per Exon - No Overlap Reads") + xlab("Sample") + ylab("Read Counts") + labs(fill = "Type")
+
+exon_counts_overlap$Category  <- row.names(exon_counts_overlap)
+exon_counts_overlap_melt <- melt(exon_counts_overlap, value.name="Count", variable.name="Variable")
+ggplot(data=exon_counts_overlap_melt, aes(x=Category, y=Count, fill=Variable)) + geom_bar(stat="identity", position=position_dodge()) + ggtitle("Reads Counts Per Exon - With Overlap Reads") + xlab("Sample") + ylab("Read Counts") + labs(fill = "Type")
 
 class_exon_counts$Category  <- row.names(class_exon_counts)
 class_exon_counts_melt <- melt(class_exon_counts, value.name="Count", variable.name="Variable")
-ggplot(data=class_exon_counts_melt, aes(x=Category, y=Count, fill=Variable)) + geom_bar(stat="identity", position=position_dodge())
+ggplot(data=class_exon_counts_melt, aes(x=Category, y=Count, fill=Variable)) + geom_bar(stat="identity", position=position_dodge()) + ggtitle("Reads Counts Per Exon - Class") + xlab("Sample") + ylab("Read Counts") + labs(fill = "Type")
 
 
 ```
 
 _____________________________________________________________________
+
+## 3 - Observations
 
 
 
