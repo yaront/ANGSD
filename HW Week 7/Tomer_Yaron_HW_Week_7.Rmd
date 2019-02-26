@@ -11,7 +11,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## R Markdown - HW Week 7 - Tomer M. Yaron
 
-## 1 - running featureCounts per exon for the 10 sanples
+## 1 - running featureCounts per exon for the 10 samples
+
+We will run the reads count *without* overlap reads, *with* overlap reads and with overlap reads but taking into account only the *primary alignment*.
 
 ```{featureCounts}
 
@@ -26,12 +28,27 @@ for f in ./databases/alignment/*.sortedByCoord.out.bam
   do featureCounts -t exon -O -f -a ./databases/sacCer3.gtf -o /athena/elementolab/scratch/toy2005/angsd/hw6/counts_overlap/$(echo $f | cut -d"/" -f4 | cut -d"." -f1)_counts.txt $f
 done
 
+for f in ./databases/alignment/*.sortedByCoord.out.bam
+  do featureCounts -t exon -O -f --primary -a ./databases/sacCer3.gtf -o /athena/elementolab/scratch/toy2005/angsd/hw6/counts_overlap_primary/$(echo $f | cut -d"/" -f4 | cut -d"." -f1)_counts.txt $f
+done
+
 scp -r toy2005@pascal.med.cornell.edu:/athena/elementolab/scratch/toy2005/angsd/hw6/counts ./
 scp -r toy2005@pascal.med.cornell.edu:/athena/elementolab/scratch/toy2005/angsd/hw6/counts_overlap ./
+scp -r toy2005@pascal.med.cornell.edu:/athena/elementolab/scratch/toy2005/angsd/hw6/counts_overlap_primary ./
 
 ```
 
+As you can see, the --primary-- didn't change anything, since even if a read multi-mapped to several exons, it will still be count once (across all genome).
 
+#### Features of _featureCounts_:
+
+1. **-f** : The read summarization is performed at the feature level (as specified in -t below). If not specify, the summarization will be performed at the meta-feature level (e.g. gene level).
+
+2. **-t** : Specify the feature type for filtering the rows for the BAM file. Only rows in the BAM file which matche the feature type specified according to the GTF annotation file, will be included for the read counting. The default is ‘exon’ (which is also what we used in this question).
+
+3. **-O** : If specified, reads will be assigned to more than one matched meta-feature or feature (if -f is specified), like in our case (exon level). Reads/fragments overlapping with more than one meta-feature/feature will be counted more than once, and not ignored.
+
+4. **−−primary** : If specified, only primary alignments will be counted. In that case, if there is a multi-maping of a read, the primary alignment will be counted, and not ignored. In our case, we didn't specify it so the multi-mapped reads will be ignored. However, we can see in the next question that here are zero multi-mapped reads, so in that case it doesn't matter.
 
 _____________________________________________________________________
 
@@ -102,7 +119,11 @@ _____________________________________________________________________
 
 ## 3 - Observations
 
+1. **Overlap Reads**: As we can see, in the first run where we didn't allow for reads to overlap with more than one feature (-O), we got reads which weren't mapped to any exon due to ambiguity. However, when we specified -O and allowed read to overlap (and then to be counted for each feature), we got 0 unassigned reads due to ambiguity (which is exactly what was done in class). To be mentioned that if we would want to count the overlap reads but only once, we would use --primary and by that count only the primary alignment (which is our case - doesn't change anything).
 
+2. **Reads Count**: We can see that the biological replicates are vary from each other by the total number of reads. Overall, there are more reads in the SNF2 samples compare to the WT samples. In addition, whereas WT-4 and SNF2-4 both have high number of reads, the other WT-SNF2 couples are not always correlated in their number of total reads.
+
+2. **Unassigned Reads Ratio**: We can see that the precentage of unassigned reads is more or less the same across the samples (i.e., more total reads has more unassigned reads and vice versa).
 
 
 
