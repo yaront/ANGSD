@@ -296,7 +296,7 @@ class_exon_counts_melt &lt;- melt(class_exon_counts, value.name=&quot;Count&quot
 <h2>3 - Observations</h2>
 <ol style="list-style-type: decimal">
 <li><p><strong>Overlap Reads</strong>: As we can see, in the first run where we didn’t allow for reads to overlap with more than one feature (-O), we got reads which weren’t mapped to any exon due to ambiguity. However, when we specified -O and allowed read to overlap (and then to be counted for each feature), we got 0 unassigned reads due to ambiguity (which is exactly what was done in class). To be mentioned that if we would want to count the overlap reads but only once, we would use –primary and by that count only the primary alignment (which is our case - doesn’t change anything).</p></li>
-<li><p><strong>Reads Count</strong>: We can see that the biological replicates are vary from each other by the total number of reads. Overall, there are more reads in the SNF2 samples compare to the WT samples. In addition, whereas WT-4 and SNF2-4 both have high number of reads, the other WT-SNF2 couples are not always correlated in their number of total reads.</p></li>
+<li><p><strong>Reads Count</strong>: We can see that the biological replicates are vary from each other by the total number of reads. Overall, there are more reads in the SNF2 samples compare to the WT samples.</p></li>
 <li><p><strong>Unassigned Reads Ratio</strong>: We can see that the precentage of unassigned reads is more or less the same across the samples (i.e., more total reads has more unassigned reads and vice versa).</p></li>
 </ol>
 </div>
