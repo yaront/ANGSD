@@ -9,22 +9,82 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+## R Markdown - HW Week 7 - Tomer M. Yaron
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+## 1 - running featureCounts per exon for the 10 sanples
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+```{featureCounts}
 
-```{r cars}
-summary(cars)
+ln -s /home/frd2007/ANGSD_2019/alignment
+ln -s /home/frd2007/ANGSD_2019/RNA-seq/refGenome_S_cerevisiae/sacCer3.gtf
+
+for f in ./databases/alignment/*.sortedByCoord.out.bam
+  do featureCounts -t exon -f -a ./databases/sacCer3.gtf -o /athena/elementolab/scratch/toy2005/angsd/hw6/counts/$(echo $f | cut -d"/" -f4 | cut -d"." -f1)_counts.txt $f
+done
+
+scp -r toy2005@pascal.med.cornell.edu:/athena/elementolab/scratch/toy2005/angsd/hw6/counts ./
+
 ```
 
-## Including Plots
+_____________________________________________________________________
 
-You can also embed plots, for example:
+## 2 - Counts barplot
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r, counts_statistics}
+
+library(ggplot2)
+library(reshape2)
+
+file_names <- dir('./counts/', pattern =".summary")
+m <- matrix(0, ncol = 3, nrow = length(file_names))
+exon_counts <- data.frame(m)
+colnames(exon_counts) <- c('Assigned','Unassigned_NoFeatures','Unassigned_Ambiguity')
+rownames(exon_counts) <- lapply(strsplit(file_names,'_A'), function(x) x[1])
+
+for (f in file_names){
+  sample <- strsplit(f,'_A')[[1]][1]
+  counts <- read.table(paste0('./counts/',f), row.names = 1, header = TRUE)
+  for (att in colnames(exon_counts)){
+    exon_counts[sample,att] <- counts[att,]
+  }
+}
+
+class_exon_counts <- data.frame(m)
+colnames(class_exon_counts) <- c('Assigned','Unassigned_NoFeatures','Unassigned_Ambiguity')
+rownames(class_exon_counts) <- lapply(strsplit(file_names,'_A'), function(x) x[1])
+original_class_exon_counts <- read.table('./featCounts_Gierlinski_exons.txt.summary', row.names = 1, header = TRUE)
+
+for (f in colnames(original_class_exon_counts)){
+  sample <- tail(strsplit(strsplit(f,'_A')[[1]][1],'[.]')[[1]], n=1)
+  for (att in colnames(exon_counts)){
+    class_exon_counts[sample,att] <- original_class_exon_counts[att,f]
+  }
+}
+
+exon_counts$Category  <- row.names(exon_counts)
+exon_counts_melt <- melt(exon_counts, value.name="Count", variable.name="Variable")
+ggplot(data=exon_counts_melt, aes(x=Category, y=Count, fill=Variable)) + geom_bar(stat="identity", position=position_dodge())
+
+class_exon_counts$Category  <- row.names(class_exon_counts)
+class_exon_counts_melt <- melt(class_exon_counts, value.name="Count", variable.name="Variable")
+ggplot(data=class_exon_counts_melt, aes(x=Category, y=Count, fill=Variable)) + geom_bar(stat="identity", position=position_dodge())
+
+
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+_____________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
