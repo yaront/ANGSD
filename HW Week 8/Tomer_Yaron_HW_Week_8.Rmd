@@ -9,22 +9,26 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+## 1 - Properties of RNAseq data and the relation to gene expression
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+1. **Gene length**: While performing RNA sequencing, we get reads from the same length, as we defined (usually 50-200 bp). Thus, the longer the gene, the higher number of counts we will get. However, if we are interested in the gene expression, we care about the number of *overlapping* reads from the same location (which will indicate that this location/gene was expressed multiple times), whereas two non-overlapping reads should be counted as one expressed transcript, since they could come from the same mRNA. Therefore, we need to normalize the gene counts to the length of the gene, in such a way that we will count the number of times the *gene* was expressed, without counting the actual reads. For that, we can use different normalization methods. The two most common methods are *Transcripts Per Million* (TPM) and *rlog*, which essentially normalize the raw number od reads count to the gene length and to the length of other genes in the genome, in such a way that the final number represents the expression of the gene itself. Another known method is RPKM/FPKM, which should not be used since it is not consistent across samples (and there is a rumor that you are being sent to hell and your papers never get accepted anymore...).
+2. **Sequencing depth**: the deeper the sequencing will be, the more raw reads we will get, and therefore the more counts we will get. Similarly to the  gene length correction, we will have to normalize the reads count. In that case, using the TPM and rlog methods, we will normalize for the total number of reads across all the genes, and therefore we will eloiminate the sequencing depth bias.
+3. **Other highly expressed genes**: sometimes we are interested in genes which have a low expression level compare to other genes in the genome. In that case, the high expression of the other genes will reduce the resilution of the difference between our genes of interest. In that case, if we are interested in some particular genes, we can use only the reads mapped to them, and therefore our analysis will be more sensitive only for those genes.
+4. **Expression of all genes in the sample**: when performing RNA sequencing, we are counting the reads from all the genes expressed in our samples. However, there are some genes which are much more expressed than other genes, and therefore can "shadow" the other genes and narrowing the range of other transcripts counts, which eventually does not allow us to perform an informative analysis of those transcripts' expression. One of such example is ribocomal-RNA (rRNA), which is significantly higher expressed than other genes in the genome. The adjustment for dealing with that issue is not computational, but experimental. using different experimental libraries, we can enrich our samples for mRNA and thus to reduce the rRNA quantity, for getting better resolution for the mRNAs in the samples.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+We will run the reads count *without* overlap reads, *with* overlap reads and with overlap reads but taking into account only the *primary alignment*.
 
-```{r cars}
-summary(cars)
+```{featureCounts}
+
+
+
 ```
 
-## Including Plots
+As you can see, the --primary-- didn't change anything, since even if a read multi-mapped to several exons, it will still be count once (across all genome).
 
-You can also embed plots, for example:
+```{featureCounts}
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+As you can see, the --primary-- didn't change anything, since even if a read multi-mapped to several exons, it will still be count once (across all genome).
