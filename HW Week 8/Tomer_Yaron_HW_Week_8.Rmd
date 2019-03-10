@@ -45,3 +45,47 @@ For rlog object, since it i a simple matrix, we will use the function cbind(rlog
 
 For DESeqDataSetFromMatrix, we need to convert the data into a dataframe first, so we will use mcols. The function will be: ```new.dds <- cbind(mcols(norm.dds), my_personal_normalization)```.
 
+_____________________________________________________________________
+
+## 3 - Exploratory analyses
+
+```{r}
+
+library(DESeq2)
+library(ggplot2)
+library(pcaExplorer)
+library(magrittr)
+
+counts.matrix <- read.table('featCounts_Gierlinski_genes.txt', header = TRUE)
+row.names(counts.matrix) <- make.names(counts.matrix$Geneid)
+counts.matrix <- counts.matrix[,-c(1:6)]
+names(counts.matrix) <- c( paste("SNF2", c(1:5), sep = "_"), paste("WT", c(1:5), sep = "_"))
+sample.info <- DataFrame(condition = gsub("_[0-9]+", "", names(counts.matrix)), row.names = names(counts.matrix) )
+
+
+DESeq.ds <- DESeqDataSetFromMatrix(countData = counts.matrix, colData = sample.info, design = ~ condition)
+DESeq.rlog <- rlog(DESeq.ds, blind = TRUE)
+rlog.norm.counts <- assay(DESeq.rlog)
+
+plot(hclust(dist(t(rlog.norm.counts))), labels = colnames(rlog.norm.counts), main = "rlog transformed read counts - Euclidean distance")
+
+corr_coeff <- cor(rlog.norm.counts, method = "pearson")
+plot(hclust(as.dist(1 - corr_coeff)), labels = colnames(rlog.norm.counts), main = "rlog transformed read counts - Correlation")
+
+```
+
+
+We can see that either based on the Euclidian distance and based on the correlation between the columns, the WT samples are the most similar to each other and the SNF2 samples are the most similar to each other (based of the gene expression pattern).
+
+```{r}
+
+rv <- rowVars(rlog.norm.counts)
+top_variable <- order(rv, decreasing = TRUE)[seq_len(500)]
+pca <- prcomp(t(assay(DESeq.rlog)[top_variable, ]))
+plotPCA(DESeq.rlog)
+
+```
+
+Also in the PCA graph, we can see that the Principle Component #1 (which is the most significant PC) is similar the most among WT samples and among SNF2 samples, but quite different between T and SNF2. That means that the gene expression pattern of the WT is similar across samples, as well as of the SNF2 samples. However, whereas in the SNF2 there is almost no variability between the samples, in the WT there is variability between the samples.
+
+The term *loadings* in PCA refers to the weight by which each standardized original variable should be multiplied to get the component score, which essentialy function as an indicator to the vraiance of the data points. Therefore, the Top-Loadings are genes which are vary the most across the data (and therefore explain the variance between samples), in probably are the relevant genes which their expression changed between WT and SNF2, where the Buttom Loadings are the opposite - the genes which their expression chagned the less.
