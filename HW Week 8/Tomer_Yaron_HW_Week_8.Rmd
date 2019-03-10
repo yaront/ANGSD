@@ -16,19 +16,32 @@ knitr::opts_chunk$set(echo = TRUE)
 3. **Other highly expressed genes**: sometimes we are interested in genes which have a low expression level compare to other genes in the genome. In that case, the high expression of the other genes will reduce the resilution of the difference between our genes of interest. In that case, if we are interested in some particular genes, we can use only the reads mapped to them, and therefore our analysis will be more sensitive only for those genes.
 4. **Expression of all genes in the sample**: when performing RNA sequencing, we are counting the reads from all the genes expressed in our samples. However, there are some genes which are much more expressed than other genes, and therefore can "shadow" the other genes and narrowing the range of other transcripts counts, which eventually does not allow us to perform an informative analysis of those transcripts' expression. One of such example is ribocomal-RNA (rRNA), which is significantly higher expressed than other genes in the genome. The adjustment for dealing with that issue is not computational, but experimental. using different experimental libraries, we can enrich our samples for mRNA and thus to reduce the rRNA quantity, for getting better resolution for the mRNAs in the samples.
 
-We will run the reads count *without* overlap reads, *with* overlap reads and with overlap reads but taking into account only the *primary alignment*.
+_____________________________________________________________________
 
-```{featureCounts}
+## 2 - DESeq2 S4 object
 
+### a - Similarities and differences between *rlog* and *DESeqDataSetFromMatrix*
 
+I was using rlog and DESeqDataSetFromMatrix online documentation.
 
-```
+### Similarities:
+1. **Input data**: both methods get counts matrix, which is a non-negative integer matrix. To be noted that rlog can get also a DESeqDataSet object as an input.
+2. **Normalization**: both of the methods takes raw counts matrix and normalize it (but by different normalization methods, see below), so differential expression analysis can be performed on the output, as well as exploratory analyses.
 
-As you can see, the --primary-- didn't change anything, since even if a read multi-mapped to several exons, it will still be count once (across all genome).
+### Differences:
+1. **Output format**: given that the input is a counts matrix, the output of rlog is simply a matrix with the normalized and transformed values, whereas the output of DESeqDataSetFromMatrix is DESeqDataSet object.
+2. **Normalization method**: rlog normlization is meant to deal with the large synamic range of values as well as descrete values. Therefore, the out counts will be normalzed by their median, and transformed to a logaritmic scale. However, in DESeqDataSet, the normalization targets the sequencing depth issue, and therefore the raw counts are normalized by their size-factor (SF).
+3. **Input parameters**: in rlog, the only required input is the counts matrix, so the normalization and transformation processes can be performed. In contrast, in DESeqDataSetFromMatrix, in addition to the counts matrix, also the *design* nput sould be provided, which is the condition which is the basis for the Differential Gene Expression analysis. The design parameter is a formula specifying the variables in the linear regression model, where the variables are being taken from the colData object, with is the meta-data for each sample.
 
-```{featureCounts}
+### b - Extraction of the expression values
 
+In rlog, the expression levels (which are the normalized reads count) is simply the results of the rlog() function.
 
-```
+In DESeqDataSetFromMatrix, we will use the function counts(dds.object, normalized = TRUE) for getting the SF-normalized expression levels.
 
-As you can see, the --primary-- didn't change anything, since even if a read multi-mapped to several exons, it will still be count once (across all genome).
+### c - Adding a personal normalization matrix
+
+For rlog object, since it i a simple matrix, we will use the function cbind(rlog.object, my_personal_normalization).
+
+For DESeqDataSetFromMatrix, we need to convert the data into a dataframe first, so we will use mcols. The function will be: ```new.dds <- cbind(mcols(norm.dds), my_personal_normalization)```.
+
