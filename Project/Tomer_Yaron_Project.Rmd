@@ -1,0 +1,29 @@
+---
+title: "ANGSD - Project"
+author: "Tomer M. Yaron"
+date: "2/15/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+Different kinases has different substrate specificity (motif) for the sequence around the central phospho-acceptor in order to perform phosphorylation. In our lab we have characterized the motifs for the entire Tyrosine kinome (78 kinases). From this profiling, we noticed that evolutionary-closed kinases from the same family have similar motifs. Therefore, the immidiate question is - why there are kinases with very similar motifs?
+
+__Our hypothesis is that the different kinases are expressed in different tissues, and in most of the time are mutually exclusive.__ A very initial analysis of scRNA-seq of mice organs (*Tabula Muris*) showed evidences supporting this hypothesis.
+
+However, there are two major problems with the *Tabula Muris* database:
+1. It is single-cell RNA-seq, which is still relatively new field and lack of consensus regarding the analysis methods which should be used for it.
+2. Even though there is a high correlation between mice and human tissues, it is better to test our hypothesis in human tissues.
+
+Hence, I believe that NGS data, specifically bulk RNA-seq from different human tissues, can be very valuable in order to test this hypothesis. Practically, I am planning to compare the expression levels of the kinases in the __Tyrosine kinome__ for different Tyrosine kinases' families, and to check whether there is a mutually exclusive expression pattern or not. I will start with the SRC family (SRC, FYN, YES), and will continue with the other families (EPH, DDR, etc.).
+
+
+## Database
+
+For targeting this research question, I will have to use a database for RNA-seq across human tissues (preferentially healthy tissues and not cancerous).
+
+I am planning to use *The Genotype-Tissue Expression (GTEx) database* (https://gtexportal.org/home/), which is a portal for RNA-seq of human tissues of postmortem donors. This database contains 53 different tissues from 714 different donors, and 11688 samples in total. most of the samples (10361) have also genotype information. The raw data (fasta files) are accessible upon request. After obtaining the data and running QC analyses on it, I will specifiy exactly which samples I am going to use for my project.
