@@ -1,0 +1,102 @@
+
+SUMMARISING RUN PARAMETERS
+==========================
+Input filename: ./../../databases/ENA_files/ERR458882.fastq.gz
+Trimming mode: single-end
+Trim Galore version: 0.4.4_dev
+Cutadapt version: 1.13
+Quality Phred score cutoff: 20
+Quality encoding type selected: ASCII+33
+Adapter sequence: 'AGATCGGAAGAGC' (Illumina TruSeq, Sanger iPCR; user defined)
+Maximum trimming error rate: 0.1 (default)
+Minimum required adapter overlap (stringency): 1 bp
+Minimum required sequence length before a sequence gets removed: 20 bp
+Output file will be GZIP compressed
+
+
+This is cutadapt 1.13 with Python 2.7.15
+Command line parameters: -f fastq -e 0.1 -q 20 -O 1 -a AGATCGGAAGAGC ./../../databases/ENA_files/ERR458882.fastq.gz
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 18.06 s (16 us/read; 3.76 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:               1,131,784
+Reads with adapters:                   406,392 (35.9%)
+Reads written (passing filters):     1,131,784 (100.0%)
+
+Total basepairs processed:    57,720,984 bp
+Quality-trimmed:                 314,901 bp (0.5%)
+Total written (filtered):     56,830,654 bp (98.5%)
+
+=== Adapter 1 ===
+
+Sequence: AGATCGGAAGAGC; Type: regular 3'; Length: 13; Trimmed: 406392 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-13 bp: 1
+
+Bases preceding removed adapters:
+  A: 38.6%
+  C: 25.3%
+  G: 16.5%
+  T: 19.6%
+  none/other: 0.0%
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+1	298488	282946.0	0	298488
+2	74127	70736.5	0	74127
+3	25423	17684.1	0	25423
+4	5991	4421.0	0	5991
+5	1183	1105.3	0	1183
+6	191	276.3	0	191
+7	57	69.1	0	57
+8	10	17.3	0	10
+9	149	4.3	0	8 141
+10	98	1.1	1	6 92
+11	79	0.3	1	3 76
+12	7	0.1	1	7
+13	7	0.0	1	7
+14	2	0.0	1	2
+15	12	0.0	1	11 1
+16	5	0.0	1	4 1
+17	6	0.0	1	5 1
+18	5	0.0	1	4 1
+19	12	0.0	1	11 1
+20	22	0.0	1	20 2
+21	234	0.0	1	234
+22	8	0.0	1	8
+23	9	0.0	1	8 1
+24	14	0.0	1	14
+25	5	0.0	1	4 1
+26	4	0.0	1	3 1
+27	2	0.0	1	1 1
+28	4	0.0	1	4
+29	3	0.0	1	2 1
+30	3	0.0	1	3
+31	9	0.0	1	9
+32	48	0.0	1	47 1
+33	6	0.0	1	5 1
+34	8	0.0	1	7 1
+37	5	0.0	1	4 1
+39	2	0.0	1	0 2
+40	2	0.0	1	0 2
+41	3	0.0	1	1 2
+42	8	0.0	1	7 1
+43	2	0.0	1	1 1
+44	1	0.0	1	1
+45	3	0.0	1	2 1
+46	2	0.0	1	0 2
+47	4	0.0	1	1 3
+48	3	0.0	1	2 1
+49	1	0.0	1	1
+50	4	0.0	1	0 4
+51	121	0.0	1	6 115
+
+
+RUN STATISTICS FOR INPUT FILE: ./../../databases/ENA_files/ERR458882.fastq.gz
+=============================================
+1131784 sequences processed in total
+Sequences removed because they became shorter than the length cutoff of 20 bp:	384 (0.0%)
+

@@ -1,0 +1,11 @@
+PASS	Basic Statistics	ERR458882.fastq.gz
+PASS	Per base sequence quality	ERR458882.fastq.gz
+WARN	Per tile sequence quality	ERR458882.fastq.gz
+PASS	Per sequence quality scores	ERR458882.fastq.gz
+FAIL	Per base sequence content	ERR458882.fastq.gz
+PASS	Per sequence GC content	ERR458882.fastq.gz
+PASS	Per base N content	ERR458882.fastq.gz
+PASS	Sequence Length Distribution	ERR458882.fastq.gz
+WARN	Sequence Duplication Levels	ERR458882.fastq.gz
+PASS	Overrepresented sequences	ERR458882.fastq.gz
+PASS	Adapter Content	ERR458882.fastq.gz
