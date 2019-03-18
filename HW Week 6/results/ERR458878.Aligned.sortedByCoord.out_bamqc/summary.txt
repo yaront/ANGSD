@@ -1,6 +1,0 @@
-PASS	Basic Statistics	ERR458878.Aligned.sortedByCoord.out.bam
-PASS	Genome Coverage	ERR458878.Aligned.sortedByCoord.out.bam
-PASS	Chromosome Read Density	ERR458878.Aligned.sortedByCoord.out.bam
-PASS	Soft Clip Length Distributions	ERR458878.Aligned.sortedByCoord.out.bam
-PASS	Indel Frequencies	ERR458878.Aligned.sortedByCoord.out.bam
-PASS	Mapping Quality Distribution	ERR458878.Aligned.sortedByCoord.out.bam
