@@ -24,6 +24,23 @@ Hence, I believe that NGS data, specifically bulk RNA-seq from different human t
 
 ## Database
 
-For targeting this research question, I will have to use a database for RNA-seq across human tissues (preferentially healthy tissues and not cancerous).
+For targeting this research question, I am planning to use *The Genotype-Tissue Expression (GTEx) database* (https://gtexportal.org/home/), which is a portal for RNA-seq of human tissues of postmortem donors. This database contains 53 different tissues from 714 different donors, and 11688 samples in total. most of the samples (10361) have also genotype information. The raw data (fasta files) are accessible upon request. After obtaining the data and running QC analyses on it, I will specifiy exactly which samples I am going to use for my project.
 
-I am planning to use *The Genotype-Tissue Expression (GTEx) database* (https://gtexportal.org/home/), which is a portal for RNA-seq of human tissues of postmortem donors. This database contains 53 different tissues from 714 different donors, and 11688 samples in total. most of the samples (10361) have also genotype information. The raw data (fasta files) are accessible upon request. After obtaining the data and running QC analyses on it, I will specifiy exactly which samples I am going to use for my project.
+
+## QC and trimming for the fastq files
+
+We will start with an initial fastQC analysis:
+
+```{FASTQC}
+
+spack load fastqc
+
+for f in ./databases/GTEX_Tomer/*/*
+    do fastqc -o ./output/fastqc_original $f --extract
+done
+
+```
+
+
+
+
