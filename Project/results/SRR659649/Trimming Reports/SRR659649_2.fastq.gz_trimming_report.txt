@@ -1,0 +1,130 @@
+
+SUMMARISING RUN PARAMETERS
+==========================
+Input filename: ./databases/GTEX_Tomer/SRR659649/SRR659649_2.fastq.gz
+Trimming mode: single-end
+Trim Galore version: 0.4.4_dev
+Cutadapt version: 1.13
+Quality Phred score cutoff: 20
+Quality encoding type selected: ASCII+33
+Adapter sequence: 'AGATCGGAAGAGC' (Illumina TruSeq, Sanger iPCR; user defined)
+Maximum trimming error rate: 0.1 (default)
+Minimum required adapter overlap (stringency): 1 bp
+Minimum required sequence length before a sequence gets removed: 20 bp
+Output file will be GZIP compressed
+
+
+This is cutadapt 1.13 with Python 2.7.15
+Command line parameters: -f fastq -e 0.1 -q 20 -O 1 -a AGATCGGAAGAGC ./databases/GTEX_Tomer/SRR659649/SRR659649_2.fastq.gz
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 925.42 s (12 us/read; 4.91 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:              75,683,758
+Reads with adapters:                26,862,535 (35.5%)
+Reads written (passing filters):    75,683,758 (100.0%)
+
+Total basepairs processed: 5,751,965,608 bp
+Quality-trimmed:             963,527,551 bp (16.8%)
+Total written (filtered):  4,625,613,559 bp (80.4%)
+
+=== Adapter 1 ===
+
+Sequence: AGATCGGAAGAGC; Type: regular 3'; Length: 13; Trimmed: 26862535 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-13 bp: 1
+
+Bases preceding removed adapters:
+  A: 29.9%
+  C: 27.2%
+  G: 22.3%
+  T: 15.9%
+  none/other: 4.7%
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+1	16337184	18920939.5	0	16337184
+2	5666727	4730234.9	0	5666727
+3	1586234	1182558.7	0	1586234
+4	333736	295639.7	0	333736
+5	92423	73909.9	0	92423
+6	27633	18477.5	0	27633
+7	24403	4619.4	0	24403
+8	25458	1154.8	0	25458
+9	40216	288.7	0	29531 10685
+10	79847	72.2	1	59986 19861
+11	49817	18.0	1	26098 23719
+12	38902	4.5	1	29316 9586
+13	37592	1.1	1	22132 15460
+14	70956	1.1	1	54710 16246
+15	18333	1.1	1	11031 7302
+16	30857	1.1	1	20123 10734
+17	70200	1.1	1	59272 10928
+18	23657	1.1	1	15943 7714
+19	26031	1.1	1	21997 4034
+20	20120	1.1	1	17642 2478
+21	11490	1.1	1	9960 1530
+22	20667	1.1	1	16838 3829
+23	32407	1.1	1	19258 13149
+24	48552	1.1	1	40817 7735
+25	20706	1.1	1	16510 4196
+26	48581	1.1	1	16609 31972
+27	30485	1.1	1	20999 9486
+28	35748	1.1	1	28645 7103
+29	27323	1.1	1	18439 8884
+30	73722	1.1	1	64787 8935
+31	6357	1.1	1	3790 2567
+32	12712	1.1	1	10607 2105
+33	6464	1.1	1	4999 1465
+34	7318	1.1	1	5942 1376
+35	8795	1.1	1	6811 1984
+36	25829	1.1	1	21057 4772
+37	13868	1.1	1	11534 2334
+38	15241	1.1	1	12850 2391
+39	21099	1.1	1	18040 3059
+40	20295	1.1	1	16257 4038
+41	28030	1.1	1	20763 7267
+42	53862	1.1	1	47265 6597
+43	15574	1.1	1	12626 2948
+44	28954	1.1	1	20486 8468
+45	47127	1.1	1	41433 5694
+46	10646	1.1	1	9017 1629
+47	11832	1.1	1	10043 1789
+48	9474	1.1	1	8060 1414
+49	22398	1.1	1	18262 4136
+50	39451	1.1	1	33588 5863
+51	61512	1.1	1	53758 7754
+52	6739	1.1	1	5826 913
+53	9936	1.1	1	7305 2631
+54	41529	1.1	1	36146 5383
+55	14654	1.1	1	12486 2168
+56	26789	1.1	1	20075 6714
+57	22771	1.1	1	14552 8219
+58	45292	1.1	1	38540 6752
+59	20552	1.1	1	16364 4188
+60	32554	1.1	1	23417 9137
+61	34289	1.1	1	25445 8844
+62	76626	1.1	1	48076 28550
+63	200923	1.1	1	146555 54368
+64	234130	1.1	1	162051 72079
+65	266781	1.1	1	150216 116565
+66	341611	1.1	1	240401 101210
+67	49443	1.1	1	16502 32941
+68	10173	1.1	1	3320 6853
+69	3021	1.1	1	1725 1296
+70	951	1.1	1	524 427
+71	576	1.1	1	313 263
+72	455	1.1	1	242 213
+73	506	1.1	1	233 273
+74	476	1.1	1	249 227
+75	1046	1.1	1	707 339
+76	3867	1.1	1	2306 1561
+
+
+RUN STATISTICS FOR INPUT FILE: ./databases/GTEX_Tomer/SRR659649/SRR659649_2.fastq.gz
+=============================================
+75683758 sequences processed in total
+Sequences removed because they became shorter than the length cutoff of 20 bp:	11948493 (15.8%)
+

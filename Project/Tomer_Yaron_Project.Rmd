@@ -29,7 +29,7 @@ For targeting this research question, I am planning to use *The Genotype-Tissue 
 
 ## QC and trimming for the fastq files
 
-We will start with an initial fastQC analysis:
+We will start with an initial fastQC analysis on the original files:
 
 ```{FASTQC}
 
@@ -37,6 +37,29 @@ spack load fastqc
 
 for f in ./databases/GTEX_Tomer/*/*
     do fastqc -o ./output/fastqc_original $f --extract
+done
+
+```
+
+We will trim the reads using Trimgalore:
+
+```{TRIMGALORE}
+
+spack load -r py-cutadapt
+spack load -r trimgalore
+
+for f in ./databases/gtex_files/*/*
+    do fastqc -o ./output/fastqc_original $f --extract
+done
+
+```
+
+and will run FastQC again for the trimmed fastq files
+
+```{FASTQC_TRIM}
+
+for f in ./databases/gtex_files/*/*
+    do fastqc -o ./output/fastqc_trimmed $f --extract
 done
 
 ```

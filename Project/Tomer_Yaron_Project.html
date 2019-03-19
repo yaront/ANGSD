@@ -200,8 +200,27 @@ $(document).ready(function () {
 </div>
 <div id="database" class="section level2">
 <h2>Database</h2>
-<p>For targeting this research question, I will have to use a database for RNA-seq across human tissues (preferentially healthy tissues and not cancerous).</p>
-<p>I am planning to use <em>The Genotype-Tissue Expression (GTEx) database</em> (<a href="https://gtexportal.org/home/" class="uri">https://gtexportal.org/home/</a>), which is a portal for RNA-seq of human tissues of postmortem donors. This database contains 53 different tissues from 714 different donors, and 11688 samples in total. most of the samples (10361) have also genotype information. The raw data (fasta files) are accessible upon request. After obtaining the data and running QC analyses on it, I will specifiy exactly which samples I am going to use for my project.</p>
+<p>For targeting this research question, I am planning to use <em>The Genotype-Tissue Expression (GTEx) database</em> (<a href="https://gtexportal.org/home/" class="uri">https://gtexportal.org/home/</a>), which is a portal for RNA-seq of human tissues of postmortem donors. This database contains 53 different tissues from 714 different donors, and 11688 samples in total. most of the samples (10361) have also genotype information. The raw data (fasta files) are accessible upon request. After obtaining the data and running QC analyses on it, I will specifiy exactly which samples I am going to use for my project.</p>
+</div>
+<div id="qc-and-trimming-for-the-fastq-files" class="section level2">
+<h2>QC and trimming for the fastq files</h2>
+<p>We will start with an initial fastQC analysis:</p>
+<pre class="fastqc"><code>
+spack load fastqc
+
+for f in ./databases/GTEX_Tomer/*/*
+    do fastqc -o ./output/fastqc_original $f --extract
+done
+</code></pre>
+<p>We will trim the reads using Trimgalore:</p>
+<pre class="trimgalore"><code>
+spack load -r py-cutadapt
+spack load -r trimgalore
+
+for f in ./databases/GTEX_Tomer/*/*
+    do fastqc -o ./output/fastqc_original $f --extract
+done
+</code></pre>
 </div>
 
 
