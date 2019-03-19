@@ -1,0 +1,5 @@
+Module	Section	Sample Name	Source
+FastQC	all_sections	SRR807971_1	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/SRR807971/FastQC/SRR807971_1_fastqc/fastqc_data.txt
+FastQC	all_sections	SRR807971_2	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/SRR807971/FastQC/SRR807971_2_fastqc/fastqc_data.txt
+FastQC	all_sections	SRR659649_2	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/SRR659649/FastQC/SRR659649_2_fastqc/fastqc_data.txt
+FastQC	all_sections	SRR659649_1	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/SRR659649/FastQC/SRR659649_1_fastqc/fastqc_data.txt

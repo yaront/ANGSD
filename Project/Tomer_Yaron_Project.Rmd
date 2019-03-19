@@ -40,7 +40,3 @@ for f in ./databases/GTEX_Tomer/*/*
 done
 
 ```
-
-
-
-
