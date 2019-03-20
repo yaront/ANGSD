@@ -63,3 +63,25 @@ for f in ./databases/gtex_files/*/*
 done
 
 ```
+
+## Alignment
+
+Indexing the reference genome (hg38) and aligning the fasta files:
+
+```{STAR_INDEX}
+
+mkdir hg38_STAR_index
+STAR --runMode genomeGenerate --runThreadN 8 --genomeDir gh38_STAR_index --genomeFastaFiles ./hg38.fa --sjdbGTFfile hg38_ucsc.gtf --sldbOverhang 75
+
+STAR --runMode alignReads --runThreadN 8 --genomeDir /athena/elementolab/scratch/toy2005/GenomeReference_hg38/hg38_STAR_index/ --readFilesIn /athena/elementolab/scratch/toy2005/angsd/project/databases/gtex_files/original/SRR807971/SRR807971_1.fastq.gz --readFilesCommand zcat --outFileNamePrefix /athena/elementolab/scratch/toy2005/angsd/project/output/SRR807971/SRR807971_1. --outSAMtype BAM SortedByCoordinate
+
+```
+
+Alignment QC:
+
+```{STAR_INDEX}
+
+samtools stats databases/gtex_files/star_aligned/SRR807971/SRR807971_1.Aligned.sortedByCoord.out.bam > ~/angsd/project/results/SRR807971/alignment_qc/SRR807971_1.stats
+samtools flagstat databases/gtex_files/star_aligned/SRR807971/SRR807971_1.Aligned.sortedByCoord.out.bam > ~/angsd/project/results/SRR807971/alignment_qc/SRR807971_1.flagstats
+
+```

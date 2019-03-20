@@ -1,0 +1,5 @@
+Sample	Samtools Stats_mqc-generalstats-samtools_stats-reads_mapped	Samtools Stats_mqc-generalstats-samtools_stats-reads_mapped_percent	Samtools Stats_mqc-generalstats-samtools_stats-raw_total_sequences	Samtools Flagstat_mqc-generalstats-samtools_flagstat-mapped_passed	Samtools Stats_mqc-generalstats-samtools_stats-error_rate	Samtools Stats_mqc-generalstats-samtools_stats-non_primary_alignments	Samtools Stats_mqc-generalstats-samtools_stats-reads_MQ0_percent	Samtools Stats_mqc-generalstats-samtools_stats-reads_properly_paired_percent
+SRR659649_1	62638143.0	100.0	62638143.0	68615667	0.0	5977524.0	0.268411533209	0.0
+SRR659649_2	60884125.0	100.0	60884125.0	66728792	0.0	5844667.0	0.269766544235	0.0
+SRR807971_1	58010346.0	100.0	58010346.0	65019708	0.0	7009362.0	0.315471312652	0.0
+SRR807971_2	56819780.0	100.0	56819780.0	63711715	0.0	6891935.0	0.315659441131	0.0
