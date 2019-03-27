@@ -9,7 +9,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown - HW 2 - Tomer M. Yaron
+## R Markdown - HW 4 - Tomer M. Yaron
 
 ## 1 - Getting the fastq files
 
