@@ -1,0 +1,62 @@
+---
+title: "ANGSD - HW Week 10"
+author: "Tomer M. Yaron"
+date: "3/27/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown - HW 10 - Tomer M. Yaron
+
+## 1 - Analyze scRNA-seq
+
+```{r read_files}
+
+library(SingleCellExperiment)
+
+count_matrix <- read.table('databases/WT-1.dge.txt', sep = '\t', header = TRUE, row.names = 1)
+dim(count_matrix)
+
+```
+
+### a - Data explanation
+
+In the count matrix, The rows represent different genes and the coluns represent different cell, marked by their specific barcode (whereas every entry is the gene count for that specific cell/barcode). In this assay, 1,400 cells were characterized, along 25,319 different genes.
+
+### b - SingleCellExperiment object
+
+```{r sce}
+
+sc_exp <- SingleCellExperiment(assays = list(counts = as.matrix(count_matrix)))
+
+```
+
+### c - Accessing counts (two ways)
+
+```{r counts}
+
+assay(sc_exp,"counts")[1:10,1:10]
+counts(sc_exp)[1:10,1:10]
+
+```
+
+### d - Calculating sequence depth
+
+```{r reads}
+
+colSums(counts(sc_exp)[,1:5])
+
+```
+
+### e - Expressed genes
+
+```{r expressed_genes}
+
+sum(rowSums(counts(sc_exp)[,1:5] != 0) == 5)
+
+```
+
+ 
