@@ -53,10 +53,13 @@ colSums(counts(sc_exp)[,1:5])
 
 ### e - Expressed genes
 
+Here I calculated the number of genes with non-zero values across **all** the 5 cells, i.e. they are expressed in each one of the first 5 cells.
+
 ```{r expressed_genes}
 
 sum(rowSums(counts(sc_exp)[,1:5] != 0) == 5)
 
 ```
+
 
  
