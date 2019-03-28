@@ -61,9 +61,4 @@ sum(rowSums(counts(sc_exp)[,1:5] != 0) == 5)
 
 ```
 
-<<<<<<< HEAD
 ### f - 
-=======
->>>>>>> 0babb0eae0a3de39faa2dbc116142db31b19dc69
-
- 
