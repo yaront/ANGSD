@@ -20,6 +20,7 @@ library(DropletUtils)
 library(scater)
 library(ggplot2)
 library(EnsDb.Hsapiens.v86)
+library(scran)
 
 count_matrix <- read.table('databases/WT-1.dge.txt', sep = '\t', header = TRUE, row.names = 1)
 dim(count_matrix)
@@ -83,9 +84,9 @@ We will use the libraries _DropletUtils_ and _scater_, sepcifically the function
 chr_loc <- mapIds(EnsDb.Hsapiens.v86, keys=rownames(sc_exp), column="SEQNAME", keytype="GENENAME")
 
 bcrank <- barcodeRanks(counts(sc_exp))
-sce_qc <- calculateQCMetrics(sc_exp, feature_controls=list(Mito=which(chr_loc=="MT")))
+sc_exp <- calculateQCMetrics(sc_exp, feature_controls=list(Mito=which(chr_loc=="MT")))
 
-total_umi_exp_genes <- data.frame(sce_qc$total_counts,sce_qc$total_features_by_counts,sce_qc$pct_counts_Mito)
+total_umi_exp_genes <- data.frame(sc_exp$total_counts,sc_exp$total_features_by_counts,sc_exp$pct_counts_Mito)
 colnames(total_umi_exp_genes) <- c('UMI','GENES','MT')
 class(total_umi_exp_genes)
 ggplot(total_umi_exp_genes, aes(x=UMI)) + geom_histogram(bins = 100) + ggtitle("Total UMI Counts") + ylab("Cells") + theme(plot.title = element_text(hjust = 0.5))
@@ -109,7 +110,43 @@ As we can see in the histogram, most of the cells have less than 10% mitochondri
 
 ### h - QC filtration
 
+There are several different ways to filter cell with low quality, some of the ways are more stringent and some are less harsh. Usually, we would like to remove cells with low reads counts or total number of expressed genes, assuming that those cells suffer from high noise and/or technical issues. However, this would probably remove cells with low RNA content, especially cell types with low RNA content in general, and we can see that the vast majoritiy of the cells in this database has relatively low amount of reads. Therefore, I would use a softer filter of removing cells with high proportion of mitochondrial RNA.
 
+```{r qc_filter}
+
+high_mito <- isOutlier(sc_exp$pct_counts_Mito, nmads=3, type="higher") | is.na(sc_exp$pct_counts_Mito)
+sc_exp_filter <- sc_exp[,!high_mito]
+summary(high_mito)
+
+```
+
+We filtered out 326 cells out of 1400.
+
+### i - Normalization
+
+```{r normalization}
+
+set.seed(1000)
+clusters <- quickCluster(sc_exp_filter, method="igraph", min.mean=0.1, irlba.args=list(maxit=1000))
+table(clusters)
+
+sc_exp_filter <- computeSumFactors(sc_exp_filter, min.mean=0.1, cluster=clusters)
+summary(sizeFactors(sc_exp_filter))
+
+plot(sc_exp_filter$total_counts, sizeFactors(sc_exp_filter), log="xy")
+
+```
+
+The size factor calculated show the expected behavior (linear).
+
+In order to access the normalized matrix, we need to use the function _normalize_:
+
+```{r norm_matrix}
+
+sc_exp_filter_norm <- normalize(sc_exp_filter)
+head(counts(sc_exp_filter_norm[,1:10]), 10)
+
+```
 
 
 
