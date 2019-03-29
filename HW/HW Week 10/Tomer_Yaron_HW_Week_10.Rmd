@@ -16,6 +16,10 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r read_files}
 
 library(SingleCellExperiment)
+library(DropletUtils)
+library(scater)
+library(ggplot2)
+library(EnsDb.Hsapiens.v86)
 
 count_matrix <- read.table('databases/WT-1.dge.txt', sep = '\t', header = TRUE, row.names = 1)
 dim(count_matrix)
@@ -53,7 +57,7 @@ colSums(counts(sc_exp)[,1:5])
 
 ### e - Expressed genes
 
-Here I calculated the number of genes with non-zero values across **all** the 5 cells, i.e. they are expressed in each one of the first 5 cells.
+Here I calculated the number of genes with non-zero values across **all** the 5 cells, i.e. genes which are expressed in each one of the first 5 cells.
 
 ```{r expressed_genes}
 
@@ -61,4 +65,54 @@ sum(rowSums(counts(sc_exp)[,1:5] != 0) == 5)
 
 ```
 
-### f - 
+### f - Keep track of the original rows and columns names
+
+```{r row_col_names}
+
+org_row_names <- rownames(sc_exp)
+org_col_names <- colnames(sc_exp)
+
+```
+
+### g - Keep track of the original rows and columns names
+
+We will use the libraries _DropletUtils_ and _scater_, sepcifically the functions _barcodeRanks_ and _calculateQCMetrics_, where the features _$total_ and _$total\_counts_ of those objects respectively, represents the total number of reads (==UMI) which we calculated in section d. In addition, the feature _total\_features\_by\_counts_ in the _calculateQCMetrics_ object represents the number of expressed genes (genes with a non-zero read counts, i.e. barcode detection).
+
+```{r histogram}
+
+chr_loc <- mapIds(EnsDb.Hsapiens.v86, keys=rownames(sc_exp), column="SEQNAME", keytype="GENENAME")
+
+bcrank <- barcodeRanks(counts(sc_exp))
+sce_qc <- calculateQCMetrics(sc_exp, feature_controls=list(Mito=which(chr_loc=="MT")))
+
+total_umi_exp_genes <- data.frame(sce_qc$total_counts,sce_qc$total_features_by_counts,sce_qc$pct_counts_Mito)
+colnames(total_umi_exp_genes) <- c('UMI','GENES','MT')
+class(total_umi_exp_genes)
+ggplot(total_umi_exp_genes, aes(x=UMI)) + geom_histogram(bins = 100) + ggtitle("Total UMI Counts") + ylab("Cells") + theme(plot.title = element_text(hjust = 0.5))
+ggplot(total_umi_exp_genes, aes(x=GENES)) + geom_histogram(bins = 100) + ggtitle("Total Expressed Genes") + ylab("Cells") + theme(plot.title = element_text(hjust = 0.5))
+
+```
+
+The first histogram (Total UMI) represents the total number of detected barcodes per cell. In equivalence to bulk RNA-seq, this is the "number of reads".
+
+The second histogram is a binary result, whether the gene is expressed or not in the cell. It should be noted that this is **not** the equivalent to the normalized expression in bulk RNA-seq, since it is only a binary answer whether the gene was expressed (its barcode was detected at least one time) or not.
+
+From the histograms, we can see that out of 1400 cells, msot of the cells has sequencing depth of less than 10K, and between 100-4000 genes detected out of 25,319 measured genes. To be noted that since the RNA expression levels in single cell are very low, a lot of genes might not be detected due to noise, or due to other biological reasons (cell cycle etc.).
+
+```{r histogram_mt}
+
+ggplot(total_umi_exp_genes, aes(x=MT)) + geom_histogram(bins = 100) + ggtitle("Mitochondrial Genes") + xlab("% Mitochondrial Genes Reads") + ylab("Cells") + theme(plot.title = element_text(hjust = 0.5))
+
+```
+
+As we can see in the histogram, most of the cells have less than 10% mitochondrial reads.
+
+### h - QC filtration
+
+
+
+
+
+
+
+
