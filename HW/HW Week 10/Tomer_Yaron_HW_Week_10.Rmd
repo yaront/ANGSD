@@ -222,13 +222,14 @@ ggduo(exp_comb_matrix, columnsX = 1:10, columnsY = 11:20)
 
 ```
 
-
+As we can see, there is a very strong correlation between the normalized expression of similar cells in SingleCellExperiment object and the Seurat object, whereas for different cells, there is a correlation but not as strong. In addition, to be noted that the actual values of the normazlied expression can be a little bit different between the two objects, since both objects are using a slightly different normalization method (SCE is using the size factor whereas Seurat is using simply the log-normalization).
 
 ______________________________________________________________________
 
 ## 3 - Cell type
 
+According to the pairwise graph from Question 2 (assuming the first 10 cells are a good representation of the entire population), we can conclude that the cells are fairly homogeneous,but still have some different between each other in the expression of different genes. In particular, we can see that there are some genes whih are not expressed at all in one cell but are expressed in the other cell and vice versa (those are the dots along the X and Y axes). However, most of the highly expressed genes are expressed in all the cells, suggesting that the cells are from the same type.
 
-
+In conclusion, I would guess that those cells are **immune cells**. This cell population is fairly homogeneous relatively to the high expressed genes which make those cells to be immune cells, but still has significant difference between different types of cells inside this population (CD4, CD8, macrophages etc.). The high correlation between the highly expressed genes on the one hand, and the genes which are expressed only in certain cells on the other, make me believe that those cells are different types of immune cells.
 
 
