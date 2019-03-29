@@ -21,6 +21,7 @@ library(scater)
 library(ggplot2)
 library(EnsDb.Hsapiens.v86)
 library(scran)
+library(Seurat)
 
 count_matrix <- read.table('databases/WT-1.dge.txt', sep = '\t', header = TRUE, row.names = 1)
 dim(count_matrix)
@@ -139,17 +140,56 @@ plot(sc_exp_filter$total_counts, sizeFactors(sc_exp_filter), log="xy")
 
 The size factor calculated show the expected behavior (linear).
 
-In order to access the normalized matrix, we need to use the function _normalize_:
+We will use the function _normalize_ for normalizing the data, and then the option _normcounts_ for accessing the normalized counts matrix:
 
 ```{r norm_matrix}
 
-sc_exp_filter_norm <- normalize(sc_exp_filter)
-head(counts(sc_exp_filter_norm[,1:10]), 10)
+sc_exp_filter <- normalizeSCE(sc_exp_filter)
+sc_exp_filter_norm_matrix <- normcounts(sc_exp_filter)
+head(sc_exp_filter_norm_matrix, 10)
 
 ```
 
+______________________________________________________________________
 
+## 2 - Seurat
 
+### a - Seurat object
 
+```{r seurat}
 
+sce_srt <- CreateSeuratObject(count_matrix, min.cells = -1, min.genes = -1)
+
+```
+
+There are two cells with not expression at all ("GCCCGTCTATGT" & "GACAAACCTACC"), and therefore when we creat a Seurat object, with the default parameter for _min.genes = 0_, we filter out those two cells (because it looks for colSums > min.genes). In order to include those cells, we have to set the parameters to be -1.
+
+### b - Filtering
+
+We will find all the mitochondrial genes (start with "MT"), and will manually calculate the percentage of mitochondrial RNA.
+
+```{r srt_filter}
+
+mito_genes <- rownames(sce_srt@data)[which(chr_loc == 'MT')]
+percent_mito <- colSums(sce_srt@raw.data[mito_genes, ]) / colSums(sce_srt@raw.data)
+
+high_mito_srt <- isOutlier(percent_mito, nmads=3, type="higher") | is.na(percent_mito)
+sce_srt_filter <- SubsetData(sce_srt, cells.use = names(high_mito_srt[!high_mito_srt]))
+summary(high_mito_srt)
+
+```
+
+As in Question 1, we filtered out 326 cells with an outlier percentage of expressed mitochondrial genes.
+
+### C - Normalization
+
+We will normalize the data using _NormalizeData_, and then access the  normalized matrix using _Object@data_.
+
+```{r srt_norm}
+
+sce_srt_filter <- NormalizeData(sce_srt_filter)
+sce_srt_filter_norm_matrix <- sce_srt_filter@data
+head(sce_srt_filter_norm_matrix[,1:5], 10)
+
+```
 
