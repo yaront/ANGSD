@@ -11,3 +11,33 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## R Markdown - HW 11 - Tomer M. Yaron
 
+## 1 - Nanopore sequencing
+
+### a - The principle of nanopore sequencing
+
+Nanopore sequencing is a sequencing technique which uses the electircal changes in small pores (of size within the nanometric range), in order to detect the nucleic acids composition of the DNA or RNA. When applying an electric field over small nanometric pores (Nanopores) which contain electrolytic solution, an electric current can be detected. This current will depend on the surface area of the nanopore and on the specific bases within the nanopore. Thus, by measuring the changes in the electric currect very close to the nanopore while moving one strand of the DNA or RNA through it, the system is able to retrieve the sequence of nucleic acids.
+
+### b - Labeling figure
+
+![](./nanopore_figure.png)
+
+**1a**: DNA molecule (double-stranded).  
+**1b**: One strand of the DNA (single-stranded DNA).  
+**2**: DNA processive enzyme (unwinding enzyme), such as phi29 DNA polimerase (for controling the motion of the DNA inside the nanopore, e.g. velocity etc.).  
+**3**: Membrane / microscaffolds: the surface which holds the nanopores, and through which a voltage is being applied (for measuring the current trough the nanopore).  
+**4**: Nanopore. Can be a biological nanopore (pore-forming proteins such as $\alpha$-hemolysin protein), or solid materials (solid-state nanopores).
+
+### c - Properties of the nanopore molecule
+
+1. **Nanometric size**: the pores must have a size in the nanometric range, in order to enable the passage of single molecules through it (such as single-stranded DNA).
+2. **High stability**: the nanopore protein / molcule must be highly stable in order to enable the sequencing of long DNA/RNA molecules at once, without changing affecting the measured electric current.
+
+### d - Change of current measurement
+
+The change of the electric current is measured below the nanopore very close to its surface by an electrode that is connected to a channel. Each nanopore has its own sensor, which measures the change in the current for this particular nanopore. Multiple nanopores with their electrodes are sitting in the sensor array chip.
+
+### e - Naturally occuring processive enzymes
+
+The processive enzymes are meant to control the speed in which the DNA/RNA molecule is running through the nanopore, as well as to unwind the double-stranded DNA. Therefore, those enzymes shold have high affinity to DNA/RNA molecules, and to move along them efficiently. In addition to that, they must be stable under the electrical field which is applied over the nanopore (for the current measurement).
+
+Therefore, the natural candidates are DNA processing enzymes and polymerases. Specifically, _phi29 DNAP_ is is a very common DNA polymerase used in nanopore sequencing.
