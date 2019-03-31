@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## 1 - Nanopore sequencing
 
-### a - The principle of nanopore sequencing
+### a - The principle of Nanopore sequencing
 
 Nanopore sequencing is a sequencing technique which uses the electircal changes in small pores (of size within the nanometric range), in order to detect the nucleic acids composition of the DNA or RNA. When applying an electric field over small nanometric pores (Nanopores) which contain electrolytic solution, an electric current can be detected. This current will depend on the surface area of the nanopore and on the specific bases within the nanopore. Thus, by measuring the changes in the electric currect very close to the nanopore while moving one strand of the DNA or RNA through it, the system is able to retrieve the sequence of nucleic acids.
 
@@ -40,4 +40,24 @@ The change of the electric current is measured below the nanopore very close to 
 
 The processive enzymes are meant to control the speed in which the DNA/RNA molecule is running through the nanopore, as well as to unwind the double-stranded DNA. Therefore, those enzymes shold have high affinity to DNA/RNA molecules, and to move along them efficiently. In addition to that, they must be stable under the electrical field which is applied over the nanopore (for the current measurement).
 
-Therefore, the natural candidates are DNA processing enzymes and polymerases. Specifically, _phi29 DNAP_ is is a very common DNA polymerase used in nanopore sequencing.
+Therefore, the natural candidates are DNA processing enzymes and polymerases. Specifically, _phi29 DNAP_ is is a very common DNA polymerase used in Nanopore sequencing.
+
+_____________________________________________________________________
+
+## 2 - Nanopore sequencing Vs. Illumina sequencing
+
+### Advantages of Nanopore sequencing:
+
+1. **Long reads**: since the Nanopore system is measuring the change in the current, we are not limited in the length of the read/molecule we can sequence. Therefore, while in Illumina we are limited to a certain read length (~50-200bp), in Nanopore sequencing we can sequence very long molecules at once.
+
+2. **Real-time**: in Nanopore sequencing, the current is being measured and converted to sequence in real-time, and therefore we can see the sequence while it is being sequenced. That allow us to pre-program the sequencing process to be dependent on the real-time results. For example, if we are interested to sequence only specific part of the DNA with a known sequence start, we can insert this signature to the _Read until..._ mode, and by that to analyse only DNA strands that contain predetermined signatures of interest. The beginning of the DNA sequence is being analysed in real-time. If it matches the provided signature, sequencing continues. If not, then the DNA strand can be rejected from the pore in real time, allowing that pore to sequence other reads. This method allows selective sequencing, improving both the time to result and the efficiency of an experiment. In contrast, in Illumina there is no way to analyze the reads in real-time, and therefore we need to sequence all the reads and only then to do post processing.
+
+3. **Cost**: Illumina sequencing machine costs 500K-1M\$, the Nanopore suqeuncer (MinION) costs only ~1000\$.
+
+### Disadvantages of Nanopore sequencing:
+
+1. **Higher error rate**: Whereas the current Illumina sequencing pipeline has ~1-2% (and sometimes even less), for Nanopore sequencing the error rate is ~8-9% (officially reported: 5-15%).
+
+2. **Sequencing depth**: in Nanopore sequencing we are sequencing much less reads than in Illumina (in our case - 4000 reads per pore). Therefore, we have much less coverage for each nucleotide, i.e. much lower sequence depth (for mutation calling etc.).
+
+
