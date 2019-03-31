@@ -23,7 +23,7 @@ Nanopore sequencing is a sequencing technique which uses the electircal changes 
 
 **1a**: DNA molecule (double-stranded).  
 **1b**: One strand of the DNA (single-stranded DNA).  
-**2**: DNA processive enzyme (unwinding enzyme), such as phi29 DNA polimerase (for controling the motion of the DNA inside the nanopore, e.g. velocity etc.).  
+**2**: DNA processive enzyme (unwinding enzyme) / enzyme motor: is used for controlling the translocation of the DNA/RNA strand through the nanopore, such as phi29 DNA polimerase.
 **3**: Membrane / microscaffolds: the surface which holds the nanopores, and through which a voltage is being applied (for measuring the current trough the nanopore).  
 **4**: Nanopore. Can be a biological nanopore (pore-forming proteins such as $\alpha$-hemolysin protein), or solid materials (solid-state nanopores).
 
@@ -41,6 +41,14 @@ The change of the electric current is measured below the nanopore very close to 
 The processive enzymes are meant to control the speed in which the DNA/RNA molecule is running through the nanopore, as well as to unwind the double-stranded DNA. Therefore, those enzymes shold have high affinity to DNA/RNA molecules, and to move along them efficiently. In addition to that, they must be stable under the electrical field which is applied over the nanopore (for the current measurement).
 
 Therefore, the natural candidates are DNA processing enzymes and polymerases. Specifically, _phi29 DNAP_ is is a very common DNA polymerase used in Nanopore sequencing.
+
+### f - Adapters types
+
+1. **Y-adapter**: this is the leader adapter, and it's called Y-adapter since it has a _Y_ shaped structure. This adapter is being ligated to the 5' end of the DNA strands, and is used for directing the DNA into the nanopore.
+
+2. **HP-adapter**: hairpin adapter, named like that due it its hairpin structure. This adapter is ligated at the 3'end os the strands, for facilitating the entrance of the complementary strand to the nanopore right after the template starnd ended passing throuhg. In a 1D (one direction) mode, the complementary strand will just be released and then can enter to a nanopore like every other molecule, whereas in the 2D (two directions) mode, by using the HP protein and adapter, the complementary strand is being inserted into the nanopore right after the template starnd.
+
+3. **Barcode**: in order to sequence multiple different libraries at the same time, we can barcode each library with a known barcode (adapter), and by retrieving its sequence - to demultiplex the entire sequences into different libraries.
 
 _____________________________________________________________________
 
@@ -60,4 +68,41 @@ _____________________________________________________________________
 
 2. **Sequencing depth**: in Nanopore sequencing we are sequencing much less reads than in Illumina (in our case - 4000 reads per pore). Therefore, we have much less coverage for each nucleotide, i.e. much lower sequence depth (for mutation calling etc.).
 
+_____________________________________________________________________
 
+## 3 - Basic QC
+
+### a - FastQC
+
+```{fastqc}
+ln -s /home/frd2007/ANGSD_2019/nanopore_seq/guppy_out/
+for f in ./guppy_out/*.gz
+  do fastqc -o /athena/elementolab/scratch/toy2005/angsd/hw11/fastqc/ $f --extract
+done
+```
+
+### b - Differences between Nanopore and Illumina
+
+1. **Per base sequence quality**: the sequence quality per base is significantly lower in the Nanopore sequencing compare to the Illumina sequencing. As we can see in the figures below, while in Illumina most of the reads have Phred Score of ~35-39, in Nanopore most of the reads have Phred Score of ~24.
+
+#### Nanopore sequence quality:
+![](./fastqc/fastq_runid_2e80324c914cfe667088fd5f8402410afdbc3251_0_fastqc/Images/per_base_quality.png) ![](./fastqc/fastq_runid_2e80324c914cfe667088fd5f8402410afdbc3251_0_fastqc/Images/per_sequence_quality.png)
+
+#### Illumina sequence quality:
+![](./../HW Week 4/fastqc_original/ERR458878_fastqc/Images/per_base_quality.png) ![](./../HW Week 4/fastqc_original/ERR458878_fastqc/Images/per_sequence_quality.png)
+
+2. **Sequence Length Distribution**: the read length of the Nanopore sequencing is much higher than in the Illumina sequencing. As we can see in the distribution below, whereas in Illumina the reads length is pre-definied (in that case - 50bp), in Nanopore is vary and can get to more than 35Kbp.
+
+#### Nanopore length distribution:
+![](./fastqc/fastq_runid_2e80324c914cfe667088fd5f8402410afdbc3251_0_fastqc/Images/sequence_length_distribution.png)
+
+#### Illumina length distribution:
+![](./../HW Week 4/fastqc_original/ERR458878_fastqc/Images/sequence_length_distribution.png)
+
+3. **Sequence Duplication Levels**: in Illumina sequencing we get much more duplicated sequences due to the deep coverage and the short reads (sometimes up to 40%). In contrast, in Nanopore sequencing we almost don't get any duplicated sequences, since we sequence the entire DNA/RNA molecules.
+
+#### Nanopore duplication levels:
+![](./fastqc/fastq_runid_2e80324c914cfe667088fd5f8402410afdbc3251_0_fastqc/Images/duplication_levels.png)
+
+#### Illumina duplication levels:
+![](./../HW Week 4/fastqc_original/ERR458878_fastqc/Images/duplication_levels.png)
