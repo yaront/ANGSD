@@ -19,13 +19,16 @@ However, there are two major problems with the *Tabula Muris* database:
 1. It is single-cell RNA-seq, which is still relatively new field and lack of consensus regarding the analysis methods which should be used for it.
 2. Even though there is a high correlation between mice and human tissues, it is better to test our hypothesis in human tissues.
 
-Hence, I believe that NGS data, specifically bulk RNA-seq from different human tissues, can be very valuable in order to test this hypothesis. Practically, I am planning to compare the expression levels of the kinases in the __Tyrosine kinome__ for different Tyrosine kinases' families, and to check whether there is a mutually exclusive expression pattern or not. I will start with the SRC family (SRC, FYN, YES), and will continue with the other families (EPH, DDR, etc.).
+Hence, I believe that NGS data, specifically bulk RNA-seq from different human tissues, can be very valuable in order to test this hypothesis. Practically, I am planning to compare the expression levels of the kinases in the __Tyrosine kinome__ for different Tyrosine kinases' families, and to check whether there is a mutually exclusive expression pattern or not.
+
+In that project, I am testing our hypothesis for the TAM receptor tyrosine kinases - Tyro3, Axl, and Mer - which have similar substrate spcificity. To that end, I will examine 4 different tissues - bladder, brain, lung and liver, whereas for each tissue I will be using 2 samples. I will process and analyze the RNA-seq data, extract the differential expression of my specific genes in different tissue, and test our hypothesis based on those results.
 
 
 ## Database
 
-For targeting this research question, I am planning to use *The Genotype-Tissue Expression (GTEx) database* (https://gtexportal.org/home/), which is a portal for RNA-seq of human tissues of postmortem donors. This database contains 53 different tissues from 714 different donors, and 11688 samples in total. most of the samples (10361) have also genotype information. The raw data (fasta files) are accessible upon request. After obtaining the data and running QC analyses on it, I will specifiy exactly which samples I am going to use for my project.
+For targeting this research question, I am planning to use *The Genotype-Tissue Expression (GTEx) database* (https://gtexportal.org/home/), which is a portal for RNA-seq of human tissues of postmortem donors. This database contains 53 different tissues from 714 different donors, and 11688 samples in total. most of the samples (10361) have also genotype information. The raw data (fasta files) are accessible upon request.
 
+For the project I chose
 
 ## QC and trimming for the fastq files
 
@@ -35,8 +38,8 @@ We will start with an initial fastQC analysis on the original files:
 
 spack load fastqc
 
-for f in ./databases/GTEX_Tomer/*/*
-    do fastqc -o ./output/fastqc_original $f --extract
+for f in databases/gtex_files/*/*/original/*
+  do fastqc -o ./results/$(echo $f |cut -f 3-4 -d/)/fastqc_original $f --extract
 done
 
 ```
@@ -48,11 +51,13 @@ We will trim the reads using Trimgalore:
 spack load -r py-cutadapt
 spack load -r trimgalore
 
-for f in ./databases/gtex_files/*/*
-    do fastqc -o ./output/fastqc_original $f --extract
+for f in databases/gtex_files/*/*/original
+  do trim_galore --illumina --length 15 -o databases/gtex_files/$(echo $f |cut -f 3-4 -d/)/trimmed/ --paired $f/*
 done
 
 ```
+
+
 
 and will run FastQC again for the trimmed fastq files
 
@@ -70,10 +75,14 @@ Indexing the reference genome (hg38) and aligning the fasta files:
 
 ```{STAR_INDEX}
 
+spack load star@2.6.1
+
 mkdir hg38_STAR_index
 STAR --runMode genomeGenerate --runThreadN 8 --genomeDir gh38_STAR_index --genomeFastaFiles ./hg38.fa --sjdbGTFfile hg38_ucsc.gtf --sldbOverhang 75
 
 STAR --runMode alignReads --runThreadN 8 --genomeDir /athena/elementolab/scratch/toy2005/GenomeReference_hg38/hg38_STAR_index/ --readFilesIn /athena/elementolab/scratch/toy2005/angsd/project/databases/gtex_files/original/SRR807971/SRR807971_1.fastq.gz --readFilesCommand zcat --outFileNamePrefix /athena/elementolab/scratch/toy2005/angsd/project/output/SRR807971/SRR807971_1. --outSAMtype BAM SortedByCoordinate
+
+STAR --runMode alignReads --runThreadN 8 --genomeDir /athena/elementolab/scratch/toy2005/GenomeReference_hg38/hg38_STAR_index/ --readFilesIn /athena/elementolab/scratch/toy2005/angsd/project/databases/gtex_files/original/SRR807971/SRR807971_1.fastq.gz /athena/elementolab/scratch/toy2005/angsd/project/databases/gtex_files/original/SRR807971/SRR807971_2.fastq.gz --readFilesCommand zcat --outFileNamePrefix /athena/elementolab/scratch/toy2005/angsd/project/output/SRR807971/SRR807971. --outSAMtype BAM SortedByCoordinate
 
 ```
 
@@ -81,7 +90,19 @@ Alignment QC:
 
 ```{STAR_INDEX}
 
+spack load samtools@1.8
+
 samtools stats databases/gtex_files/star_aligned/SRR807971/SRR807971_1.Aligned.sortedByCoord.out.bam > ~/angsd/project/results/SRR807971/alignment_qc/SRR807971_1.stats
 samtools flagstat databases/gtex_files/star_aligned/SRR807971/SRR807971_1.Aligned.sortedByCoord.out.bam > ~/angsd/project/results/SRR807971/alignment_qc/SRR807971_1.flagstats
+
+```
+
+## Gene count
+
+```{FEATURE_COUNT}
+
+for f in ./databases/alignment/*.sortedByCoord.out.bam
+  do featureCounts -t exon -f -a ./databases/sacCer3.gtf -o /athena/elementolab/scratch/toy2005/angsd/hw6/counts/$(echo $f | cut -d"/" -f4 | cut -d"." -f1)_counts.txt $f
+done
 
 ```
