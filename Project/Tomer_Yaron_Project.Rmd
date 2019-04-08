@@ -21,7 +21,7 @@ However, there are two major problems with the *Tabula Muris* database:
 
 Hence, I believe that NGS data, specifically bulk RNA-seq from different human tissues, can be very valuable in order to test this hypothesis. Practically, I am planning to compare the expression levels of the kinases in the __Tyrosine kinome__ for different Tyrosine kinases' families, and to check whether there is a mutually exclusive expression pattern or not.
 
-In that project, I am testing our hypothesis for the TAM receptor tyrosine kinases - Tyro3, Axl, and Mer - which have similar substrate spcificity. To that end, I will examine 4 different tissues - bladder, brain, lung and liver, whereas for each tissue I will be using 2 samples. I will process and analyze the RNA-seq data, extract the differential expression of my specific genes in different tissue, and test our hypothesis based on those results.
+In that project, I am testing our hypothesis for the TAM receptor tyrosine kinases - Tyro3, Axl, and Mer - which have similar substrate spcificity. To that end, I will examine 4 different tissues - bladder, brain, lung and liver, whereas for each tissue I will be choose 1 sample out of two optional (based on QC analysis). I will process and analyze the RNA-seq data, extract the differential expression of my specific genes in different tissue, and test our hypothesis based on those results.
 
 
 ## Database
@@ -41,9 +41,9 @@ For the project I chose 4 different tissues (bladder, brain, lung and liver), 2 
 | SRR807971  | SRS408127  | GTEX-OOBJ-0826-SM-3NB2K      | Liver             | No       | male   | SRP012682 |
 | SRR659649  | SRS389590  | GTEX-U3ZN-0226-SM-3DB8D      | Liver             | No       | female | SRP012682 |
 
-## QC and trimming for the fastq files
+## QC of the fastq files and choosing samples for analysis
 
-We will start with an initial fastQC analysis on the original files:
+I started with an initial fastQC analysis on the original files, and then presented it using MultiQC:
 
 ```{FASTQC}
 spack load fastqc
@@ -56,32 +56,61 @@ multiqc ./Project/results/*/*/fastqc_original/* -o ./Project/results/combined/Fa
 
 ```
 
-We will trim the reads using Trimgalore:
+As we can see, some of the samples have a significant adapter contamination and overrepresented sequences:
+
+![](./results/combined/FastQC - Original/multiqc_data/fastqc_adapter_content_plot.png)
+
+![](./results/combined/FastQC - Original/multiqc_data/fastqc_overrepresented_sequencesi_plot.png)
+
+In addition, we can see that one sample (SRR600417 - lung), has relatively low quality score.
+
+![](./results/combined/FastQC - Original/multiqc_data/fastqc_per_base_sequence_quality_plot.png)
+
+Moreover, some samples has high percentage of duplicated sequences:
+
+![](./results/combined/FastQC - Original/multiqc_data/fastqc_sequence_counts_plot.png)
+
+![](./results/combined/FastQC - Original/multiqc_data/fastqc_sequence_counts_percentage_plot.png)
+
+Based on the QC analysis above, considering the amount of duplicated sequences and the quality scores, I decided to pick the following samples from each tissue:
+
+| Run        | SRA_Sample | Sample_Name                  | histological_type | is_tumor | sex    | SRA_Study |
+|------------|------------|------------------------------|-------------------|----------|--------|-----------|
+| SRR1085402 | SRS524923  | GTEX-SNMC-0826-SM-4DM66      | Bladder           | No       | male   | SRP012682 |
+| SRR595926  | SRS332984  | GTEX-N7MS-0011-R10A-SM-2HMJK | Brain             | No       | male   | SRP012682 |
+| SRR600584  | SRS333222  | GTEX-OHPL-0526-SM-2HMIX      | Lung              | No       | female | SRP012682 |
+| SRR807971  | SRS408127  | GTEX-OOBJ-0826-SM-3NB2K      | Liver             | No       | male   | SRP012682 |
+
+## Trimming adapters
+
+Since the samples has adapter contamination, I trimmed the reads using TrimGalore:
 
 ```{TRIMGALORE}
 spack load -r py-cutadapt
 spack load -r trimgalore
 
 for f in databases/gtex_files/*/*/original
-  do trim_galore --illumina --length 15 -o databases/gtex_files/$(echo $f |cut -f 3-4 -d/)/trimmed/ --paired $f/*
+  do trim_galore --illumina -o databases/gtex_files/$(echo $f |cut -f 3-4 -d/)/trimmed/ $f/*
 done
 
 ```
 
+I chose the argument `--length` to remain 20bp (default), since our reads are 75bp long, and the used Illumina adapters are ~60bp. In addition, I didn't specify the argument `--paired` so every read longer than 20bp after trimming will be preserved, even if its other paired-end is not preserved (since it is shorter than 20bp after trimming). That will allow us to use both paired-end and not paired-end alignment later on.
 
-
-and will run FastQC again for the trimmed fastq files
+Then I ran FastQC again for the trimmed fastq files:
 
 ```{FASTQC_TRIM}
-for f in ./databases/gtex_files/*/*
-    do fastqc -o ./output/fastqc_trimmed $f --extract
+for f in databases/gtex_files/*/*/original/*
+  do fastqc -o ./results/$(echo $f |cut -f 3-4 -d/)/fastqc_trimmed $f --extract
 done
+
+multiqc ./Project/results/*/*/fastqc_trimmed/* -o ./Project/results/combined/FastQC\ -\ Trimmed/
 
 ```
 
 ## Alignment
 
-Indexing the reference genome (hg38) and aligning the fasta files:
+Since we are dealing here with RNA-seq, I used STAR. First, I indexed the reference genome (hg38) and then aligned the fastq files as paired-end:
 
 ```{STAR_INDEX}
 spack load star@2.6.1
@@ -97,7 +126,7 @@ STAR --runMode alignReads --runThreadN 8 --genomeDir /athena/elementolab/scratch
 
 Alignment QC:
 
-```{STAR_INDEX}
+```{ALIGN_QC}
 spack load samtools@1.8
 
 samtools stats databases/gtex_files/star_aligned/SRR807971/SRR807971_1.Aligned.sortedByCoord.out.bam > ~/angsd/project/results/SRR807971/alignment_qc/SRR807971_1.stats
