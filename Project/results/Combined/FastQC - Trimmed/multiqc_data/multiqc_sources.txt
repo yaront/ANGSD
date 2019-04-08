@@ -1,9 +1,0 @@
-Module	Section	Sample Name	Source
-Cutadapt	all_sections	SRR807971_1	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/SRR807971/Trimming Reports/SRR807971_1.fastq.gz_trimming_report.txt
-Cutadapt	all_sections	SRR807971_2	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/SRR807971/Trimming Reports/SRR807971_2.fastq.gz_trimming_report.txt
-Cutadapt	all_sections	SRR659649_2	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/SRR659649/Trimming Reports/SRR659649_2.fastq.gz_trimming_report.txt
-Cutadapt	all_sections	SRR659649_1	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/SRR659649/Trimming Reports/SRR659649_1.fastq.gz_trimming_report.txt
-FastQC	all_sections	SRR807971_1	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/SRR807971/FastQC - Trimmed/SRR807971_1_trimmed_fastqc/fastqc_data.txt
-FastQC	all_sections	SRR807971_2	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/SRR807971/FastQC - Trimmed/SRR807971_2_trimmed_fastqc/fastqc_data.txt
-FastQC	all_sections	SRR659649_2	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/SRR659649/FastQC - Trimmed/SRR659649_2_trimmed_fastqc/fastqc_data.txt
-FastQC	all_sections	SRR659649_1	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/SRR659649/FastQC - Trimmed/SRR659649_1_trimmed_fastqc/fastqc_data.txt

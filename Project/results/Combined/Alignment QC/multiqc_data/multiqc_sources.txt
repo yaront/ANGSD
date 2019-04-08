@@ -1,9 +1,0 @@
-Module	Section	Sample Name	Source
-Samtools	flagstat	SRR807971_1	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/Combined/Alignment QC/SRR807971_1.flagstats
-Samtools	flagstat	SRR807971_2	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/Combined/Alignment QC/SRR807971_2.flagstats
-Samtools	flagstat	SRR659649_2	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/Combined/Alignment QC/SRR659649_2.flagstats
-Samtools	flagstat	SRR659649_1	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/Combined/Alignment QC/SRR659649_1.flagstats
-Samtools	stats	SRR807971_1	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/Combined/Alignment QC/SRR807971_1.stats
-Samtools	stats	SRR807971_2	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/Combined/Alignment QC/SRR807971_2.stats
-Samtools	stats	SRR659649_2	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/Combined/Alignment QC/SRR659649_2.stats
-Samtools	stats	SRR659649_1	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/Combined/Alignment QC/SRR659649_1.stats
