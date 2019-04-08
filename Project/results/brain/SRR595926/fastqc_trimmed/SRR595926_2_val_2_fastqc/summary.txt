@@ -1,0 +1,10 @@
+PASS	Basic Statistics	SRR595926_2_val_2.fq.gz
+PASS	Per base sequence quality	SRR595926_2_val_2.fq.gz
+PASS	Per sequence quality scores	SRR595926_2_val_2.fq.gz
+FAIL	Per base sequence content	SRR595926_2_val_2.fq.gz
+PASS	Per sequence GC content	SRR595926_2_val_2.fq.gz
+PASS	Per base N content	SRR595926_2_val_2.fq.gz
+WARN	Sequence Length Distribution	SRR595926_2_val_2.fq.gz
+PASS	Sequence Duplication Levels	SRR595926_2_val_2.fq.gz
+PASS	Overrepresented sequences	SRR595926_2_val_2.fq.gz
+PASS	Adapter Content	SRR595926_2_val_2.fq.gz
