@@ -28,26 +28,37 @@ In that project, I am testing our hypothesis for the TAM receptor tyrosine kinas
 
 For targeting this research question, I am planning to use *The Genotype-Tissue Expression (GTEx) database* (https://gtexportal.org/home/), which is a portal for RNA-seq of human tissues of postmortem donors. This database contains 53 different tissues from 714 different donors, and 11688 samples in total. most of the samples (10361) have also genotype information. The raw data (fasta files) are accessible upon request.
 
-For the project I chose
+For the project I chose 4 different tissues (bladder, brain, lung and liver), 2 samples from each:
+
+| Run        | SRA_Sample | Sample_Name                  | histological_type | is_tumor | sex    | SRA_Study |
+|------------|------------|------------------------------|-------------------|----------|--------|-----------|
+| SRR1085402 | SRS524923  | GTEX-SNMC-0826-SM-4DM66      | Bladder           | No       | male   | SRP012682 |
+| SRR1086236 | SRS524959  | GTEX-TMMY-1526-SM-4DXST      | Bladder           | No       | female | SRP012682 |
+| SRR595926  | SRS332984  | GTEX-N7MS-0011-R10A-SM-2HMJK | Brain             | No       | male   | SRP012682 |
+| SRR598253  | SRS332955  | GTEX-Q2AG-0011-R6A-SM-2HML7  | Brain             | No       | female | SRP012682 |
+| SRR600417  | SRS333244  | GTEX-Q2AI-0526-SM-2I3EJ      | Lung              | No       | male   | SRP012682 |
+| SRR600584  | SRS333222  | GTEX-OHPL-0526-SM-2HMIX      | Lung              | No       | female | SRP012682 |
+| SRR807971  | SRS408127  | GTEX-OOBJ-0826-SM-3NB2K      | Liver             | No       | male   | SRP012682 |
+| SRR659649  | SRS389590  | GTEX-U3ZN-0226-SM-3DB8D      | Liver             | No       | female | SRP012682 |
 
 ## QC and trimming for the fastq files
 
 We will start with an initial fastQC analysis on the original files:
 
 ```{FASTQC}
-
 spack load fastqc
 
 for f in databases/gtex_files/*/*/original/*
   do fastqc -o ./results/$(echo $f |cut -f 3-4 -d/)/fastqc_original $f --extract
 done
 
+multiqc ./Project/results/*/*/fastqc_original/* -o ./Project/results/combined/FastQC\ -\ Original/
+
 ```
 
 We will trim the reads using Trimgalore:
 
 ```{TRIMGALORE}
-
 spack load -r py-cutadapt
 spack load -r trimgalore
 
@@ -62,7 +73,6 @@ done
 and will run FastQC again for the trimmed fastq files
 
 ```{FASTQC_TRIM}
-
 for f in ./databases/gtex_files/*/*
     do fastqc -o ./output/fastqc_trimmed $f --extract
 done
@@ -74,7 +84,6 @@ done
 Indexing the reference genome (hg38) and aligning the fasta files:
 
 ```{STAR_INDEX}
-
 spack load star@2.6.1
 
 mkdir hg38_STAR_index
@@ -89,7 +98,6 @@ STAR --runMode alignReads --runThreadN 8 --genomeDir /athena/elementolab/scratch
 Alignment QC:
 
 ```{STAR_INDEX}
-
 spack load samtools@1.8
 
 samtools stats databases/gtex_files/star_aligned/SRR807971/SRR807971_1.Aligned.sortedByCoord.out.bam > ~/angsd/project/results/SRR807971/alignment_qc/SRR807971_1.stats
@@ -100,7 +108,6 @@ samtools flagstat databases/gtex_files/star_aligned/SRR807971/SRR807971_1.Aligne
 ## Gene count
 
 ```{FEATURE_COUNT}
-
 for f in ./databases/alignment/*.sortedByCoord.out.bam
   do featureCounts -t exon -f -a ./databases/sacCer3.gtf -o /athena/elementolab/scratch/toy2005/angsd/hw6/counts/$(echo $f | cut -d"/" -f4 | cut -d"." -f1)_counts.txt $f
 done
