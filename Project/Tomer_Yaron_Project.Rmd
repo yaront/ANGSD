@@ -108,6 +108,14 @@ multiqc ./Project/results/*/*/fastqc_trimmed/* -o ./Project/results/combined/Fas
 
 ```
 
+As we can see, the overall quality got imporved. First, there are less duplicated sequences (mainly becuase many of them were adapters):
+
+![](./results/combined/FastQC - Trimmed/multiqc_data/fastqc_sequence_counts_plot.png)
+
+![](./results/combined/FastQC - Trimmed/multiqc_data/fastqc_sequence_counts_percentage_plot.png)
+
+in addition, there are no overrepresented sequences and no adapter content.
+
 ## Alignment
 
 Since we are dealing here with RNA-seq, I used STAR. First, I indexed the reference genome (hg38) and then aligned the fastq files as paired-end:
@@ -118,16 +126,12 @@ spack load star@2.6.1
 mkdir hg38_STAR_index
 STAR --runMode genomeGenerate --runThreadN 8 --genomeDir gh38_STAR_index --genomeFastaFiles ./hg38.fa --sjdbGTFfile hg38_ucsc.gtf --sldbOverhang 75
 
-STAR --runMode alignReads --runThreadN 8 --genomeDir /athena/elementolab/scratch/toy2005/GenomeReference_hg38/hg38_STAR_index/ --readFilesIn /athena/elementolab/scratch/toy2005/angsd/project/databases/gtex_files/original/SRR807971/SRR807971_1.fastq.gz --readFilesCommand zcat --outFileNamePrefix /athena/elementolab/scratch/toy2005/angsd/project/output/SRR807971/SRR807971_1. --outSAMtype BAM SortedByCoordinate
-
-STAR --runMode alignReads --runThreadN 8 --genomeDir /athena/elementolab/scratch/toy2005/GenomeReference_hg38/hg38_STAR_index/ --readFilesIn /athena/elementolab/scratch/toy2005/angsd/project/databases/gtex_files/original/SRR807971/SRR807971_1.fastq.gz /athena/elementolab/scratch/toy2005/angsd/project/databases/gtex_files/original/SRR807971/SRR807971_2.fastq.gz --readFilesCommand zcat --outFileNamePrefix /athena/elementolab/scratch/toy2005/angsd/project/output/SRR807971/SRR807971. --outSAMtype BAM SortedByCoordinate
-
-
 for f in databases/gtex_files/*/*/trimmed
   do STAR --runMode alignReads --runThreadN 8 --genomeDir /athena/elementolab/scratch/toy2005/GenomeReference_hg38/hg38_STAR_index/ --readFilesIn $f/*.gz --readFilesCommand zcat --outFileNamePrefix /athena/elementolab/scratch/toy2005/angsd/project/databases/gtex_files/$(echo $f | cut -f 3-4 -d/)/star_aligned/$(echo $f | cut -f 4 -d/). --outSAMtype BAM SortedByCoordinate
   samtools stats databases/gtex_files/$(echo $f | cut -f 3-4 -d/)/star_aligned/$(echo $f | cut -f 4 -d/).Aligned.sortedByCoord.out.bam > ~/angsd/project/results/$(echo $f | cut -f 3-4 -d/)/alignment_qc/$(echo $f | cut -f 4 -d/).stats
   samtools flagstat databases/gtex_files/$(echo $f | cut -f 3-4 -d/)/star_aligned/$(echo $f | cut -f 4 -d/).Aligned.sortedByCoord.out.bam > ~/angsd/project/results/$(echo $f | cut -f 3-4 -d/)/alignment_qc/$(echo $f | cut -f 4 -d/).flagstat
 done
+
 ```
 
 Alignment QC:
@@ -140,11 +144,79 @@ samtools flagstat databases/gtex_files/star_aligned/SRR807971/SRR807971_1.Aligne
 
 ```
 
+As we can see, 100% of the reads were mapped:
+
+![](./results/combined/Alignment QC/multiqc_data/samtools_alignment_percentage_plot.png)
+
+Even though some of them where multi-mapped:
+
+| Sample Name | M Reads Mapped | % Mapped | M Non-Primary | % MapQ 0 Reads | Error rate | % Proper Pairs |
+|-------------|----------------|----------|---------------|----------------|------------|----------------|
+| SRR1085402  | 55.8           | 100.0%   | 3.7           | 0.3%           | 0.00%      | 99.9%          |
+| SRR595926   | 114.7          | 100.0%   | 8.0           | 0.2%           | 0.00%      | 99.7%          |
+| SRR600584   | 70.7           | 100.0%   | 3.8           | 0.2%           | 0.00%      | 99.7%          |
+| SRR807971   | 114.2          | 100.0%   | 9.3           | 0.3%           | 0.00%      | 99.8%          |
+
 ## Gene count
 
 ```{FEATURE_COUNT}
-for f in ./databases/alignment/*.sortedByCoord.out.bam
-  do featureCounts -t exon -f -a ./databases/sacCer3.gtf -o /athena/elementolab/scratch/toy2005/angsd/hw6/counts/$(echo $f | cut -d"/" -f4 | cut -d"." -f1)_counts.txt $f
+spack load subread
+
+for f in databases/gtex_files/*/*/star_aligned/*.Aligned.sortedByCoord.out.bam
+  do featureCounts -T 2 -t gene -f -a databases/GenomeReference_hg38/annotation/Homo_sapiens.GRCh38.77.gtf -o databases/gtex_files/$(echo $f | cut -f 3-4 -d/)/counts/$(echo $f| cut -f 4 -d/)_counts.txt $f
 done
+
+```
+
+Now we will normalize the counts matries and compare the differential expression.
+
+```{r, COUNT_STATS}
+
+library(ggplot2)
+library(reshape2)
+
+file_names <- list.files(pattern = "\\.summary$", recursive = TRUE)
+m <- matrix(0, ncol = 3, nrow = length(file_names))
+
+gene_counts <- data.frame(m)
+colnames(gene_counts) <- c('Assigned','Unassigned_NoFeatures','Unassigned_Ambiguity')
+rownames(gene_counts) <- lapply(strsplit(file_names,'/'), function(x) paste(x[2:3], collapse = '/'))
+
+for (f in file_names){
+  sample <- paste(strsplit(f,'/')[[1]][2:3], collapse = '/')
+  counts <- read.table(f, row.names = 1, header = TRUE)
+  for (att in colnames(gene_counts)){
+    gene_counts[sample,att] <- counts[att,]
+  }
+}
+
+gene_counts$Category  <- row.names(gene_counts)
+gene_counts_melt <- melt(gene_counts, value.name="Count", variable.name="Variable")
+ggplot(data=gene_counts_melt, aes(x=Category, y=Count, fill=Variable)) + geom_bar(stat="identity", position=position_dodge()) + ggtitle("Reads Counts Per Gene - No Multi-Mapped Reads") + xlab("Sample") + ylab("Read Counts") + labs(fill = "Type")
+
+```
+
+```{r, GENE_EXP}
+
+library(DESeq2)
+
+file_names <- list.files(pattern = "._counts.txt$", recursive = TRUE)
+sample_matrix <- read.table(file_names[1], row.names = 1, header = TRUE)
+m <- matrix(0, ncol = length(file_names), nrow = dim(sample_matrix)[1])
+
+counts_matrix <- data.frame(m)
+colnames(counts_matrix) <- lapply(strsplit(file_names,'/'), function(x) paste(x[2:3], collapse = '/'))
+rownames(counts_matrix) <- rownames(sample_matrix)
+
+for (f in file_names){
+  sample <- paste(strsplit(f,'/')[[1]][2:3], collapse = '/')
+  sample_matrix <- read.table(f, row.names = 1, header = TRUE)
+  counts_matrix[,sample] <- sample_matrix[,ncol(sample_matrix)]
+}
+
+sample.info <- DataFrame(condition = names(counts_matrix), row.names = names(counts_matrix) )
+DESeq.ds <- DESeqDataSetFromMatrix(countData = counts_matrix, colData = sample.info, design = ~ condition)
+DESeq.rlog <- rlog(DESeq.ds, blind = TRUE)
+rlog.norm.counts <- assay(DESeq.rlog)
 
 ```
