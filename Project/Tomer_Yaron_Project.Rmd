@@ -90,7 +90,7 @@ spack load -r py-cutadapt
 spack load -r trimgalore
 
 for f in databases/gtex_files/*/*/original
-  do trim_galore --illumina -o databases/gtex_files/$(echo $f |cut -f 3-4 -d/)/trimmed/ $f/*
+  do trim_galore --illumina -o databases/gtex_files/$(echo $f |cut -f 3-4 -d/)/trimmed/ --paired $f/*
 done
 
 ```
@@ -100,8 +100,8 @@ I chose the argument `--length` to remain 20bp (default), since our reads are 75
 Then I ran FastQC again for the trimmed fastq files:
 
 ```{FASTQC_TRIM}
-for f in databases/gtex_files/*/*/original/*
-  do fastqc -o ./results/$(echo $f |cut -f 3-4 -d/)/fastqc_trimmed $f --extract
+for f in databases/gtex_files/*/*/trimmed/*.gz
+  do fastqc -o ~/angsd/project/results/$(echo $f |cut -f 3-4 -d/)/fastqc_trimmed $f --extract
 done
 
 multiqc ./Project/results/*/*/fastqc_trimmed/* -o ./Project/results/combined/FastQC\ -\ Trimmed/
@@ -122,6 +122,12 @@ STAR --runMode alignReads --runThreadN 8 --genomeDir /athena/elementolab/scratch
 
 STAR --runMode alignReads --runThreadN 8 --genomeDir /athena/elementolab/scratch/toy2005/GenomeReference_hg38/hg38_STAR_index/ --readFilesIn /athena/elementolab/scratch/toy2005/angsd/project/databases/gtex_files/original/SRR807971/SRR807971_1.fastq.gz /athena/elementolab/scratch/toy2005/angsd/project/databases/gtex_files/original/SRR807971/SRR807971_2.fastq.gz --readFilesCommand zcat --outFileNamePrefix /athena/elementolab/scratch/toy2005/angsd/project/output/SRR807971/SRR807971. --outSAMtype BAM SortedByCoordinate
 
+
+for f in databases/gtex_files/*/*/trimmed
+  do STAR --runMode alignReads --runThreadN 8 --genomeDir /athena/elementolab/scratch/toy2005/GenomeReference_hg38/hg38_STAR_index/ --readFilesIn $f/*.gz --readFilesCommand zcat --outFileNamePrefix /athena/elementolab/scratch/toy2005/angsd/project/databases/gtex_files/$(echo $f | cut -f 3-4 -d/)/star_aligned/$(echo $f | cut -f 4 -d/). --outSAMtype BAM SortedByCoordinate
+  samtools stats databases/gtex_files/$(echo $f | cut -f 3-4 -d/)/star_aligned/$(echo $f | cut -f 4 -d/).Aligned.sortedByCoord.out.bam > ~/angsd/project/results/$(echo $f | cut -f 3-4 -d/)/alignment_qc/$(echo $f | cut -f 4 -d/).stats
+  samtools flagstat databases/gtex_files/$(echo $f | cut -f 3-4 -d/)/star_aligned/$(echo $f | cut -f 4 -d/).Aligned.sortedByCoord.out.bam > ~/angsd/project/results/$(echo $f | cut -f 3-4 -d/)/alignment_qc/$(echo $f | cut -f 4 -d/).flagstat
+done
 ```
 
 Alignment QC:
