@@ -1,0 +1,9 @@
+Module	Section	Sample Name	Source
+FastQC	all_sections	SRR1085402_1_val_1	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/bladder/SRR1085402/fastqc_trimmed/SRR1085402_1_val_1_fastqc/fastqc_data.txt
+FastQC	all_sections	SRR1085402_2_val_2	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/bladder/SRR1085402/fastqc_trimmed/SRR1085402_2_val_2_fastqc/fastqc_data.txt
+FastQC	all_sections	SRR595926_1_val_1	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/brain/SRR595926/fastqc_trimmed/SRR595926_1_val_1_fastqc/fastqc_data.txt
+FastQC	all_sections	SRR595926_2_val_2	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/brain/SRR595926/fastqc_trimmed/SRR595926_2_val_2_fastqc/fastqc_data.txt
+FastQC	all_sections	SRR807971_1_val_1	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/liver/SRR807971/fastqc_trimmed/SRR807971_1_val_1_fastqc/fastqc_data.txt
+FastQC	all_sections	SRR807971_2_val_2	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/liver/SRR807971/fastqc_trimmed/SRR807971_2_val_2_fastqc/fastqc_data.txt
+FastQC	all_sections	SRR600584_1_val_1	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/lung/SRR600584/fastqc_trimmed/SRR600584_1_val_1_fastqc/fastqc_data.txt
+FastQC	all_sections	SRR600584_2_val_2	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/lung/SRR600584/fastqc_trimmed/SRR600584_2_val_2_fastqc/fastqc_data.txt
