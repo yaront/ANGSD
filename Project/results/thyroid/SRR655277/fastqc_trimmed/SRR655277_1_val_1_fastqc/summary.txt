@@ -1,0 +1,10 @@
+PASS	Basic Statistics	SRR655277_1_val_1.fq.gz
+PASS	Per base sequence quality	SRR655277_1_val_1.fq.gz
+PASS	Per sequence quality scores	SRR655277_1_val_1.fq.gz
+FAIL	Per base sequence content	SRR655277_1_val_1.fq.gz
+PASS	Per sequence GC content	SRR655277_1_val_1.fq.gz
+PASS	Per base N content	SRR655277_1_val_1.fq.gz
+WARN	Sequence Length Distribution	SRR655277_1_val_1.fq.gz
+WARN	Sequence Duplication Levels	SRR655277_1_val_1.fq.gz
+PASS	Overrepresented sequences	SRR655277_1_val_1.fq.gz
+PASS	Adapter Content	SRR655277_1_val_1.fq.gz

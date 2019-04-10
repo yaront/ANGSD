@@ -95,7 +95,7 @@ done
 
 ```
 
-I chose the argument `--length` to remain 20bp (default), since our reads are 75bp long, and the used Illumina adapters are ~60bp. In addition, I didn't specify the argument `--paired` so every read longer than 20bp after trimming will be preserved, even if its other paired-end is not preserved (since it is shorter than 20bp after trimming). That will allow us to use both paired-end and not paired-end alignment later on.
+I chose the argument `--length` to remain 20bp (default). In addition, I didn't specify the argument `--paired` so every read longer than 20bp after trimming will be preserved, even if its other paired-end is not preserved (since it is shorter than 20bp after trimming). That will allow us to use both paired-end and not paired-end alignment later on.
 
 Then I ran FastQC again for the trimmed fastq files:
 
@@ -141,6 +141,8 @@ spack load samtools@1.8
 
 samtools stats databases/gtex_files/star_aligned/SRR807971/SRR807971_1.Aligned.sortedByCoord.out.bam > ~/angsd/project/results/SRR807971/alignment_qc/SRR807971_1.stats
 samtools flagstat databases/gtex_files/star_aligned/SRR807971/SRR807971_1.Aligned.sortedByCoord.out.bam > ~/angsd/project/results/SRR807971/alignment_qc/SRR807971_1.flagstats
+
+multiqc ./Project/results/*/*/alignment_qc/* -o ./Project/results/combined/Alignment\ QC/
 
 ```
 

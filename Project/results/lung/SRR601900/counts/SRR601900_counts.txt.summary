@@ -1,0 +1,13 @@
+Status	databases/gtex_files/lung/SRR601900/star_aligned/SRR601900.Aligned.sortedByCoord.out.bam
+Assigned	47733591
+Unassigned_Unmapped	0
+Unassigned_MappingQuality	0
+Unassigned_Chimera	0
+Unassigned_FragmentLength	0
+Unassigned_Duplicate	0
+Unassigned_MultiMapping	5691984
+Unassigned_Secondary	0
+Unassigned_Nonjunction	0
+Unassigned_NoFeatures	1537494
+Unassigned_Overlapping_Length	0
+Unassigned_Ambiguity	9348193

@@ -1,0 +1,10 @@
+PASS	Basic Statistics	SRR614167_1.fastq.gz
+FAIL	Per base sequence quality	SRR614167_1.fastq.gz
+PASS	Per sequence quality scores	SRR614167_1.fastq.gz
+FAIL	Per base sequence content	SRR614167_1.fastq.gz
+FAIL	Per sequence GC content	SRR614167_1.fastq.gz
+PASS	Per base N content	SRR614167_1.fastq.gz
+PASS	Sequence Length Distribution	SRR614167_1.fastq.gz
+FAIL	Sequence Duplication Levels	SRR614167_1.fastq.gz
+FAIL	Overrepresented sequences	SRR614167_1.fastq.gz
+WARN	Adapter Content	SRR614167_1.fastq.gz
