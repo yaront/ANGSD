@@ -21,25 +21,47 @@ However, there are two major problems with the *Tabula Muris* database:
 
 Hence, I believe that NGS data, specifically bulk RNA-seq from different human tissues, can be very valuable in order to test this hypothesis. Practically, I am planning to compare the expression levels of the kinases in the __Tyrosine kinome__ for different Tyrosine kinases' families, and to check whether there is a mutually exclusive expression pattern or not.
 
-In that project, I am testing our hypothesis for the TAM receptor tyrosine kinases - Tyro3, Axl, and Mer - which have similar substrate spcificity. To that end, I will examine 4 different tissues - bladder, brain, lung and liver, whereas for each tissue I will be choose 1 sample out of two optional (based on QC analysis). I will process and analyze the RNA-seq data, extract the differential expression of my specific genes in different tissue, and test our hypothesis based on those results.
+In that project, I am testing our hypothesis for the SrcB subfamily tyrosine kinases - BLK, HCK, LCK and LYN - which have similar substrate spcificity. To that end, I will examine 6 different tissues - bladder, blood, brain, liver, lung and thyroid, whereas for each tissue I will be use 5 samples. I will process and analyze the RNA-seq data, extract the differential expression of my specific genes in different tissue, and test our hypothesis based on those results.
 
 
 ## Database
 
 For targeting this research question, I am planning to use *The Genotype-Tissue Expression (GTEx) database* (https://gtexportal.org/home/), which is a portal for RNA-seq of human tissues of postmortem donors. This database contains 53 different tissues from 714 different donors, and 11688 samples in total. most of the samples (10361) have also genotype information. The raw data (fasta files) are accessible upon request.
 
-For the project I chose 4 different tissues (bladder, brain, lung and liver), 2 samples from each:
+For the project I chose 6 different tissues (bladder, blood, brain, liver, lung and thyroid), 5 samples from each:
 
 | Run        | SRA_Sample | Sample_Name                  | histological_type | is_tumor | sex    | SRA_Study |
 |------------|------------|------------------------------|-------------------|----------|--------|-----------|
+| SRR1071717 | SRS524326  | GTEX-U3ZM-0826-SM-4DXU6      | Bladder           | No       | male   | SRP012682 |
+| SRR1079830 | SRS524681  | GTEX-U4B1-1226-SM-4DXT7      | Bladder           | No       | male   | SRP012682 |
 | SRR1085402 | SRS524923  | GTEX-SNMC-0826-SM-4DM66      | Bladder           | No       | male   | SRP012682 |
 | SRR1086236 | SRS524959  | GTEX-TMMY-1526-SM-4DXST      | Bladder           | No       | female | SRP012682 |
+| SRR1120296 | SRS534674  | GTEX-U3ZN-1226-SM-4DXUD      | Bladder           | No       | female | SRP012682 |
+| SRR613723  | SRS374901  | GTEX-R55F-0005-SM-2TF4W      | Blood             | No       | male   | SRP012682 |
+| SRR614059  | SRS374925  | GTEX-PWN1-0006-SM-2S1NG      | Blood             | No       | female | SRP012682 |
+| SRR614131  | SRS374918  | GTEX-RTLS-0006-SM-2TF58      | Blood             | No       | female | SRP012682 |
+| SRR614167  | SRS374895  | GTEX-RM2N-0006-SM-2TF5H      | Blood             | No       | male   | SRP012682 |
+| SRR615177  | SRS374896  | GTEX-QDVJ-0005-SM-2TC5X      | Blood             | No       | male   | SRP012682 |
 | SRR595926  | SRS332984  | GTEX-N7MS-0011-R10A-SM-2HMJK | Brain             | No       | male   | SRP012682 |
 | SRR598253  | SRS332955  | GTEX-Q2AG-0011-R6A-SM-2HML7  | Brain             | No       | female | SRP012682 |
+| SRR603397  | SRS332972  | GTEX-NPJ7-0011-R2a-SM-2I3GF  | Brain             | No       | female | SRP012682 |
+| SRR627449  | SRS377771  | GTEX-NPJ8-1526-SM-26GMY      | Brain             | No       | male   | SRP012682 |
+| SRR627462  | SRS377775  | GTEX-NPJ8-2626-SM-26GMZ      | Brain             | No       | male   | SRP012682 |
+| SRR1093861 | SRS525377  | GTEX-XXEK-1126-SM-4BRUX      | Liver             | No       | male   | SRP012682 |
+| SRR1095383 | SRS525982  | GTEX-QDVN-0826-SM-48TZ2      | Liver             | No       | male   | SRP012682 |
+| SRR659649  | SRS389590  | GTEX-U3ZN-0226-SM-3DB8D      | Liver             | No       | female | SRP012682 |
+| SRR807971  | SRS408127  | GTEX-OOBJ-0826-SM-3NB2K      | Liver             | No       | male   | SRP012682 |
+| SRR815711  | SRS408539  | GTEX-P78B-1326-SM-3P611      | Liver             | No       | female | SRP012682 |
 | SRR600417  | SRS333244  | GTEX-Q2AI-0526-SM-2I3EJ      | Lung              | No       | male   | SRP012682 |
 | SRR600584  | SRS333222  | GTEX-OHPL-0526-SM-2HMIX      | Lung              | No       | female | SRP012682 |
-| SRR807971  | SRS408127  | GTEX-OOBJ-0826-SM-3NB2K      | Liver             | No       | male   | SRP012682 |
-| SRR659649  | SRS389590  | GTEX-U3ZN-0226-SM-3DB8D      | Liver             | No       | female | SRP012682 |
+| SRR600900  | SRS333156  | GTEX-PX3G-0526-SM-2I3EM      | Lung              | No       | female | SRP012682 |
+| SRR601900  | SRS333310  | GTEX-OHPJ-1026-SM-2HMLE      | Lung              | No       | male   | SRP012682 |
+| SRR665217  | SRS389763  | GTEX-U3ZH-0526-SM-3DB75      | Lung              | No       | male   | SRP012682 |
+| SRR655277  | SRS389076  | GTEX-WFG8-0426-SM-3GILD      | Thyroid           | No       | male   | SRP012682 |
+| SRR656191  | SRS389105  | GTEX-S7SE-0726-SM-2XCD7      | Thyroid           | No       | male   | SRP012682 |
+| SRR656373  | SRS389163  | GTEX-WEY5-0526-SM-3GIKZ      | Thyroid           | No       | female | SRP012682 |
+| SRR656469  | SRS389159  | GTEX-OXRP-0326-SM-33HBJ      | Thyroid           | No       | female | SRP012682 |
+| SRR656528  | SRS389160  | GTEX-POYW-0826-SM-2XCEM      | Thyroid           | No       | male   | SRP012682 |
 
 ## QC of the fastq files and choosing samples for analysis
 
@@ -71,15 +93,6 @@ Moreover, some samples has high percentage of duplicated sequences:
 ![](./results/combined/FastQC - Original/multiqc_data/fastqc_sequence_counts_plot.png)
 
 ![](./results/combined/FastQC - Original/multiqc_data/fastqc_sequence_counts_percentage_plot.png)
-
-Based on the QC analysis above, considering the amount of duplicated sequences and the quality scores, I decided to pick the following samples from each tissue:
-
-| Run        | SRA_Sample | Sample_Name                  | histological_type | is_tumor | sex    | SRA_Study |
-|------------|------------|------------------------------|-------------------|----------|--------|-----------|
-| SRR1085402 | SRS524923  | GTEX-SNMC-0826-SM-4DM66      | Bladder           | No       | male   | SRP012682 |
-| SRR595926  | SRS332984  | GTEX-N7MS-0011-R10A-SM-2HMJK | Brain             | No       | male   | SRP012682 |
-| SRR600584  | SRS333222  | GTEX-OHPL-0526-SM-2HMIX      | Lung              | No       | female | SRP012682 |
-| SRR807971  | SRS408127  | GTEX-OOBJ-0826-SM-3NB2K      | Liver             | No       | male   | SRP012682 |
 
 ## Trimming adapters
 
@@ -194,7 +207,7 @@ for (f in file_names){
 
 gene_counts$Category  <- row.names(gene_counts)
 gene_counts_melt <- melt(gene_counts, value.name="Count", variable.name="Variable")
-ggplot(data=gene_counts_melt, aes(x=Category, y=Count, fill=Variable)) + geom_bar(stat="identity", position=position_dodge()) + ggtitle("Reads Counts Per Gene - No Multi-Mapped Reads") + xlab("Sample") + ylab("Read Counts") + labs(fill = "Type")
+ggplot(data=gene_counts_melt, aes(x=Category, y=Count, fill=Variable)) + geom_bar(stat="identity", position=position_dodge()) + ggtitle("Reads Counts Per Gene - No Multi-Mapped Reads") + xlab("Sample") + ylab("Read Counts") + labs(fill = "Type") + theme(axis.text.x = element_text(angle = 90, hjust = 1))
 
 ```
 
@@ -216,9 +229,77 @@ for (f in file_names){
   counts_matrix[,sample] <- sample_matrix[,ncol(sample_matrix)]
 }
 
-sample.info <- DataFrame(condition = names(counts_matrix), row.names = names(counts_matrix) )
+sample.info <- DataFrame(condition = sapply(strsplit(names(counts_matrix),'/'), function(x) x[1]), row.names = names(counts_matrix))
 DESeq.ds <- DESeqDataSetFromMatrix(countData = counts_matrix, colData = sample.info, design = ~ condition)
 DESeq.rlog <- rlog(DESeq.ds, blind = TRUE)
 rlog.norm.counts <- assay(DESeq.rlog)
+
+#write.table(rlog.norm.counts, file = './results/combined/Combined counts/rlog_counts_samples.txt', sep = '\t')
+#rlog.norm.counts <- read.table('./results/combined/Combined counts/rlog_counts_samples.txt', sep = '\t')
+#colnames(rlog.norm.counts) <- gsub('\\.','/',colnames(rlog.norm.counts))
+
+plot(hclust(dist(t(rlog.norm.counts))), labels = colnames(rlog.norm.counts), main = "rlog transformed read counts - Euclidean distance")
+
+corr_coeff <- cor(rlog.norm.counts, method = "pearson")
+plot(hclust(as.dist(1 - corr_coeff)), labels = colnames(rlog.norm.counts), main = "rlog transformed read counts - Correlation")
+
+```
+
+```{r, GENE_EXP_PCA}
+
+library(Rtsne)
+
+rv <- rowVars(rlog.norm.counts)
+top_variable <- order(rv, decreasing = TRUE)
+pca <- prcomp(t(assay(DESeq.rlog)[top_variable, ]))
+plotPCA(DESeq.rlog)
+
+counts_tsne <- Rtsne(t(unique(assay(DESeq.rlog))), perplexity = 5, dims = 2, check_duplicates = FALSE)
+ggplot(as.data.frame(counts_tsne$Y), aes(x = counts_tsne$Y[,1], y = counts_tsne$Y[,2], colour = sample.info$condition)) + geom_point(alpha = 1) + theme_bw()
+
+```
+
+```{r, GENE_EXP_STAT, fig.show='asis'}
+
+library(biomaRt)
+library(reshape2)
+library(ggsignif)
+
+ensembl <- useDataset("hsapiens_gene_ensembl", useMart("ensembl"))
+
+#kinases <- sort(c("ddr1","ddr2"))
+# kinases <- sort(c("src","fyn","yes1","fgr"))
+kinases <- sort(c("lck","hck","blk","lyn"))
+# kinases <- sort(c("csf1r","kit"))
+# kinases <- sort(c("tyro3","axl","mertk"))
+# kinases <- sort(c("insr","igf1r"))
+# kinases <- c(paste0("epha",1:8), paste0("ephb",c(1,2,4)))
+
+# targets <- sort(c("ELMO1","ELMO2"))
+
+kin_ensembl <- getBM(attributes = "ensembl_gene_id", filters="hgnc_symbol", values=kinases, mart=ensembl)
+kin_ensembl <- kin_ensembl$ensembl_gene_id[unlist(lapply(kin_ensembl, function(x) x %in% rownames(rlog.norm.counts)))]
+# tar_ensembl <- getBM(attributes = "ensembl_gene_id", filters="hgnc_symbol", values=targets, mart=ensembl)
+
+kin_exp <- rlog.norm.counts[kin_ensembl,]
+kin_exp <- kin_exp[rowSums(kin_exp) > 0,]
+rownames(kin_exp) <- kinases
+colnames(kin_exp) <- sapply(strsplit(colnames(kin_exp),'/'), function(x) x[1])
+# tar_exp <- rlog.norm.counts[tar_ensembl,]
+# rownames(tar_exp) <- targets
+# colnames(tar_exp) <- sapply(strsplit(colnames(tar_exp),'/'), function(x) x[1])
+
+tissues <- sort(unique(sapply(strsplit(colnames(DESeq.ds),'/'), function(x) x[1])))
+sample_exp <- melt(kin_exp)[,c(2,1,3)]
+colnames(sample_exp) <- c("tissue","kinase","exp_value")
+
+
+for (t in tissues){
+  tissue_exp <- sample_exp[sample_exp$tissue == t,]
+  plt <- ggplot(tissue_exp, aes(x=kinase, y=exp_value, fill=kinase)) + geom_boxplot() + geom_dotplot(binaxis='y', stackdir='center', binwidth = 0.3) + ggtitle(t) + theme(plot.title = element_text(hjust = 0.5)) + geom_signif(comparisons = split(combn(kinases,2), rep(1:ncol(combn(kinases,2)), each = nrow(combn(kinases,2)))), map_signif_level=TRUE, step_increase = 0.1, vjust = 0.5) + xlab("Kinase") + ylab("Expression Level (rlog)")
+  plot(plt)
+}
+
+ggplot(sample_exp, aes(x=tissue, y=exp_value, fill=kinase)) + geom_boxplot() + ggtitle(t) + theme(plot.title = element_text(hjust = 0.5)) + xlab("Tissue") + ylab("Expression Level (rlog)") + geom_vline(xintercept = (1:5 + 0.5), linetype = "dashed")
 
 ```
