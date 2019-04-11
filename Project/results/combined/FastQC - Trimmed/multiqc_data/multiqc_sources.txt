@@ -53,5 +53,9 @@ FastQC	all_sections	SRR655277_1_val_1	/Users/tomer/Google Drive/PhD/Courses/Anal
 FastQC	all_sections	SRR655277_2_val_2	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/thyroid/SRR655277/fastqc_trimmed/SRR655277_2_val_2_fastqc/fastqc_data.txt
 FastQC	all_sections	SRR656191_1_val_1	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/thyroid/SRR656191/fastqc_trimmed/SRR656191_1_val_1_fastqc/fastqc_data.txt
 FastQC	all_sections	SRR656191_2_val_2	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/thyroid/SRR656191/fastqc_trimmed/SRR656191_2_val_2_fastqc/fastqc_data.txt
+FastQC	all_sections	SRR656373_1_val_1	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/thyroid/SRR656373/fastqc_trimmed/SRR656373_1_val_1_fastqc/fastqc_data.txt
+FastQC	all_sections	SRR656373_2_val_2	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/thyroid/SRR656373/fastqc_trimmed/SRR656373_2_val_2_fastqc/fastqc_data.txt
 FastQC	all_sections	SRR656469_1_val_1	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/thyroid/SRR656469/fastqc_trimmed/SRR656469_1_val_1_fastqc/fastqc_data.txt
 FastQC	all_sections	SRR656469_2_val_2	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/thyroid/SRR656469/fastqc_trimmed/SRR656469_2_val_2_fastqc/fastqc_data.txt
+FastQC	all_sections	SRR656528_1_val_1	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/thyroid/SRR656528/fastqc_trimmed/SRR656528_1_val_1_fastqc/fastqc_data.txt
+FastQC	all_sections	SRR656528_2_val_2	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/thyroid/SRR656528/fastqc_trimmed/SRR656528_2_val_2_fastqc/fastqc_data.txt

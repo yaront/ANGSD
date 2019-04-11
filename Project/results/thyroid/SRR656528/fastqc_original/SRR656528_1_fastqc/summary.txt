@@ -1,0 +1,10 @@
+PASS	Basic Statistics	SRR656528_1.fastq.gz
+FAIL	Per base sequence quality	SRR656528_1.fastq.gz
+PASS	Per sequence quality scores	SRR656528_1.fastq.gz
+FAIL	Per base sequence content	SRR656528_1.fastq.gz
+FAIL	Per sequence GC content	SRR656528_1.fastq.gz
+PASS	Per base N content	SRR656528_1.fastq.gz
+PASS	Sequence Length Distribution	SRR656528_1.fastq.gz
+FAIL	Sequence Duplication Levels	SRR656528_1.fastq.gz
+FAIL	Overrepresented sequences	SRR656528_1.fastq.gz
+PASS	Adapter Content	SRR656528_1.fastq.gz

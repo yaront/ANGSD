@@ -1,150 +1,154 @@
-[2019-04-09 23:08:21,264] multiqc                                            [DEBUG  ]  No MultiQC config found: /anaconda2/lib/python3.7/site-packages/multiqc_config.yaml
-[2019-04-09 23:08:21,264] multiqc                                            [DEBUG  ]  No MultiQC config found: /Users/tomer/.multiqc_config.yaml
-[2019-04-09 23:08:21,264] multiqc                                            [DEBUG  ]  No MultiQC config found: multiqc_config.yaml
-[2019-04-09 23:08:21,264] multiqc                                            [DEBUG  ]  Command used: /anaconda2/bin/multiqc ./Project/results/bladder/SRR1071717/alignment_qc/SRR1071717.flagstat ./Project/results/bladder/SRR1071717/alignment_qc/SRR1071717.stats ./Project/results/bladder/SRR1079830/alignment_qc/SRR1079830.flagstat ./Project/results/bladder/SRR1079830/alignment_qc/SRR1079830.stats ./Project/results/bladder/SRR1085402/alignment_qc/SRR1085402.flagstat ./Project/results/bladder/SRR1085402/alignment_qc/SRR1085402.stats ./Project/results/bladder/SRR1086236/alignment_qc/SRR1086236.flagstat ./Project/results/bladder/SRR1086236/alignment_qc/SRR1086236.stats ./Project/results/bladder/SRR1120296/alignment_qc/SRR1120296.flagstat ./Project/results/bladder/SRR1120296/alignment_qc/SRR1120296.stats ./Project/results/blood/SRR613723/alignment_qc/SRR613723.flagstat ./Project/results/blood/SRR613723/alignment_qc/SRR613723.stats ./Project/results/blood/SRR614059/alignment_qc/SRR614059.flagstat ./Project/results/blood/SRR614059/alignment_qc/SRR614059.stats ./Project/results/blood/SRR614131/alignment_qc/SRR614131.flagstat ./Project/results/blood/SRR614131/alignment_qc/SRR614131.stats ./Project/results/blood/SRR614167/alignment_qc/SRR614167.flagstat ./Project/results/blood/SRR614167/alignment_qc/SRR614167.stats ./Project/results/blood/SRR615177/alignment_qc/SRR615177.flagstat ./Project/results/blood/SRR615177/alignment_qc/SRR615177.stats ./Project/results/brain/SRR595926/alignment_qc/SRR595926.flagstat ./Project/results/brain/SRR595926/alignment_qc/SRR595926.stats ./Project/results/brain/SRR598253/alignment_qc/SRR598253.flagstat ./Project/results/brain/SRR598253/alignment_qc/SRR598253.stats ./Project/results/brain/SRR603397/alignment_qc/SRR603397.flagstat ./Project/results/brain/SRR603397/alignment_qc/SRR603397.stats ./Project/results/brain/SRR627449/alignment_qc/SRR627449.flagstat ./Project/results/brain/SRR627449/alignment_qc/SRR627449.stats ./Project/results/brain/SRR627462/alignment_qc/SRR627462.flagstat ./Project/results/brain/SRR627462/alignment_qc/SRR627462.stats ./Project/results/liver/SRR1093861/alignment_qc/SRR1093861.flagstat ./Project/results/liver/SRR1093861/alignment_qc/SRR1093861.stats ./Project/results/liver/SRR1095383/alignment_qc/SRR1095383.flagstat ./Project/results/liver/SRR1095383/alignment_qc/SRR1095383.stats ./Project/results/liver/SRR659649/alignment_qc/SRR659649.flagstat ./Project/results/liver/SRR659649/alignment_qc/SRR659649.stats ./Project/results/liver/SRR807971/alignment_qc/SRR807971.flagstat ./Project/results/liver/SRR807971/alignment_qc/SRR807971.stats ./Project/results/liver/SRR815711/alignment_qc/SRR815711.flagstat ./Project/results/liver/SRR815711/alignment_qc/SRR815711.stats ./Project/results/lung/SRR600417/alignment_qc/SRR600417.flagstat ./Project/results/lung/SRR600417/alignment_qc/SRR600417.stats ./Project/results/lung/SRR600584/alignment_qc/SRR600584.flagstat ./Project/results/lung/SRR600584/alignment_qc/SRR600584.stats ./Project/results/lung/SRR600900/alignment_qc/SRR600900.flagstat ./Project/results/lung/SRR600900/alignment_qc/SRR600900.stats ./Project/results/lung/SRR601900/alignment_qc/SRR601900.flagstat ./Project/results/lung/SRR601900/alignment_qc/SRR601900.stats ./Project/results/lung/SRR665217/alignment_qc/SRR665217.flagstat ./Project/results/lung/SRR665217/alignment_qc/SRR665217.stats ./Project/results/thyroid/SRR655277/alignment_qc/SRR655277.flagstat ./Project/results/thyroid/SRR655277/alignment_qc/SRR655277.stats ./Project/results/thyroid/SRR656191/alignment_qc/SRR656191.flagstat ./Project/results/thyroid/SRR656191/alignment_qc/SRR656191.stats ./Project/results/thyroid/SRR656469/alignment_qc/SRR656469.flagstat ./Project/results/thyroid/SRR656469/alignment_qc/SRR656469.stats -o ./Project/results/combined/Alignment QC/
-[2019-04-09 23:08:21,982] multiqc                                            [DEBUG  ]  Latest MultiQC version is v1.7
-[2019-04-09 23:08:21,983] multiqc                                            [INFO   ]  This is MultiQC v1.7
-[2019-04-09 23:08:21,983] multiqc                                            [DEBUG  ]  Command     : /anaconda2/bin/multiqc ./Project/results/bladder/SRR1071717/alignment_qc/SRR1071717.flagstat ./Project/results/bladder/SRR1071717/alignment_qc/SRR1071717.stats ./Project/results/bladder/SRR1079830/alignment_qc/SRR1079830.flagstat ./Project/results/bladder/SRR1079830/alignment_qc/SRR1079830.stats ./Project/results/bladder/SRR1085402/alignment_qc/SRR1085402.flagstat ./Project/results/bladder/SRR1085402/alignment_qc/SRR1085402.stats ./Project/results/bladder/SRR1086236/alignment_qc/SRR1086236.flagstat ./Project/results/bladder/SRR1086236/alignment_qc/SRR1086236.stats ./Project/results/bladder/SRR1120296/alignment_qc/SRR1120296.flagstat ./Project/results/bladder/SRR1120296/alignment_qc/SRR1120296.stats ./Project/results/blood/SRR613723/alignment_qc/SRR613723.flagstat ./Project/results/blood/SRR613723/alignment_qc/SRR613723.stats ./Project/results/blood/SRR614059/alignment_qc/SRR614059.flagstat ./Project/results/blood/SRR614059/alignment_qc/SRR614059.stats ./Project/results/blood/SRR614131/alignment_qc/SRR614131.flagstat ./Project/results/blood/SRR614131/alignment_qc/SRR614131.stats ./Project/results/blood/SRR614167/alignment_qc/SRR614167.flagstat ./Project/results/blood/SRR614167/alignment_qc/SRR614167.stats ./Project/results/blood/SRR615177/alignment_qc/SRR615177.flagstat ./Project/results/blood/SRR615177/alignment_qc/SRR615177.stats ./Project/results/brain/SRR595926/alignment_qc/SRR595926.flagstat ./Project/results/brain/SRR595926/alignment_qc/SRR595926.stats ./Project/results/brain/SRR598253/alignment_qc/SRR598253.flagstat ./Project/results/brain/SRR598253/alignment_qc/SRR598253.stats ./Project/results/brain/SRR603397/alignment_qc/SRR603397.flagstat ./Project/results/brain/SRR603397/alignment_qc/SRR603397.stats ./Project/results/brain/SRR627449/alignment_qc/SRR627449.flagstat ./Project/results/brain/SRR627449/alignment_qc/SRR627449.stats ./Project/results/brain/SRR627462/alignment_qc/SRR627462.flagstat ./Project/results/brain/SRR627462/alignment_qc/SRR627462.stats ./Project/results/liver/SRR1093861/alignment_qc/SRR1093861.flagstat ./Project/results/liver/SRR1093861/alignment_qc/SRR1093861.stats ./Project/results/liver/SRR1095383/alignment_qc/SRR1095383.flagstat ./Project/results/liver/SRR1095383/alignment_qc/SRR1095383.stats ./Project/results/liver/SRR659649/alignment_qc/SRR659649.flagstat ./Project/results/liver/SRR659649/alignment_qc/SRR659649.stats ./Project/results/liver/SRR807971/alignment_qc/SRR807971.flagstat ./Project/results/liver/SRR807971/alignment_qc/SRR807971.stats ./Project/results/liver/SRR815711/alignment_qc/SRR815711.flagstat ./Project/results/liver/SRR815711/alignment_qc/SRR815711.stats ./Project/results/lung/SRR600417/alignment_qc/SRR600417.flagstat ./Project/results/lung/SRR600417/alignment_qc/SRR600417.stats ./Project/results/lung/SRR600584/alignment_qc/SRR600584.flagstat ./Project/results/lung/SRR600584/alignment_qc/SRR600584.stats ./Project/results/lung/SRR600900/alignment_qc/SRR600900.flagstat ./Project/results/lung/SRR600900/alignment_qc/SRR600900.stats ./Project/results/lung/SRR601900/alignment_qc/SRR601900.flagstat ./Project/results/lung/SRR601900/alignment_qc/SRR601900.stats ./Project/results/lung/SRR665217/alignment_qc/SRR665217.flagstat ./Project/results/lung/SRR665217/alignment_qc/SRR665217.stats ./Project/results/thyroid/SRR655277/alignment_qc/SRR655277.flagstat ./Project/results/thyroid/SRR655277/alignment_qc/SRR655277.stats ./Project/results/thyroid/SRR656191/alignment_qc/SRR656191.flagstat ./Project/results/thyroid/SRR656191/alignment_qc/SRR656191.stats ./Project/results/thyroid/SRR656469/alignment_qc/SRR656469.flagstat ./Project/results/thyroid/SRR656469/alignment_qc/SRR656469.stats -o ./Project/results/combined/Alignment QC/
-[2019-04-09 23:08:21,983] multiqc                                            [DEBUG  ]  Working dir : /Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data
-[2019-04-09 23:08:21,983] multiqc                                            [INFO   ]  Template    : default
-[2019-04-09 23:08:21,983] multiqc                                            [INFO   ]  Searching './Project/results/bladder/SRR1071717/alignment_qc/SRR1071717.flagstat'
-[2019-04-09 23:08:21,983] multiqc                                            [INFO   ]  Searching './Project/results/bladder/SRR1071717/alignment_qc/SRR1071717.stats'
-[2019-04-09 23:08:21,983] multiqc                                            [INFO   ]  Searching './Project/results/bladder/SRR1079830/alignment_qc/SRR1079830.flagstat'
-[2019-04-09 23:08:21,983] multiqc                                            [INFO   ]  Searching './Project/results/bladder/SRR1079830/alignment_qc/SRR1079830.stats'
-[2019-04-09 23:08:21,983] multiqc                                            [INFO   ]  Searching './Project/results/bladder/SRR1085402/alignment_qc/SRR1085402.flagstat'
-[2019-04-09 23:08:21,983] multiqc                                            [INFO   ]  Searching './Project/results/bladder/SRR1085402/alignment_qc/SRR1085402.stats'
-[2019-04-09 23:08:21,983] multiqc                                            [INFO   ]  Searching './Project/results/bladder/SRR1086236/alignment_qc/SRR1086236.flagstat'
-[2019-04-09 23:08:21,983] multiqc                                            [INFO   ]  Searching './Project/results/bladder/SRR1086236/alignment_qc/SRR1086236.stats'
-[2019-04-09 23:08:21,983] multiqc                                            [INFO   ]  Searching './Project/results/bladder/SRR1120296/alignment_qc/SRR1120296.flagstat'
-[2019-04-09 23:08:21,983] multiqc                                            [INFO   ]  Searching './Project/results/bladder/SRR1120296/alignment_qc/SRR1120296.stats'
-[2019-04-09 23:08:21,984] multiqc                                            [INFO   ]  Searching './Project/results/blood/SRR613723/alignment_qc/SRR613723.flagstat'
-[2019-04-09 23:08:21,984] multiqc                                            [INFO   ]  Searching './Project/results/blood/SRR613723/alignment_qc/SRR613723.stats'
-[2019-04-09 23:08:21,984] multiqc                                            [INFO   ]  Searching './Project/results/blood/SRR614059/alignment_qc/SRR614059.flagstat'
-[2019-04-09 23:08:21,984] multiqc                                            [INFO   ]  Searching './Project/results/blood/SRR614059/alignment_qc/SRR614059.stats'
-[2019-04-09 23:08:21,984] multiqc                                            [INFO   ]  Searching './Project/results/blood/SRR614131/alignment_qc/SRR614131.flagstat'
-[2019-04-09 23:08:21,984] multiqc                                            [INFO   ]  Searching './Project/results/blood/SRR614131/alignment_qc/SRR614131.stats'
-[2019-04-09 23:08:21,984] multiqc                                            [INFO   ]  Searching './Project/results/blood/SRR614167/alignment_qc/SRR614167.flagstat'
-[2019-04-09 23:08:21,984] multiqc                                            [INFO   ]  Searching './Project/results/blood/SRR614167/alignment_qc/SRR614167.stats'
-[2019-04-09 23:08:21,984] multiqc                                            [INFO   ]  Searching './Project/results/blood/SRR615177/alignment_qc/SRR615177.flagstat'
-[2019-04-09 23:08:21,984] multiqc                                            [INFO   ]  Searching './Project/results/blood/SRR615177/alignment_qc/SRR615177.stats'
-[2019-04-09 23:08:21,984] multiqc                                            [INFO   ]  Searching './Project/results/brain/SRR595926/alignment_qc/SRR595926.flagstat'
-[2019-04-09 23:08:21,984] multiqc                                            [INFO   ]  Searching './Project/results/brain/SRR595926/alignment_qc/SRR595926.stats'
-[2019-04-09 23:08:21,984] multiqc                                            [INFO   ]  Searching './Project/results/brain/SRR598253/alignment_qc/SRR598253.flagstat'
-[2019-04-09 23:08:21,984] multiqc                                            [INFO   ]  Searching './Project/results/brain/SRR598253/alignment_qc/SRR598253.stats'
-[2019-04-09 23:08:21,984] multiqc                                            [INFO   ]  Searching './Project/results/brain/SRR603397/alignment_qc/SRR603397.flagstat'
-[2019-04-09 23:08:21,984] multiqc                                            [INFO   ]  Searching './Project/results/brain/SRR603397/alignment_qc/SRR603397.stats'
-[2019-04-09 23:08:21,985] multiqc                                            [INFO   ]  Searching './Project/results/brain/SRR627449/alignment_qc/SRR627449.flagstat'
-[2019-04-09 23:08:21,985] multiqc                                            [INFO   ]  Searching './Project/results/brain/SRR627449/alignment_qc/SRR627449.stats'
-[2019-04-09 23:08:21,985] multiqc                                            [INFO   ]  Searching './Project/results/brain/SRR627462/alignment_qc/SRR627462.flagstat'
-[2019-04-09 23:08:21,985] multiqc                                            [INFO   ]  Searching './Project/results/brain/SRR627462/alignment_qc/SRR627462.stats'
-[2019-04-09 23:08:21,985] multiqc                                            [INFO   ]  Searching './Project/results/liver/SRR1093861/alignment_qc/SRR1093861.flagstat'
-[2019-04-09 23:08:21,985] multiqc                                            [INFO   ]  Searching './Project/results/liver/SRR1093861/alignment_qc/SRR1093861.stats'
-[2019-04-09 23:08:21,985] multiqc                                            [INFO   ]  Searching './Project/results/liver/SRR1095383/alignment_qc/SRR1095383.flagstat'
-[2019-04-09 23:08:21,985] multiqc                                            [INFO   ]  Searching './Project/results/liver/SRR1095383/alignment_qc/SRR1095383.stats'
-[2019-04-09 23:08:21,985] multiqc                                            [INFO   ]  Searching './Project/results/liver/SRR659649/alignment_qc/SRR659649.flagstat'
-[2019-04-09 23:08:21,985] multiqc                                            [INFO   ]  Searching './Project/results/liver/SRR659649/alignment_qc/SRR659649.stats'
-[2019-04-09 23:08:21,985] multiqc                                            [INFO   ]  Searching './Project/results/liver/SRR807971/alignment_qc/SRR807971.flagstat'
-[2019-04-09 23:08:21,985] multiqc                                            [INFO   ]  Searching './Project/results/liver/SRR807971/alignment_qc/SRR807971.stats'
-[2019-04-09 23:08:21,985] multiqc                                            [INFO   ]  Searching './Project/results/liver/SRR815711/alignment_qc/SRR815711.flagstat'
-[2019-04-09 23:08:21,985] multiqc                                            [INFO   ]  Searching './Project/results/liver/SRR815711/alignment_qc/SRR815711.stats'
-[2019-04-09 23:08:21,985] multiqc                                            [INFO   ]  Searching './Project/results/lung/SRR600417/alignment_qc/SRR600417.flagstat'
-[2019-04-09 23:08:21,985] multiqc                                            [INFO   ]  Searching './Project/results/lung/SRR600417/alignment_qc/SRR600417.stats'
-[2019-04-09 23:08:21,985] multiqc                                            [INFO   ]  Searching './Project/results/lung/SRR600584/alignment_qc/SRR600584.flagstat'
-[2019-04-09 23:08:21,986] multiqc                                            [INFO   ]  Searching './Project/results/lung/SRR600584/alignment_qc/SRR600584.stats'
-[2019-04-09 23:08:21,986] multiqc                                            [INFO   ]  Searching './Project/results/lung/SRR600900/alignment_qc/SRR600900.flagstat'
-[2019-04-09 23:08:21,986] multiqc                                            [INFO   ]  Searching './Project/results/lung/SRR600900/alignment_qc/SRR600900.stats'
-[2019-04-09 23:08:21,986] multiqc                                            [INFO   ]  Searching './Project/results/lung/SRR601900/alignment_qc/SRR601900.flagstat'
-[2019-04-09 23:08:21,986] multiqc                                            [INFO   ]  Searching './Project/results/lung/SRR601900/alignment_qc/SRR601900.stats'
-[2019-04-09 23:08:21,986] multiqc                                            [INFO   ]  Searching './Project/results/lung/SRR665217/alignment_qc/SRR665217.flagstat'
-[2019-04-09 23:08:21,986] multiqc                                            [INFO   ]  Searching './Project/results/lung/SRR665217/alignment_qc/SRR665217.stats'
-[2019-04-09 23:08:21,986] multiqc                                            [INFO   ]  Searching './Project/results/thyroid/SRR655277/alignment_qc/SRR655277.flagstat'
-[2019-04-09 23:08:21,986] multiqc                                            [INFO   ]  Searching './Project/results/thyroid/SRR655277/alignment_qc/SRR655277.stats'
-[2019-04-09 23:08:21,986] multiqc                                            [INFO   ]  Searching './Project/results/thyroid/SRR656191/alignment_qc/SRR656191.flagstat'
-[2019-04-09 23:08:21,986] multiqc                                            [INFO   ]  Searching './Project/results/thyroid/SRR656191/alignment_qc/SRR656191.stats'
-[2019-04-09 23:08:21,986] multiqc                                            [INFO   ]  Searching './Project/results/thyroid/SRR656469/alignment_qc/SRR656469.flagstat'
-[2019-04-09 23:08:21,986] multiqc                                            [INFO   ]  Searching './Project/results/thyroid/SRR656469/alignment_qc/SRR656469.stats'
-[2019-04-09 23:08:21,987] multiqc                                            [DEBUG  ]  Analysing modules: custom_content, conpair, peddy, methylQA, phantompeakqualtools, qualimap, preseq, quast, qorts, rna_seqc, rsem, rseqc, busco, goleft_indexcov, disambiguate, supernova, deeptools, sargasso, verifybamid, mirtrace, happy, homer, macs2, theta2, snpeff, gatk, htseq, bcftools, featureCounts, dedup, damageprofiler, picard, prokka, samblaster, samtools, bamtools, jellyfish, vcftools, longranger, stacks, bbmap, bismark, biscuit, hicexplorer, hicup, hicpro, salmon, kallisto, slamdunk, star, hisat2, tophat, bowtie2, bowtie1, kat, leehom, adapterRemoval, clipandmerge, cutadapt, flexbar, trimmomatic, skewer, sortmerna, biobloomtools, fastq_screen, afterqc, fastp, fastqc, minionqc, clusterflow, bcl2fastq, interop, flash
-[2019-04-09 23:08:21,987] multiqc                                            [DEBUG  ]  Using temporary directory for creating report: /var/folders/rg/4_yk2klj4nl5yysc2cwmjscw0000gn/T/tmpb4ox5sup
-[2019-04-09 23:08:29,330] multiqc                                            [DEBUG  ]  No samples found: custom_content
-[2019-04-09 23:08:29,333] multiqc                                            [DEBUG  ]  No samples found: conpair
-[2019-04-09 23:08:29,335] multiqc                                            [DEBUG  ]  No samples found: peddy
-[2019-04-09 23:08:29,337] multiqc                                            [DEBUG  ]  No samples found: methylQA
-[2019-04-09 23:08:29,340] multiqc                                            [DEBUG  ]  No samples found: phantompeakqualtools
-[2019-04-09 23:08:29,342] multiqc                                            [DEBUG  ]  No samples found: qualimap
-[2019-04-09 23:08:29,345] multiqc                                            [DEBUG  ]  No samples found: preseq
-[2019-04-09 23:08:29,347] multiqc                                            [DEBUG  ]  No samples found: quast
-[2019-04-09 23:08:29,350] multiqc                                            [DEBUG  ]  No samples found: qorts
-[2019-04-09 23:08:29,352] multiqc                                            [DEBUG  ]  No samples found: rna_seqc
-[2019-04-09 23:08:29,354] multiqc                                            [DEBUG  ]  No samples found: rsem
-[2019-04-09 23:08:29,358] multiqc                                            [DEBUG  ]  No samples found: rseqc
-[2019-04-09 23:08:29,361] multiqc                                            [DEBUG  ]  No samples found: busco
-[2019-04-09 23:08:29,363] multiqc                                            [DEBUG  ]  No samples found: goleft_indexcov
-[2019-04-09 23:08:29,365] multiqc                                            [DEBUG  ]  No samples found: disambiguate
-[2019-04-09 23:08:29,368] multiqc                                            [DEBUG  ]  No samples found: supernova
-[2019-04-09 23:08:29,372] multiqc                                            [DEBUG  ]  No samples found: deeptools
-[2019-04-09 23:08:29,375] multiqc                                            [DEBUG  ]  No samples found: sargasso
-[2019-04-09 23:08:29,377] multiqc                                            [DEBUG  ]  No samples found: verifybamid
-[2019-04-09 23:08:29,379] multiqc                                            [DEBUG  ]  No samples found: mirtrace
-[2019-04-09 23:08:29,382] multiqc                                            [DEBUG  ]  No samples found: happy
-[2019-04-09 23:08:29,385] multiqc                                            [DEBUG  ]  No samples found: homer
-[2019-04-09 23:08:29,387] multiqc                                            [DEBUG  ]  No samples found: macs2
-[2019-04-09 23:08:29,389] multiqc                                            [DEBUG  ]  No samples found: theta2
-[2019-04-09 23:08:29,392] multiqc                                            [DEBUG  ]  No samples found: snpeff
-[2019-04-09 23:08:29,394] multiqc                                            [DEBUG  ]  No samples found: gatk
-[2019-04-09 23:08:29,397] multiqc                                            [DEBUG  ]  No samples found: htseq
-[2019-04-09 23:08:29,399] multiqc                                            [DEBUG  ]  No samples found: bcftools
-[2019-04-09 23:08:29,401] multiqc                                            [DEBUG  ]  No samples found: featureCounts
-[2019-04-09 23:08:29,404] multiqc                                            [DEBUG  ]  No samples found: dedup
-[2019-04-09 23:08:29,406] multiqc                                            [DEBUG  ]  No samples found: damageprofiler
-[2019-04-09 23:08:29,411] multiqc                                            [DEBUG  ]  No samples found: picard
-[2019-04-09 23:08:29,413] multiqc                                            [DEBUG  ]  No samples found: prokka
-[2019-04-09 23:08:29,416] multiqc                                            [DEBUG  ]  No samples found: samblaster
-[2019-04-09 23:08:29,493] multiqc.modules.samtools.samtools                  [INFO   ]  Found 28 stats reports
-[2019-04-09 23:08:29,509] multiqc.modules.samtools.samtools                  [INFO   ]  Found 28 flagstat reports
-[2019-04-09 23:08:29,512] multiqc                                            [DEBUG  ]  No samples found: bamtools
-[2019-04-09 23:08:29,514] multiqc                                            [DEBUG  ]  No samples found: jellyfish
-[2019-04-09 23:08:29,517] multiqc                                            [DEBUG  ]  No samples found: vcftools
-[2019-04-09 23:08:29,519] multiqc                                            [DEBUG  ]  No samples found: longranger
-[2019-04-09 23:08:29,521] multiqc                                            [DEBUG  ]  No samples found: stacks
-[2019-04-09 23:08:29,526] multiqc                                            [DEBUG  ]  No samples found: bbmap
-[2019-04-09 23:08:29,528] multiqc                                            [DEBUG  ]  No samples found: bismark
-[2019-04-09 23:08:29,532] multiqc                                            [DEBUG  ]  No samples found: biscuit
-[2019-04-09 23:08:29,535] multiqc                                            [DEBUG  ]  No samples found: hicexplorer
-[2019-04-09 23:08:29,537] multiqc                                            [DEBUG  ]  No samples found: hicup
-[2019-04-09 23:08:29,540] multiqc                                            [DEBUG  ]  No samples found: hicpro
-[2019-04-09 23:08:29,542] multiqc                                            [DEBUG  ]  No samples found: salmon
-[2019-04-09 23:08:29,545] multiqc                                            [DEBUG  ]  No samples found: kallisto
-[2019-04-09 23:08:29,547] multiqc                                            [DEBUG  ]  No samples found: slamdunk
-[2019-04-09 23:08:29,550] multiqc                                            [DEBUG  ]  No samples found: star
-[2019-04-09 23:08:29,552] multiqc                                            [DEBUG  ]  No samples found: hisat2
-[2019-04-09 23:08:29,554] multiqc                                            [DEBUG  ]  No samples found: tophat
-[2019-04-09 23:08:29,556] multiqc                                            [DEBUG  ]  No samples found: bowtie2
-[2019-04-09 23:08:29,559] multiqc                                            [DEBUG  ]  No samples found: bowtie1
-[2019-04-09 23:08:29,561] multiqc                                            [DEBUG  ]  No samples found: kat
-[2019-04-09 23:08:29,563] multiqc                                            [DEBUG  ]  No samples found: leehom
-[2019-04-09 23:08:29,566] multiqc                                            [DEBUG  ]  No samples found: adapterRemoval
-[2019-04-09 23:08:29,568] multiqc                                            [DEBUG  ]  No samples found: clipandmerge
-[2019-04-09 23:08:29,571] multiqc                                            [DEBUG  ]  No samples found: cutadapt
-[2019-04-09 23:08:29,573] multiqc                                            [DEBUG  ]  No samples found: flexbar
-[2019-04-09 23:08:29,576] multiqc                                            [DEBUG  ]  No samples found: trimmomatic
-[2019-04-09 23:08:29,578] multiqc                                            [DEBUG  ]  No samples found: skewer
-[2019-04-09 23:08:29,580] multiqc                                            [DEBUG  ]  No samples found: sortmerna
-[2019-04-09 23:08:29,583] multiqc                                            [DEBUG  ]  No samples found: biobloomtools
-[2019-04-09 23:08:29,585] multiqc                                            [DEBUG  ]  No samples found: fastq_screen
-[2019-04-09 23:08:29,588] multiqc                                            [DEBUG  ]  No samples found: afterqc
-[2019-04-09 23:08:29,590] multiqc                                            [DEBUG  ]  No samples found: fastp
-[2019-04-09 23:08:29,593] multiqc                                            [DEBUG  ]  No samples found: fastqc
-[2019-04-09 23:08:29,595] multiqc                                            [DEBUG  ]  No samples found: minionqc
-[2019-04-09 23:08:29,598] multiqc                                            [DEBUG  ]  No samples found: clusterflow
-[2019-04-09 23:08:29,600] multiqc                                            [DEBUG  ]  No samples found: bcl2fastq
-[2019-04-09 23:08:29,602] multiqc                                            [DEBUG  ]  No samples found: interop
-[2019-04-09 23:08:29,605] multiqc                                            [DEBUG  ]  No samples found: flash
-[2019-04-09 23:08:29,651] multiqc                                            [INFO   ]  Compressing plot data
-[2019-04-09 23:08:29,689] multiqc                                            [INFO   ]  Report      : Project/results/combined/Alignment QC/multiqc_report.html
-[2019-04-09 23:08:29,689] multiqc                                            [INFO   ]  Data        : Project/results/combined/Alignment QC/multiqc_data
-[2019-04-09 23:08:29,690] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/rg/4_yk2klj4nl5yysc2cwmjscw0000gn/T/tmpb4ox5sup/multiqc_data/multiqc_general_stats.txt' to './Project/results/combined/Alignment QC/multiqc_data'
-[2019-04-09 23:08:29,690] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/rg/4_yk2klj4nl5yysc2cwmjscw0000gn/T/tmpb4ox5sup/multiqc_data/multiqc_sources.txt' to './Project/results/combined/Alignment QC/multiqc_data'
-[2019-04-09 23:08:29,690] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/rg/4_yk2klj4nl5yysc2cwmjscw0000gn/T/tmpb4ox5sup/multiqc_data/multiqc_samtools_stats.txt' to './Project/results/combined/Alignment QC/multiqc_data'
-[2019-04-09 23:08:29,690] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/rg/4_yk2klj4nl5yysc2cwmjscw0000gn/T/tmpb4ox5sup/multiqc_data/multiqc_data.json' to './Project/results/combined/Alignment QC/multiqc_data'
-[2019-04-09 23:08:29,690] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/rg/4_yk2klj4nl5yysc2cwmjscw0000gn/T/tmpb4ox5sup/multiqc_data/multiqc_samtools_flagstat.txt' to './Project/results/combined/Alignment QC/multiqc_data'
-[2019-04-09 23:08:29,797] multiqc                                            [INFO   ]  MultiQC complete
+[2019-04-10 18:04:30,356] multiqc                                            [DEBUG  ]  No MultiQC config found: /anaconda2/lib/python3.7/site-packages/multiqc_config.yaml
+[2019-04-10 18:04:30,356] multiqc                                            [DEBUG  ]  No MultiQC config found: /Users/tomer/.multiqc_config.yaml
+[2019-04-10 18:04:30,356] multiqc                                            [DEBUG  ]  No MultiQC config found: multiqc_config.yaml
+[2019-04-10 18:04:30,356] multiqc                                            [DEBUG  ]  Command used: /anaconda2/bin/multiqc ./Project/results/bladder/SRR1071717/alignment_qc/SRR1071717.flagstat ./Project/results/bladder/SRR1071717/alignment_qc/SRR1071717.stats ./Project/results/bladder/SRR1079830/alignment_qc/SRR1079830.flagstat ./Project/results/bladder/SRR1079830/alignment_qc/SRR1079830.stats ./Project/results/bladder/SRR1085402/alignment_qc/SRR1085402.flagstat ./Project/results/bladder/SRR1085402/alignment_qc/SRR1085402.stats ./Project/results/bladder/SRR1086236/alignment_qc/SRR1086236.flagstat ./Project/results/bladder/SRR1086236/alignment_qc/SRR1086236.stats ./Project/results/bladder/SRR1120296/alignment_qc/SRR1120296.flagstat ./Project/results/bladder/SRR1120296/alignment_qc/SRR1120296.stats ./Project/results/blood/SRR613723/alignment_qc/SRR613723.flagstat ./Project/results/blood/SRR613723/alignment_qc/SRR613723.stats ./Project/results/blood/SRR614059/alignment_qc/SRR614059.flagstat ./Project/results/blood/SRR614059/alignment_qc/SRR614059.stats ./Project/results/blood/SRR614131/alignment_qc/SRR614131.flagstat ./Project/results/blood/SRR614131/alignment_qc/SRR614131.stats ./Project/results/blood/SRR614167/alignment_qc/SRR614167.flagstat ./Project/results/blood/SRR614167/alignment_qc/SRR614167.stats ./Project/results/blood/SRR615177/alignment_qc/SRR615177.flagstat ./Project/results/blood/SRR615177/alignment_qc/SRR615177.stats ./Project/results/brain/SRR595926/alignment_qc/SRR595926.flagstat ./Project/results/brain/SRR595926/alignment_qc/SRR595926.stats ./Project/results/brain/SRR598253/alignment_qc/SRR598253.flagstat ./Project/results/brain/SRR598253/alignment_qc/SRR598253.stats ./Project/results/brain/SRR603397/alignment_qc/SRR603397.flagstat ./Project/results/brain/SRR603397/alignment_qc/SRR603397.stats ./Project/results/brain/SRR627449/alignment_qc/SRR627449.flagstat ./Project/results/brain/SRR627449/alignment_qc/SRR627449.stats ./Project/results/brain/SRR627462/alignment_qc/SRR627462.flagstat ./Project/results/brain/SRR627462/alignment_qc/SRR627462.stats ./Project/results/liver/SRR1093861/alignment_qc/SRR1093861.flagstat ./Project/results/liver/SRR1093861/alignment_qc/SRR1093861.stats ./Project/results/liver/SRR1095383/alignment_qc/SRR1095383.flagstat ./Project/results/liver/SRR1095383/alignment_qc/SRR1095383.stats ./Project/results/liver/SRR659649/alignment_qc/SRR659649.flagstat ./Project/results/liver/SRR659649/alignment_qc/SRR659649.stats ./Project/results/liver/SRR807971/alignment_qc/SRR807971.flagstat ./Project/results/liver/SRR807971/alignment_qc/SRR807971.stats ./Project/results/liver/SRR815711/alignment_qc/SRR815711.flagstat ./Project/results/liver/SRR815711/alignment_qc/SRR815711.stats ./Project/results/lung/SRR600417/alignment_qc/SRR600417.flagstat ./Project/results/lung/SRR600417/alignment_qc/SRR600417.stats ./Project/results/lung/SRR600584/alignment_qc/SRR600584.flagstat ./Project/results/lung/SRR600584/alignment_qc/SRR600584.stats ./Project/results/lung/SRR600900/alignment_qc/SRR600900.flagstat ./Project/results/lung/SRR600900/alignment_qc/SRR600900.stats ./Project/results/lung/SRR601900/alignment_qc/SRR601900.flagstat ./Project/results/lung/SRR601900/alignment_qc/SRR601900.stats ./Project/results/lung/SRR665217/alignment_qc/SRR665217.flagstat ./Project/results/lung/SRR665217/alignment_qc/SRR665217.stats ./Project/results/thyroid/SRR655277/alignment_qc/SRR655277.flagstat ./Project/results/thyroid/SRR655277/alignment_qc/SRR655277.stats ./Project/results/thyroid/SRR656191/alignment_qc/SRR656191.flagstat ./Project/results/thyroid/SRR656191/alignment_qc/SRR656191.stats ./Project/results/thyroid/SRR656373/alignment_qc/SRR656373.flagstat ./Project/results/thyroid/SRR656373/alignment_qc/SRR656373.stats ./Project/results/thyroid/SRR656469/alignment_qc/SRR656469.flagstat ./Project/results/thyroid/SRR656469/alignment_qc/SRR656469.stats ./Project/results/thyroid/SRR656528/alignment_qc/SRR656528.flagstat ./Project/results/thyroid/SRR656528/alignment_qc/SRR656528.stats -o ./Project/results/combined/Alignment QC/
+[2019-04-10 18:04:30,837] multiqc                                            [DEBUG  ]  Latest MultiQC version is v1.7
+[2019-04-10 18:04:30,837] multiqc                                            [INFO   ]  This is MultiQC v1.7
+[2019-04-10 18:04:30,837] multiqc                                            [DEBUG  ]  Command     : /anaconda2/bin/multiqc ./Project/results/bladder/SRR1071717/alignment_qc/SRR1071717.flagstat ./Project/results/bladder/SRR1071717/alignment_qc/SRR1071717.stats ./Project/results/bladder/SRR1079830/alignment_qc/SRR1079830.flagstat ./Project/results/bladder/SRR1079830/alignment_qc/SRR1079830.stats ./Project/results/bladder/SRR1085402/alignment_qc/SRR1085402.flagstat ./Project/results/bladder/SRR1085402/alignment_qc/SRR1085402.stats ./Project/results/bladder/SRR1086236/alignment_qc/SRR1086236.flagstat ./Project/results/bladder/SRR1086236/alignment_qc/SRR1086236.stats ./Project/results/bladder/SRR1120296/alignment_qc/SRR1120296.flagstat ./Project/results/bladder/SRR1120296/alignment_qc/SRR1120296.stats ./Project/results/blood/SRR613723/alignment_qc/SRR613723.flagstat ./Project/results/blood/SRR613723/alignment_qc/SRR613723.stats ./Project/results/blood/SRR614059/alignment_qc/SRR614059.flagstat ./Project/results/blood/SRR614059/alignment_qc/SRR614059.stats ./Project/results/blood/SRR614131/alignment_qc/SRR614131.flagstat ./Project/results/blood/SRR614131/alignment_qc/SRR614131.stats ./Project/results/blood/SRR614167/alignment_qc/SRR614167.flagstat ./Project/results/blood/SRR614167/alignment_qc/SRR614167.stats ./Project/results/blood/SRR615177/alignment_qc/SRR615177.flagstat ./Project/results/blood/SRR615177/alignment_qc/SRR615177.stats ./Project/results/brain/SRR595926/alignment_qc/SRR595926.flagstat ./Project/results/brain/SRR595926/alignment_qc/SRR595926.stats ./Project/results/brain/SRR598253/alignment_qc/SRR598253.flagstat ./Project/results/brain/SRR598253/alignment_qc/SRR598253.stats ./Project/results/brain/SRR603397/alignment_qc/SRR603397.flagstat ./Project/results/brain/SRR603397/alignment_qc/SRR603397.stats ./Project/results/brain/SRR627449/alignment_qc/SRR627449.flagstat ./Project/results/brain/SRR627449/alignment_qc/SRR627449.stats ./Project/results/brain/SRR627462/alignment_qc/SRR627462.flagstat ./Project/results/brain/SRR627462/alignment_qc/SRR627462.stats ./Project/results/liver/SRR1093861/alignment_qc/SRR1093861.flagstat ./Project/results/liver/SRR1093861/alignment_qc/SRR1093861.stats ./Project/results/liver/SRR1095383/alignment_qc/SRR1095383.flagstat ./Project/results/liver/SRR1095383/alignment_qc/SRR1095383.stats ./Project/results/liver/SRR659649/alignment_qc/SRR659649.flagstat ./Project/results/liver/SRR659649/alignment_qc/SRR659649.stats ./Project/results/liver/SRR807971/alignment_qc/SRR807971.flagstat ./Project/results/liver/SRR807971/alignment_qc/SRR807971.stats ./Project/results/liver/SRR815711/alignment_qc/SRR815711.flagstat ./Project/results/liver/SRR815711/alignment_qc/SRR815711.stats ./Project/results/lung/SRR600417/alignment_qc/SRR600417.flagstat ./Project/results/lung/SRR600417/alignment_qc/SRR600417.stats ./Project/results/lung/SRR600584/alignment_qc/SRR600584.flagstat ./Project/results/lung/SRR600584/alignment_qc/SRR600584.stats ./Project/results/lung/SRR600900/alignment_qc/SRR600900.flagstat ./Project/results/lung/SRR600900/alignment_qc/SRR600900.stats ./Project/results/lung/SRR601900/alignment_qc/SRR601900.flagstat ./Project/results/lung/SRR601900/alignment_qc/SRR601900.stats ./Project/results/lung/SRR665217/alignment_qc/SRR665217.flagstat ./Project/results/lung/SRR665217/alignment_qc/SRR665217.stats ./Project/results/thyroid/SRR655277/alignment_qc/SRR655277.flagstat ./Project/results/thyroid/SRR655277/alignment_qc/SRR655277.stats ./Project/results/thyroid/SRR656191/alignment_qc/SRR656191.flagstat ./Project/results/thyroid/SRR656191/alignment_qc/SRR656191.stats ./Project/results/thyroid/SRR656373/alignment_qc/SRR656373.flagstat ./Project/results/thyroid/SRR656373/alignment_qc/SRR656373.stats ./Project/results/thyroid/SRR656469/alignment_qc/SRR656469.flagstat ./Project/results/thyroid/SRR656469/alignment_qc/SRR656469.stats ./Project/results/thyroid/SRR656528/alignment_qc/SRR656528.flagstat ./Project/results/thyroid/SRR656528/alignment_qc/SRR656528.stats -o ./Project/results/combined/Alignment QC/
+[2019-04-10 18:04:30,837] multiqc                                            [DEBUG  ]  Working dir : /Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data
+[2019-04-10 18:04:30,837] multiqc                                            [INFO   ]  Template    : default
+[2019-04-10 18:04:30,837] multiqc                                            [INFO   ]  Searching './Project/results/bladder/SRR1071717/alignment_qc/SRR1071717.flagstat'
+[2019-04-10 18:04:30,837] multiqc                                            [INFO   ]  Searching './Project/results/bladder/SRR1071717/alignment_qc/SRR1071717.stats'
+[2019-04-10 18:04:30,838] multiqc                                            [INFO   ]  Searching './Project/results/bladder/SRR1079830/alignment_qc/SRR1079830.flagstat'
+[2019-04-10 18:04:30,838] multiqc                                            [INFO   ]  Searching './Project/results/bladder/SRR1079830/alignment_qc/SRR1079830.stats'
+[2019-04-10 18:04:30,838] multiqc                                            [INFO   ]  Searching './Project/results/bladder/SRR1085402/alignment_qc/SRR1085402.flagstat'
+[2019-04-10 18:04:30,838] multiqc                                            [INFO   ]  Searching './Project/results/bladder/SRR1085402/alignment_qc/SRR1085402.stats'
+[2019-04-10 18:04:30,838] multiqc                                            [INFO   ]  Searching './Project/results/bladder/SRR1086236/alignment_qc/SRR1086236.flagstat'
+[2019-04-10 18:04:30,838] multiqc                                            [INFO   ]  Searching './Project/results/bladder/SRR1086236/alignment_qc/SRR1086236.stats'
+[2019-04-10 18:04:30,838] multiqc                                            [INFO   ]  Searching './Project/results/bladder/SRR1120296/alignment_qc/SRR1120296.flagstat'
+[2019-04-10 18:04:30,838] multiqc                                            [INFO   ]  Searching './Project/results/bladder/SRR1120296/alignment_qc/SRR1120296.stats'
+[2019-04-10 18:04:30,838] multiqc                                            [INFO   ]  Searching './Project/results/blood/SRR613723/alignment_qc/SRR613723.flagstat'
+[2019-04-10 18:04:30,838] multiqc                                            [INFO   ]  Searching './Project/results/blood/SRR613723/alignment_qc/SRR613723.stats'
+[2019-04-10 18:04:30,838] multiqc                                            [INFO   ]  Searching './Project/results/blood/SRR614059/alignment_qc/SRR614059.flagstat'
+[2019-04-10 18:04:30,838] multiqc                                            [INFO   ]  Searching './Project/results/blood/SRR614059/alignment_qc/SRR614059.stats'
+[2019-04-10 18:04:30,838] multiqc                                            [INFO   ]  Searching './Project/results/blood/SRR614131/alignment_qc/SRR614131.flagstat'
+[2019-04-10 18:04:30,838] multiqc                                            [INFO   ]  Searching './Project/results/blood/SRR614131/alignment_qc/SRR614131.stats'
+[2019-04-10 18:04:30,838] multiqc                                            [INFO   ]  Searching './Project/results/blood/SRR614167/alignment_qc/SRR614167.flagstat'
+[2019-04-10 18:04:30,838] multiqc                                            [INFO   ]  Searching './Project/results/blood/SRR614167/alignment_qc/SRR614167.stats'
+[2019-04-10 18:04:30,839] multiqc                                            [INFO   ]  Searching './Project/results/blood/SRR615177/alignment_qc/SRR615177.flagstat'
+[2019-04-10 18:04:30,839] multiqc                                            [INFO   ]  Searching './Project/results/blood/SRR615177/alignment_qc/SRR615177.stats'
+[2019-04-10 18:04:30,839] multiqc                                            [INFO   ]  Searching './Project/results/brain/SRR595926/alignment_qc/SRR595926.flagstat'
+[2019-04-10 18:04:30,839] multiqc                                            [INFO   ]  Searching './Project/results/brain/SRR595926/alignment_qc/SRR595926.stats'
+[2019-04-10 18:04:30,839] multiqc                                            [INFO   ]  Searching './Project/results/brain/SRR598253/alignment_qc/SRR598253.flagstat'
+[2019-04-10 18:04:30,839] multiqc                                            [INFO   ]  Searching './Project/results/brain/SRR598253/alignment_qc/SRR598253.stats'
+[2019-04-10 18:04:30,839] multiqc                                            [INFO   ]  Searching './Project/results/brain/SRR603397/alignment_qc/SRR603397.flagstat'
+[2019-04-10 18:04:30,839] multiqc                                            [INFO   ]  Searching './Project/results/brain/SRR603397/alignment_qc/SRR603397.stats'
+[2019-04-10 18:04:30,839] multiqc                                            [INFO   ]  Searching './Project/results/brain/SRR627449/alignment_qc/SRR627449.flagstat'
+[2019-04-10 18:04:30,839] multiqc                                            [INFO   ]  Searching './Project/results/brain/SRR627449/alignment_qc/SRR627449.stats'
+[2019-04-10 18:04:30,839] multiqc                                            [INFO   ]  Searching './Project/results/brain/SRR627462/alignment_qc/SRR627462.flagstat'
+[2019-04-10 18:04:30,840] multiqc                                            [INFO   ]  Searching './Project/results/brain/SRR627462/alignment_qc/SRR627462.stats'
+[2019-04-10 18:04:30,840] multiqc                                            [INFO   ]  Searching './Project/results/liver/SRR1093861/alignment_qc/SRR1093861.flagstat'
+[2019-04-10 18:04:30,840] multiqc                                            [INFO   ]  Searching './Project/results/liver/SRR1093861/alignment_qc/SRR1093861.stats'
+[2019-04-10 18:04:30,840] multiqc                                            [INFO   ]  Searching './Project/results/liver/SRR1095383/alignment_qc/SRR1095383.flagstat'
+[2019-04-10 18:04:30,840] multiqc                                            [INFO   ]  Searching './Project/results/liver/SRR1095383/alignment_qc/SRR1095383.stats'
+[2019-04-10 18:04:30,840] multiqc                                            [INFO   ]  Searching './Project/results/liver/SRR659649/alignment_qc/SRR659649.flagstat'
+[2019-04-10 18:04:30,840] multiqc                                            [INFO   ]  Searching './Project/results/liver/SRR659649/alignment_qc/SRR659649.stats'
+[2019-04-10 18:04:30,840] multiqc                                            [INFO   ]  Searching './Project/results/liver/SRR807971/alignment_qc/SRR807971.flagstat'
+[2019-04-10 18:04:30,840] multiqc                                            [INFO   ]  Searching './Project/results/liver/SRR807971/alignment_qc/SRR807971.stats'
+[2019-04-10 18:04:30,840] multiqc                                            [INFO   ]  Searching './Project/results/liver/SRR815711/alignment_qc/SRR815711.flagstat'
+[2019-04-10 18:04:30,840] multiqc                                            [INFO   ]  Searching './Project/results/liver/SRR815711/alignment_qc/SRR815711.stats'
+[2019-04-10 18:04:30,840] multiqc                                            [INFO   ]  Searching './Project/results/lung/SRR600417/alignment_qc/SRR600417.flagstat'
+[2019-04-10 18:04:30,840] multiqc                                            [INFO   ]  Searching './Project/results/lung/SRR600417/alignment_qc/SRR600417.stats'
+[2019-04-10 18:04:30,840] multiqc                                            [INFO   ]  Searching './Project/results/lung/SRR600584/alignment_qc/SRR600584.flagstat'
+[2019-04-10 18:04:30,840] multiqc                                            [INFO   ]  Searching './Project/results/lung/SRR600584/alignment_qc/SRR600584.stats'
+[2019-04-10 18:04:30,840] multiqc                                            [INFO   ]  Searching './Project/results/lung/SRR600900/alignment_qc/SRR600900.flagstat'
+[2019-04-10 18:04:30,841] multiqc                                            [INFO   ]  Searching './Project/results/lung/SRR600900/alignment_qc/SRR600900.stats'
+[2019-04-10 18:04:30,841] multiqc                                            [INFO   ]  Searching './Project/results/lung/SRR601900/alignment_qc/SRR601900.flagstat'
+[2019-04-10 18:04:30,841] multiqc                                            [INFO   ]  Searching './Project/results/lung/SRR601900/alignment_qc/SRR601900.stats'
+[2019-04-10 18:04:30,841] multiqc                                            [INFO   ]  Searching './Project/results/lung/SRR665217/alignment_qc/SRR665217.flagstat'
+[2019-04-10 18:04:30,841] multiqc                                            [INFO   ]  Searching './Project/results/lung/SRR665217/alignment_qc/SRR665217.stats'
+[2019-04-10 18:04:30,841] multiqc                                            [INFO   ]  Searching './Project/results/thyroid/SRR655277/alignment_qc/SRR655277.flagstat'
+[2019-04-10 18:04:30,841] multiqc                                            [INFO   ]  Searching './Project/results/thyroid/SRR655277/alignment_qc/SRR655277.stats'
+[2019-04-10 18:04:30,841] multiqc                                            [INFO   ]  Searching './Project/results/thyroid/SRR656191/alignment_qc/SRR656191.flagstat'
+[2019-04-10 18:04:30,841] multiqc                                            [INFO   ]  Searching './Project/results/thyroid/SRR656191/alignment_qc/SRR656191.stats'
+[2019-04-10 18:04:30,841] multiqc                                            [INFO   ]  Searching './Project/results/thyroid/SRR656373/alignment_qc/SRR656373.flagstat'
+[2019-04-10 18:04:30,841] multiqc                                            [INFO   ]  Searching './Project/results/thyroid/SRR656373/alignment_qc/SRR656373.stats'
+[2019-04-10 18:04:30,842] multiqc                                            [INFO   ]  Searching './Project/results/thyroid/SRR656469/alignment_qc/SRR656469.flagstat'
+[2019-04-10 18:04:30,842] multiqc                                            [INFO   ]  Searching './Project/results/thyroid/SRR656469/alignment_qc/SRR656469.stats'
+[2019-04-10 18:04:30,842] multiqc                                            [INFO   ]  Searching './Project/results/thyroid/SRR656528/alignment_qc/SRR656528.flagstat'
+[2019-04-10 18:04:30,842] multiqc                                            [INFO   ]  Searching './Project/results/thyroid/SRR656528/alignment_qc/SRR656528.stats'
+[2019-04-10 18:04:30,842] multiqc                                            [DEBUG  ]  Analysing modules: custom_content, conpair, peddy, methylQA, phantompeakqualtools, qualimap, preseq, quast, qorts, rna_seqc, rsem, rseqc, busco, goleft_indexcov, disambiguate, supernova, deeptools, sargasso, verifybamid, mirtrace, happy, homer, macs2, theta2, snpeff, gatk, htseq, bcftools, featureCounts, dedup, damageprofiler, picard, prokka, samblaster, samtools, bamtools, jellyfish, vcftools, longranger, stacks, bbmap, bismark, biscuit, hicexplorer, hicup, hicpro, salmon, kallisto, slamdunk, star, hisat2, tophat, bowtie2, bowtie1, kat, leehom, adapterRemoval, clipandmerge, cutadapt, flexbar, trimmomatic, skewer, sortmerna, biobloomtools, fastq_screen, afterqc, fastp, fastqc, minionqc, clusterflow, bcl2fastq, interop, flash
+[2019-04-10 18:04:30,842] multiqc                                            [DEBUG  ]  Using temporary directory for creating report: /var/folders/rg/4_yk2klj4nl5yysc2cwmjscw0000gn/T/tmp904doaf0
+[2019-04-10 18:04:38,919] multiqc                                            [DEBUG  ]  No samples found: custom_content
+[2019-04-10 18:04:38,922] multiqc                                            [DEBUG  ]  No samples found: conpair
+[2019-04-10 18:04:38,924] multiqc                                            [DEBUG  ]  No samples found: peddy
+[2019-04-10 18:04:38,927] multiqc                                            [DEBUG  ]  No samples found: methylQA
+[2019-04-10 18:04:38,929] multiqc                                            [DEBUG  ]  No samples found: phantompeakqualtools
+[2019-04-10 18:04:38,932] multiqc                                            [DEBUG  ]  No samples found: qualimap
+[2019-04-10 18:04:38,935] multiqc                                            [DEBUG  ]  No samples found: preseq
+[2019-04-10 18:04:38,937] multiqc                                            [DEBUG  ]  No samples found: quast
+[2019-04-10 18:04:38,939] multiqc                                            [DEBUG  ]  No samples found: qorts
+[2019-04-10 18:04:38,942] multiqc                                            [DEBUG  ]  No samples found: rna_seqc
+[2019-04-10 18:04:38,944] multiqc                                            [DEBUG  ]  No samples found: rsem
+[2019-04-10 18:04:38,947] multiqc                                            [DEBUG  ]  No samples found: rseqc
+[2019-04-10 18:04:38,950] multiqc                                            [DEBUG  ]  No samples found: busco
+[2019-04-10 18:04:38,952] multiqc                                            [DEBUG  ]  No samples found: goleft_indexcov
+[2019-04-10 18:04:38,954] multiqc                                            [DEBUG  ]  No samples found: disambiguate
+[2019-04-10 18:04:38,957] multiqc                                            [DEBUG  ]  No samples found: supernova
+[2019-04-10 18:04:38,961] multiqc                                            [DEBUG  ]  No samples found: deeptools
+[2019-04-10 18:04:38,963] multiqc                                            [DEBUG  ]  No samples found: sargasso
+[2019-04-10 18:04:38,966] multiqc                                            [DEBUG  ]  No samples found: verifybamid
+[2019-04-10 18:04:38,968] multiqc                                            [DEBUG  ]  No samples found: mirtrace
+[2019-04-10 18:04:38,970] multiqc                                            [DEBUG  ]  No samples found: happy
+[2019-04-10 18:04:38,973] multiqc                                            [DEBUG  ]  No samples found: homer
+[2019-04-10 18:04:38,975] multiqc                                            [DEBUG  ]  No samples found: macs2
+[2019-04-10 18:04:38,978] multiqc                                            [DEBUG  ]  No samples found: theta2
+[2019-04-10 18:04:38,980] multiqc                                            [DEBUG  ]  No samples found: snpeff
+[2019-04-10 18:04:38,983] multiqc                                            [DEBUG  ]  No samples found: gatk
+[2019-04-10 18:04:38,985] multiqc                                            [DEBUG  ]  No samples found: htseq
+[2019-04-10 18:04:38,987] multiqc                                            [DEBUG  ]  No samples found: bcftools
+[2019-04-10 18:04:38,990] multiqc                                            [DEBUG  ]  No samples found: featureCounts
+[2019-04-10 18:04:38,992] multiqc                                            [DEBUG  ]  No samples found: dedup
+[2019-04-10 18:04:38,995] multiqc                                            [DEBUG  ]  No samples found: damageprofiler
+[2019-04-10 18:04:38,999] multiqc                                            [DEBUG  ]  No samples found: picard
+[2019-04-10 18:04:39,002] multiqc                                            [DEBUG  ]  No samples found: prokka
+[2019-04-10 18:04:39,005] multiqc                                            [DEBUG  ]  No samples found: samblaster
+[2019-04-10 18:04:39,085] multiqc.modules.samtools.samtools                  [INFO   ]  Found 30 stats reports
+[2019-04-10 18:04:39,102] multiqc.modules.samtools.samtools                  [INFO   ]  Found 30 flagstat reports
+[2019-04-10 18:04:39,105] multiqc                                            [DEBUG  ]  No samples found: bamtools
+[2019-04-10 18:04:39,107] multiqc                                            [DEBUG  ]  No samples found: jellyfish
+[2019-04-10 18:04:39,110] multiqc                                            [DEBUG  ]  No samples found: vcftools
+[2019-04-10 18:04:39,112] multiqc                                            [DEBUG  ]  No samples found: longranger
+[2019-04-10 18:04:39,115] multiqc                                            [DEBUG  ]  No samples found: stacks
+[2019-04-10 18:04:39,119] multiqc                                            [DEBUG  ]  No samples found: bbmap
+[2019-04-10 18:04:39,122] multiqc                                            [DEBUG  ]  No samples found: bismark
+[2019-04-10 18:04:39,126] multiqc                                            [DEBUG  ]  No samples found: biscuit
+[2019-04-10 18:04:39,129] multiqc                                            [DEBUG  ]  No samples found: hicexplorer
+[2019-04-10 18:04:39,131] multiqc                                            [DEBUG  ]  No samples found: hicup
+[2019-04-10 18:04:39,134] multiqc                                            [DEBUG  ]  No samples found: hicpro
+[2019-04-10 18:04:39,136] multiqc                                            [DEBUG  ]  No samples found: salmon
+[2019-04-10 18:04:39,138] multiqc                                            [DEBUG  ]  No samples found: kallisto
+[2019-04-10 18:04:39,141] multiqc                                            [DEBUG  ]  No samples found: slamdunk
+[2019-04-10 18:04:39,143] multiqc                                            [DEBUG  ]  No samples found: star
+[2019-04-10 18:04:39,145] multiqc                                            [DEBUG  ]  No samples found: hisat2
+[2019-04-10 18:04:39,148] multiqc                                            [DEBUG  ]  No samples found: tophat
+[2019-04-10 18:04:39,150] multiqc                                            [DEBUG  ]  No samples found: bowtie2
+[2019-04-10 18:04:39,152] multiqc                                            [DEBUG  ]  No samples found: bowtie1
+[2019-04-10 18:04:39,155] multiqc                                            [DEBUG  ]  No samples found: kat
+[2019-04-10 18:04:39,157] multiqc                                            [DEBUG  ]  No samples found: leehom
+[2019-04-10 18:04:39,160] multiqc                                            [DEBUG  ]  No samples found: adapterRemoval
+[2019-04-10 18:04:39,163] multiqc                                            [DEBUG  ]  No samples found: clipandmerge
+[2019-04-10 18:04:39,165] multiqc                                            [DEBUG  ]  No samples found: cutadapt
+[2019-04-10 18:04:39,168] multiqc                                            [DEBUG  ]  No samples found: flexbar
+[2019-04-10 18:04:39,170] multiqc                                            [DEBUG  ]  No samples found: trimmomatic
+[2019-04-10 18:04:39,172] multiqc                                            [DEBUG  ]  No samples found: skewer
+[2019-04-10 18:04:39,175] multiqc                                            [DEBUG  ]  No samples found: sortmerna
+[2019-04-10 18:04:39,177] multiqc                                            [DEBUG  ]  No samples found: biobloomtools
+[2019-04-10 18:04:39,179] multiqc                                            [DEBUG  ]  No samples found: fastq_screen
+[2019-04-10 18:04:39,181] multiqc                                            [DEBUG  ]  No samples found: afterqc
+[2019-04-10 18:04:39,184] multiqc                                            [DEBUG  ]  No samples found: fastp
+[2019-04-10 18:04:39,186] multiqc                                            [DEBUG  ]  No samples found: fastqc
+[2019-04-10 18:04:39,188] multiqc                                            [DEBUG  ]  No samples found: minionqc
+[2019-04-10 18:04:39,191] multiqc                                            [DEBUG  ]  No samples found: clusterflow
+[2019-04-10 18:04:39,193] multiqc                                            [DEBUG  ]  No samples found: bcl2fastq
+[2019-04-10 18:04:39,195] multiqc                                            [DEBUG  ]  No samples found: interop
+[2019-04-10 18:04:39,197] multiqc                                            [DEBUG  ]  No samples found: flash
+[2019-04-10 18:04:39,246] multiqc                                            [INFO   ]  Compressing plot data
+[2019-04-10 18:04:39,287] multiqc                                            [INFO   ]  Report      : Project/results/combined/Alignment QC/multiqc_report.html
+[2019-04-10 18:04:39,287] multiqc                                            [INFO   ]  Data        : Project/results/combined/Alignment QC/multiqc_data
+[2019-04-10 18:04:39,287] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/rg/4_yk2klj4nl5yysc2cwmjscw0000gn/T/tmp904doaf0/multiqc_data/multiqc_general_stats.txt' to './Project/results/combined/Alignment QC/multiqc_data'
+[2019-04-10 18:04:39,287] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/rg/4_yk2klj4nl5yysc2cwmjscw0000gn/T/tmp904doaf0/multiqc_data/multiqc_sources.txt' to './Project/results/combined/Alignment QC/multiqc_data'
+[2019-04-10 18:04:39,287] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/rg/4_yk2klj4nl5yysc2cwmjscw0000gn/T/tmp904doaf0/multiqc_data/multiqc_samtools_stats.txt' to './Project/results/combined/Alignment QC/multiqc_data'
+[2019-04-10 18:04:39,288] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/rg/4_yk2klj4nl5yysc2cwmjscw0000gn/T/tmp904doaf0/multiqc_data/multiqc_data.json' to './Project/results/combined/Alignment QC/multiqc_data'
+[2019-04-10 18:04:39,288] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/rg/4_yk2klj4nl5yysc2cwmjscw0000gn/T/tmp904doaf0/multiqc_data/multiqc_samtools_flagstat.txt' to './Project/results/combined/Alignment QC/multiqc_data'
+[2019-04-10 18:04:39,397] multiqc                                            [INFO   ]  MultiQC complete

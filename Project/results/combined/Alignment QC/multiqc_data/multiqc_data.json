@@ -29,7 +29,9 @@
                 "SRR665217": "/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/lung/SRR665217/alignment_qc/SRR665217.stats",
                 "SRR655277": "/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/thyroid/SRR655277/alignment_qc/SRR655277.stats",
                 "SRR656191": "/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/thyroid/SRR656191/alignment_qc/SRR656191.stats",
-                "SRR656469": "/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/thyroid/SRR656469/alignment_qc/SRR656469.stats"
+                "SRR656373": "/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/thyroid/SRR656373/alignment_qc/SRR656373.stats",
+                "SRR656469": "/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/thyroid/SRR656469/alignment_qc/SRR656469.stats",
+                "SRR656528": "/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/thyroid/SRR656528/alignment_qc/SRR656528.stats"
             },
             "flagstat": {
                 "SRR1071717": "/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/bladder/SRR1071717/alignment_qc/SRR1071717.flagstat",
@@ -59,7 +61,9 @@
                 "SRR665217": "/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/lung/SRR665217/alignment_qc/SRR665217.flagstat",
                 "SRR655277": "/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/thyroid/SRR655277/alignment_qc/SRR655277.flagstat",
                 "SRR656191": "/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/thyroid/SRR656191/alignment_qc/SRR656191.flagstat",
-                "SRR656469": "/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/thyroid/SRR656469/alignment_qc/SRR656469.flagstat"
+                "SRR656373": "/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/thyroid/SRR656373/alignment_qc/SRR656373.flagstat",
+                "SRR656469": "/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/thyroid/SRR656469/alignment_qc/SRR656469.flagstat",
+                "SRR656528": "/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/thyroid/SRR656528/alignment_qc/SRR656528.flagstat"
             }
         }
     },
@@ -1333,6 +1337,54 @@
                 "reads_MQ0_percent": 0.29828670973189103,
                 "reads_QC_failed_percent": 0.0
             },
+            "SRR656373": {
+                "raw_total_sequences": 67549847.0,
+                "filtered_sequences": 0.0,
+                "sequences": 67549847.0,
+                "is_sorted": 1.0,
+                "1st_fragments": 33831921.0,
+                "last_fragments": 33717926.0,
+                "reads_mapped": 67549847.0,
+                "reads_mapped_and_paired": 67392574.0,
+                "reads_unmapped": 0.0,
+                "reads_properly_paired": 67392574.0,
+                "reads_paired": 67549847.0,
+                "reads_duplicated": 0.0,
+                "reads_MQ0": 160537.0,
+                "reads_QC_failed": 0.0,
+                "non-primary_alignments": 4298097.0,
+                "total_length": 4994341360.0,
+                "total_first_fragment_length": 2515314943.0,
+                "total_last_fragment_length": 2479026417.0,
+                "bases_mapped": 4994341360.0,
+                "bases_mapped_(cigar)": 4970615399.0,
+                "bases_trimmed": 0.0,
+                "bases_duplicated": 0.0,
+                "mismatches": 0.0,
+                "error_rate": 0.0,
+                "average_length": 73.0,
+                "average_first_fragment_length": 74.0,
+                "average_last_fragment_length": 74.0,
+                "maximum_length": 76.0,
+                "maximum_first_fragment_length": 76.0,
+                "maximum_last_fragment_length": 76.0,
+                "average_quality": 36.1,
+                "insert_size_average": 852.3,
+                "insert_size_standard_deviation": 1716.4,
+                "inward_oriented_pairs": 33620184.0,
+                "outward_oriented_pairs": 76103.0,
+                "pairs_with_other_orientation": 0.0,
+                "pairs_on_different_chromosomes": 0.0,
+                "percentage_of_properly_paired_reads_(%)": 99.8,
+                "reads_mapped_percent": 100.0,
+                "reads_mapped_and_paired_percent": 99.76717489826439,
+                "reads_unmapped_percent": 0.0,
+                "reads_properly_paired_percent": 99.76717489826439,
+                "reads_paired_percent": 100.0,
+                "reads_duplicated_percent": 0.0,
+                "reads_MQ0_percent": 0.2376570889938507,
+                "reads_QC_failed_percent": 0.0
+            },
             "SRR656469": {
                 "raw_total_sequences": 121529381.0,
                 "filtered_sequences": 0.0,
@@ -1379,6 +1431,54 @@
                 "reads_paired_percent": 100.0,
                 "reads_duplicated_percent": 0.0,
                 "reads_MQ0_percent": 0.3251806244285898,
+                "reads_QC_failed_percent": 0.0
+            },
+            "SRR656528": {
+                "raw_total_sequences": 73367582.0,
+                "filtered_sequences": 0.0,
+                "sequences": 73367582.0,
+                "is_sorted": 1.0,
+                "1st_fragments": 36724679.0,
+                "last_fragments": 36642903.0,
+                "reads_mapped": 73367582.0,
+                "reads_mapped_and_paired": 73102498.0,
+                "reads_unmapped": 0.0,
+                "reads_properly_paired": 73102498.0,
+                "reads_paired": 73367582.0,
+                "reads_duplicated": 0.0,
+                "reads_MQ0": 278105.0,
+                "reads_QC_failed": 0.0,
+                "non-primary_alignments": 5460958.0,
+                "total_length": 5381295876.0,
+                "total_first_fragment_length": 2700735049.0,
+                "total_last_fragment_length": 2680560827.0,
+                "bases_mapped": 5381295876.0,
+                "bases_mapped_(cigar)": 5351844215.0,
+                "bases_trimmed": 0.0,
+                "bases_duplicated": 0.0,
+                "mismatches": 0.0,
+                "error_rate": 0.0,
+                "average_length": 73.0,
+                "average_first_fragment_length": 74.0,
+                "average_last_fragment_length": 73.0,
+                "maximum_length": 76.0,
+                "maximum_first_fragment_length": 76.0,
+                "maximum_last_fragment_length": 76.0,
+                "average_quality": 36.1,
+                "insert_size_average": 850.9,
+                "insert_size_standard_deviation": 1690.8,
+                "inward_oriented_pairs": 36297175.0,
+                "outward_oriented_pairs": 254074.0,
+                "pairs_with_other_orientation": 0.0,
+                "pairs_on_different_chromosomes": 0.0,
+                "percentage_of_properly_paired_reads_(%)": 99.6,
+                "reads_mapped_percent": 100.0,
+                "reads_mapped_and_paired_percent": 99.6386905595444,
+                "reads_unmapped_percent": 0.0,
+                "reads_properly_paired_percent": 99.6386905595444,
+                "reads_paired_percent": 100.0,
+                "reads_duplicated_percent": 0.0,
+                "reads_MQ0_percent": 0.37905706092371966,
                 "reads_QC_failed_percent": 0.0
             }
         },
@@ -2328,6 +2428,41 @@
                 "with mate mapped to a different chr (mapQ >= 5)_failed": 0,
                 "flagstat_total": 62893022
             },
+            "SRR656373": {
+                "total_passed": 71847944,
+                "total_failed": 0,
+                "secondary_passed": 4298097,
+                "secondary_failed": 0,
+                "supplementary_passed": 0,
+                "supplementary_failed": 0,
+                "duplicates_passed": 0,
+                "duplicates_failed": 0,
+                "mapped_passed": 71847944,
+                "mapped_failed": 0,
+                "mapped_passed_pct": 100.0,
+                "mapped_failed_pct": NaN,
+                "paired in sequencing_passed": 67549847,
+                "paired in sequencing_failed": 0,
+                "read1_passed": 33831921,
+                "read1_failed": 0,
+                "read2_passed": 33717926,
+                "read2_failed": 0,
+                "properly paired_passed": 67392574,
+                "properly paired_failed": 0,
+                "properly paired_passed_pct": 99.77,
+                "properly paired_failed_pct": NaN,
+                "with itself and mate mapped_passed": 67392574,
+                "with itself and mate mapped_failed": 0,
+                "singletons_passed": 157273,
+                "singletons_failed": 0,
+                "singletons_passed_pct": 0.23,
+                "singletons_failed_pct": NaN,
+                "with mate mapped to a different chr_passed": 0,
+                "with mate mapped to a different chr_failed": 0,
+                "with mate mapped to a different chr (mapQ >= 5)_passed": 0,
+                "with mate mapped to a different chr (mapQ >= 5)_failed": 0,
+                "flagstat_total": 71847944
+            },
             "SRR656469": {
                 "total_passed": 130278084,
                 "total_failed": 0,
@@ -2362,6 +2497,41 @@
                 "with mate mapped to a different chr (mapQ >= 5)_passed": 0,
                 "with mate mapped to a different chr (mapQ >= 5)_failed": 0,
                 "flagstat_total": 130278084
+            },
+            "SRR656528": {
+                "total_passed": 78828540,
+                "total_failed": 0,
+                "secondary_passed": 5460958,
+                "secondary_failed": 0,
+                "supplementary_passed": 0,
+                "supplementary_failed": 0,
+                "duplicates_passed": 0,
+                "duplicates_failed": 0,
+                "mapped_passed": 78828540,
+                "mapped_failed": 0,
+                "mapped_passed_pct": 100.0,
+                "mapped_failed_pct": NaN,
+                "paired in sequencing_passed": 73367582,
+                "paired in sequencing_failed": 0,
+                "read1_passed": 36724679,
+                "read1_failed": 0,
+                "read2_passed": 36642903,
+                "read2_failed": 0,
+                "properly paired_passed": 73102498,
+                "properly paired_failed": 0,
+                "properly paired_passed_pct": 99.64,
+                "properly paired_failed_pct": NaN,
+                "with itself and mate mapped_passed": 73102498,
+                "with itself and mate mapped_failed": 0,
+                "singletons_passed": 265084,
+                "singletons_failed": 0,
+                "singletons_passed_pct": 0.36,
+                "singletons_failed_pct": NaN,
+                "with mate mapped to a different chr_passed": 0,
+                "with mate mapped to a different chr_failed": 0,
+                "with mate mapped to a different chr (mapQ >= 5)_passed": 0,
+                "with mate mapped to a different chr (mapQ >= 5)_failed": 0,
+                "flagstat_total": 78828540
             }
         }
     ],
@@ -2535,7 +2705,7 @@
             }
         }
     ],
-    "report_multiqc_command": "/anaconda2/bin/multiqc ./Project/results/bladder/SRR1071717/alignment_qc/SRR1071717.flagstat ./Project/results/bladder/SRR1071717/alignment_qc/SRR1071717.stats ./Project/results/bladder/SRR1079830/alignment_qc/SRR1079830.flagstat ./Project/results/bladder/SRR1079830/alignment_qc/SRR1079830.stats ./Project/results/bladder/SRR1085402/alignment_qc/SRR1085402.flagstat ./Project/results/bladder/SRR1085402/alignment_qc/SRR1085402.stats ./Project/results/bladder/SRR1086236/alignment_qc/SRR1086236.flagstat ./Project/results/bladder/SRR1086236/alignment_qc/SRR1086236.stats ./Project/results/bladder/SRR1120296/alignment_qc/SRR1120296.flagstat ./Project/results/bladder/SRR1120296/alignment_qc/SRR1120296.stats ./Project/results/blood/SRR613723/alignment_qc/SRR613723.flagstat ./Project/results/blood/SRR613723/alignment_qc/SRR613723.stats ./Project/results/blood/SRR614059/alignment_qc/SRR614059.flagstat ./Project/results/blood/SRR614059/alignment_qc/SRR614059.stats ./Project/results/blood/SRR614131/alignment_qc/SRR614131.flagstat ./Project/results/blood/SRR614131/alignment_qc/SRR614131.stats ./Project/results/blood/SRR614167/alignment_qc/SRR614167.flagstat ./Project/results/blood/SRR614167/alignment_qc/SRR614167.stats ./Project/results/blood/SRR615177/alignment_qc/SRR615177.flagstat ./Project/results/blood/SRR615177/alignment_qc/SRR615177.stats ./Project/results/brain/SRR595926/alignment_qc/SRR595926.flagstat ./Project/results/brain/SRR595926/alignment_qc/SRR595926.stats ./Project/results/brain/SRR598253/alignment_qc/SRR598253.flagstat ./Project/results/brain/SRR598253/alignment_qc/SRR598253.stats ./Project/results/brain/SRR603397/alignment_qc/SRR603397.flagstat ./Project/results/brain/SRR603397/alignment_qc/SRR603397.stats ./Project/results/brain/SRR627449/alignment_qc/SRR627449.flagstat ./Project/results/brain/SRR627449/alignment_qc/SRR627449.stats ./Project/results/brain/SRR627462/alignment_qc/SRR627462.flagstat ./Project/results/brain/SRR627462/alignment_qc/SRR627462.stats ./Project/results/liver/SRR1093861/alignment_qc/SRR1093861.flagstat ./Project/results/liver/SRR1093861/alignment_qc/SRR1093861.stats ./Project/results/liver/SRR1095383/alignment_qc/SRR1095383.flagstat ./Project/results/liver/SRR1095383/alignment_qc/SRR1095383.stats ./Project/results/liver/SRR659649/alignment_qc/SRR659649.flagstat ./Project/results/liver/SRR659649/alignment_qc/SRR659649.stats ./Project/results/liver/SRR807971/alignment_qc/SRR807971.flagstat ./Project/results/liver/SRR807971/alignment_qc/SRR807971.stats ./Project/results/liver/SRR815711/alignment_qc/SRR815711.flagstat ./Project/results/liver/SRR815711/alignment_qc/SRR815711.stats ./Project/results/lung/SRR600417/alignment_qc/SRR600417.flagstat ./Project/results/lung/SRR600417/alignment_qc/SRR600417.stats ./Project/results/lung/SRR600584/alignment_qc/SRR600584.flagstat ./Project/results/lung/SRR600584/alignment_qc/SRR600584.stats ./Project/results/lung/SRR600900/alignment_qc/SRR600900.flagstat ./Project/results/lung/SRR600900/alignment_qc/SRR600900.stats ./Project/results/lung/SRR601900/alignment_qc/SRR601900.flagstat ./Project/results/lung/SRR601900/alignment_qc/SRR601900.stats ./Project/results/lung/SRR665217/alignment_qc/SRR665217.flagstat ./Project/results/lung/SRR665217/alignment_qc/SRR665217.stats ./Project/results/thyroid/SRR655277/alignment_qc/SRR655277.flagstat ./Project/results/thyroid/SRR655277/alignment_qc/SRR655277.stats ./Project/results/thyroid/SRR656191/alignment_qc/SRR656191.flagstat ./Project/results/thyroid/SRR656191/alignment_qc/SRR656191.stats ./Project/results/thyroid/SRR656469/alignment_qc/SRR656469.flagstat ./Project/results/thyroid/SRR656469/alignment_qc/SRR656469.stats -o ./Project/results/combined/Alignment QC/",
+    "report_multiqc_command": "/anaconda2/bin/multiqc ./Project/results/bladder/SRR1071717/alignment_qc/SRR1071717.flagstat ./Project/results/bladder/SRR1071717/alignment_qc/SRR1071717.stats ./Project/results/bladder/SRR1079830/alignment_qc/SRR1079830.flagstat ./Project/results/bladder/SRR1079830/alignment_qc/SRR1079830.stats ./Project/results/bladder/SRR1085402/alignment_qc/SRR1085402.flagstat ./Project/results/bladder/SRR1085402/alignment_qc/SRR1085402.stats ./Project/results/bladder/SRR1086236/alignment_qc/SRR1086236.flagstat ./Project/results/bladder/SRR1086236/alignment_qc/SRR1086236.stats ./Project/results/bladder/SRR1120296/alignment_qc/SRR1120296.flagstat ./Project/results/bladder/SRR1120296/alignment_qc/SRR1120296.stats ./Project/results/blood/SRR613723/alignment_qc/SRR613723.flagstat ./Project/results/blood/SRR613723/alignment_qc/SRR613723.stats ./Project/results/blood/SRR614059/alignment_qc/SRR614059.flagstat ./Project/results/blood/SRR614059/alignment_qc/SRR614059.stats ./Project/results/blood/SRR614131/alignment_qc/SRR614131.flagstat ./Project/results/blood/SRR614131/alignment_qc/SRR614131.stats ./Project/results/blood/SRR614167/alignment_qc/SRR614167.flagstat ./Project/results/blood/SRR614167/alignment_qc/SRR614167.stats ./Project/results/blood/SRR615177/alignment_qc/SRR615177.flagstat ./Project/results/blood/SRR615177/alignment_qc/SRR615177.stats ./Project/results/brain/SRR595926/alignment_qc/SRR595926.flagstat ./Project/results/brain/SRR595926/alignment_qc/SRR595926.stats ./Project/results/brain/SRR598253/alignment_qc/SRR598253.flagstat ./Project/results/brain/SRR598253/alignment_qc/SRR598253.stats ./Project/results/brain/SRR603397/alignment_qc/SRR603397.flagstat ./Project/results/brain/SRR603397/alignment_qc/SRR603397.stats ./Project/results/brain/SRR627449/alignment_qc/SRR627449.flagstat ./Project/results/brain/SRR627449/alignment_qc/SRR627449.stats ./Project/results/brain/SRR627462/alignment_qc/SRR627462.flagstat ./Project/results/brain/SRR627462/alignment_qc/SRR627462.stats ./Project/results/liver/SRR1093861/alignment_qc/SRR1093861.flagstat ./Project/results/liver/SRR1093861/alignment_qc/SRR1093861.stats ./Project/results/liver/SRR1095383/alignment_qc/SRR1095383.flagstat ./Project/results/liver/SRR1095383/alignment_qc/SRR1095383.stats ./Project/results/liver/SRR659649/alignment_qc/SRR659649.flagstat ./Project/results/liver/SRR659649/alignment_qc/SRR659649.stats ./Project/results/liver/SRR807971/alignment_qc/SRR807971.flagstat ./Project/results/liver/SRR807971/alignment_qc/SRR807971.stats ./Project/results/liver/SRR815711/alignment_qc/SRR815711.flagstat ./Project/results/liver/SRR815711/alignment_qc/SRR815711.stats ./Project/results/lung/SRR600417/alignment_qc/SRR600417.flagstat ./Project/results/lung/SRR600417/alignment_qc/SRR600417.stats ./Project/results/lung/SRR600584/alignment_qc/SRR600584.flagstat ./Project/results/lung/SRR600584/alignment_qc/SRR600584.stats ./Project/results/lung/SRR600900/alignment_qc/SRR600900.flagstat ./Project/results/lung/SRR600900/alignment_qc/SRR600900.stats ./Project/results/lung/SRR601900/alignment_qc/SRR601900.flagstat ./Project/results/lung/SRR601900/alignment_qc/SRR601900.stats ./Project/results/lung/SRR665217/alignment_qc/SRR665217.flagstat ./Project/results/lung/SRR665217/alignment_qc/SRR665217.stats ./Project/results/thyroid/SRR655277/alignment_qc/SRR655277.flagstat ./Project/results/thyroid/SRR655277/alignment_qc/SRR655277.stats ./Project/results/thyroid/SRR656191/alignment_qc/SRR656191.flagstat ./Project/results/thyroid/SRR656191/alignment_qc/SRR656191.stats ./Project/results/thyroid/SRR656373/alignment_qc/SRR656373.flagstat ./Project/results/thyroid/SRR656373/alignment_qc/SRR656373.stats ./Project/results/thyroid/SRR656469/alignment_qc/SRR656469.flagstat ./Project/results/thyroid/SRR656469/alignment_qc/SRR656469.stats ./Project/results/thyroid/SRR656528/alignment_qc/SRR656528.flagstat ./Project/results/thyroid/SRR656528/alignment_qc/SRR656528.stats -o ./Project/results/combined/Alignment QC/",
     "report_plot_data": {
         "samtools_alignment_plot": {
             "plot_type": "bar_graph",
@@ -2564,7 +2734,9 @@
                     "SRR627462",
                     "SRR655277",
                     "SRR656191",
+                    "SRR656373",
                     "SRR656469",
+                    "SRR656528",
                     "SRR659649",
                     "SRR665217",
                     "SRR807971",
@@ -2599,7 +2771,9 @@
                             54734443.0,
                             89134525.0,
                             58641902.0,
+                            67549847.0,
                             121529381.0,
+                            73367582.0,
                             117278320.0,
                             130697351.0,
                             104976537.0,
@@ -2647,7 +2821,9 @@
                     "SRR665217",
                     "SRR655277",
                     "SRR656191",
-                    "SRR656469"
+                    "SRR656373",
+                    "SRR656469",
+                    "SRR656528"
                 ],
                 [
                     "SRR1071717",
@@ -2677,7 +2853,9 @@
                     "SRR665217",
                     "SRR655277",
                     "SRR656191",
-                    "SRR656469"
+                    "SRR656373",
+                    "SRR656469",
+                    "SRR656528"
                 ],
                 [
                     "SRR1071717",
@@ -2707,7 +2885,9 @@
                     "SRR665217",
                     "SRR655277",
                     "SRR656191",
-                    "SRR656469"
+                    "SRR656373",
+                    "SRR656469",
+                    "SRR656528"
                 ],
                 [
                     "SRR1071717",
@@ -2737,7 +2917,9 @@
                     "SRR665217",
                     "SRR655277",
                     "SRR656191",
-                    "SRR656469"
+                    "SRR656373",
+                    "SRR656469",
+                    "SRR656528"
                 ],
                 [
                     "SRR1071717",
@@ -2767,7 +2949,9 @@
                     "SRR665217",
                     "SRR655277",
                     "SRR656191",
-                    "SRR656469"
+                    "SRR656373",
+                    "SRR656469",
+                    "SRR656528"
                 ],
                 [
                     "SRR1071717",
@@ -2797,7 +2981,9 @@
                     "SRR665217",
                     "SRR655277",
                     "SRR656191",
-                    "SRR656469"
+                    "SRR656373",
+                    "SRR656469",
+                    "SRR656528"
                 ],
                 [
                     "SRR1071717",
@@ -2827,7 +3013,9 @@
                     "SRR665217",
                     "SRR655277",
                     "SRR656191",
-                    "SRR656469"
+                    "SRR656373",
+                    "SRR656469",
+                    "SRR656528"
                 ],
                 [
                     "SRR1071717",
@@ -2857,7 +3045,9 @@
                     "SRR665217",
                     "SRR655277",
                     "SRR656191",
-                    "SRR656469"
+                    "SRR656373",
+                    "SRR656469",
+                    "SRR656528"
                 ],
                 [
                     "SRR1071717",
@@ -2887,7 +3077,9 @@
                     "SRR665217",
                     "SRR655277",
                     "SRR656191",
-                    "SRR656469"
+                    "SRR656373",
+                    "SRR656469",
+                    "SRR656528"
                 ],
                 [
                     "SRR1071717",
@@ -2917,7 +3109,9 @@
                     "SRR665217",
                     "SRR655277",
                     "SRR656191",
-                    "SRR656469"
+                    "SRR656373",
+                    "SRR656469",
+                    "SRR656528"
                 ],
                 [
                     "SRR1071717",
@@ -2947,7 +3141,9 @@
                     "SRR665217",
                     "SRR655277",
                     "SRR656191",
-                    "SRR656469"
+                    "SRR656373",
+                    "SRR656469",
+                    "SRR656528"
                 ],
                 [
                     "SRR1071717",
@@ -2977,7 +3173,9 @@
                     "SRR665217",
                     "SRR655277",
                     "SRR656191",
-                    "SRR656469"
+                    "SRR656373",
+                    "SRR656469",
+                    "SRR656528"
                 ],
                 [
                     "SRR1071717",
@@ -3007,7 +3205,9 @@
                     "SRR665217",
                     "SRR655277",
                     "SRR656191",
-                    "SRR656469"
+                    "SRR656373",
+                    "SRR656469",
+                    "SRR656528"
                 ]
             ],
             "datasets": [
@@ -3039,7 +3239,9 @@
                     130.697351,
                     89.134525,
                     58.641902,
-                    121.529381
+                    67.549847,
+                    121.529381,
+                    73.367582
                 ],
                 [
                     42.051528,
@@ -3069,7 +3271,9 @@
                     130.346832,
                     88.919222,
                     58.460398,
-                    121.161568
+                    67.392574,
+                    121.161568,
+                    73.102498
                 ],
                 [
                     42.051528,
@@ -3099,9 +3303,13 @@
                     130.346832,
                     88.919222,
                     58.460398,
-                    121.161568
+                    67.392574,
+                    121.161568,
+                    73.102498
                 ],
                 [
+                    0.0,
+                    0.0,
                     0.0,
                     0.0,
                     0.0,
@@ -3132,6 +3340,8 @@
                     0.0
                 ],
                 [
+                    0.0,
+                    0.0,
                     0.0,
                     0.0,
                     0.0,
@@ -3189,7 +3399,9 @@
                     0.395771,
                     0.186968,
                     0.174921,
-                    0.39519
+                    0.160537,
+                    0.39519,
+                    0.278105
                 ],
                 [
                     3123.48927,
@@ -3219,9 +3431,13 @@
                     9486.40106,
                     6559.938855,
                     4293.286459,
-                    8926.67858
+                    4970.615399,
+                    8926.67858,
+                    5351.844215
                 ],
                 [
+                    0.0,
+                    0.0,
                     0.0,
                     0.0,
                     0.0,
@@ -3279,39 +3495,45 @@
                     0.0,
                     0.0,
                     0.0,
-                    0.0
-                ],
-                [
-                    0.0,
-                    0.0,
-                    0.0,
-                    0.0,
-                    0.0,
-                    0.0,
-                    0.0,
-                    0.0,
-                    0.0,
-                    0.0,
-                    0.0,
-                    0.0,
-                    0.0,
-                    0.0,
-                    0.0,
-                    0.0,
-                    0.0,
-                    0.0,
-                    0.0,
-                    0.0,
-                    0.0,
-                    0.0,
-                    0.0,
-                    0.0,
-                    0.0,
                     0.0,
                     0.0,
                     0.0
                 ],
                 [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0,
                     0.0,
                     0.0,
                     0.0,
@@ -3369,7 +3591,9 @@
                     65.123338,
                     44.450734,
                     29.210792,
-                    60.543654
+                    33.620184,
+                    60.543654,
+                    36.297175
                 ],
                 [
                     0.007061,
@@ -3399,7 +3623,9 @@
                     0.050078,
                     0.008877,
                     0.019407,
-                    0.03713
+                    0.076103,
+                    0.03713,
+                    0.254074
                 ]
             ],
             "categories": [
@@ -3566,7 +3792,9 @@
                     "SRR665217",
                     "SRR655277",
                     "SRR656191",
-                    "SRR656469"
+                    "SRR656373",
+                    "SRR656469",
+                    "SRR656528"
                 ],
                 [
                     "SRR1071717",
@@ -3596,7 +3824,9 @@
                     "SRR665217",
                     "SRR655277",
                     "SRR656191",
-                    "SRR656469"
+                    "SRR656373",
+                    "SRR656469",
+                    "SRR656528"
                 ],
                 [
                     "SRR1071717",
@@ -3626,7 +3856,9 @@
                     "SRR665217",
                     "SRR655277",
                     "SRR656191",
-                    "SRR656469"
+                    "SRR656373",
+                    "SRR656469",
+                    "SRR656528"
                 ],
                 [
                     "SRR1071717",
@@ -3656,7 +3888,9 @@
                     "SRR665217",
                     "SRR655277",
                     "SRR656191",
-                    "SRR656469"
+                    "SRR656373",
+                    "SRR656469",
+                    "SRR656528"
                 ],
                 [
                     "SRR1071717",
@@ -3686,7 +3920,9 @@
                     "SRR665217",
                     "SRR655277",
                     "SRR656191",
-                    "SRR656469"
+                    "SRR656373",
+                    "SRR656469",
+                    "SRR656528"
                 ],
                 [
                     "SRR1071717",
@@ -3716,7 +3952,9 @@
                     "SRR665217",
                     "SRR655277",
                     "SRR656191",
-                    "SRR656469"
+                    "SRR656373",
+                    "SRR656469",
+                    "SRR656528"
                 ],
                 [
                     "SRR1071717",
@@ -3746,7 +3984,9 @@
                     "SRR665217",
                     "SRR655277",
                     "SRR656191",
-                    "SRR656469"
+                    "SRR656373",
+                    "SRR656469",
+                    "SRR656528"
                 ],
                 [
                     "SRR1071717",
@@ -3776,7 +4016,9 @@
                     "SRR665217",
                     "SRR655277",
                     "SRR656191",
-                    "SRR656469"
+                    "SRR656373",
+                    "SRR656469",
+                    "SRR656528"
                 ],
                 [
                     "SRR1071717",
@@ -3806,7 +4048,9 @@
                     "SRR665217",
                     "SRR655277",
                     "SRR656191",
-                    "SRR656469"
+                    "SRR656373",
+                    "SRR656469",
+                    "SRR656528"
                 ],
                 [
                     "SRR1071717",
@@ -3836,7 +4080,9 @@
                     "SRR665217",
                     "SRR655277",
                     "SRR656191",
-                    "SRR656469"
+                    "SRR656373",
+                    "SRR656469",
+                    "SRR656528"
                 ],
                 [
                     "SRR1071717",
@@ -3866,7 +4112,9 @@
                     "SRR665217",
                     "SRR655277",
                     "SRR656191",
-                    "SRR656469"
+                    "SRR656373",
+                    "SRR656469",
+                    "SRR656528"
                 ]
             ],
             "datasets": [
@@ -3898,7 +4146,9 @@
                     139.344689,
                     94.709705,
                     62.893022,
-                    130.278084
+                    71.847944,
+                    130.278084,
+                    78.82854
                 ],
                 [
                     44.651826,
@@ -3928,7 +4178,9 @@
                     139.344689,
                     94.709705,
                     62.893022,
-                    130.278084
+                    71.847944,
+                    130.278084,
+                    78.82854
                 ],
                 [
                     44.651826,
@@ -3958,7 +4210,9 @@
                     139.344689,
                     94.709705,
                     62.893022,
-                    130.278084
+                    71.847944,
+                    130.278084,
+                    78.82854
                 ],
                 [
                     2.566435,
@@ -3988,9 +4242,13 @@
                     8.647338,
                     5.57518,
                     4.25112,
-                    8.748703
+                    4.298097,
+                    8.748703,
+                    5.460958
                 ],
                 [
+                    0.0,
+                    0.0,
                     0.0,
                     0.0,
                     0.0,
@@ -4048,7 +4306,9 @@
                     130.697351,
                     89.134525,
                     58.641902,
-                    121.529381
+                    67.549847,
+                    121.529381,
+                    73.367582
                 ],
                 [
                     42.051528,
@@ -4078,7 +4338,9 @@
                     130.346832,
                     88.919222,
                     58.460398,
-                    121.161568
+                    67.392574,
+                    121.161568,
+                    73.102498
                 ],
                 [
                     42.051528,
@@ -4108,7 +4370,9 @@
                     130.346832,
                     88.919222,
                     58.460398,
-                    121.161568
+                    67.392574,
+                    121.161568,
+                    73.102498
                 ],
                 [
                     0.033863,
@@ -4138,9 +4402,13 @@
                     0.350519,
                     0.215303,
                     0.181504,
-                    0.367813
+                    0.157273,
+                    0.367813,
+                    0.265084
                 ],
                 [
+                    0.0,
+                    0.0,
                     0.0,
                     0.0,
                     0.0,
@@ -4171,6 +4439,8 @@
                     0.0
                 ],
                 [
+                    0.0,
+                    0.0,
                     0.0,
                     0.0,
                     0.0,
@@ -5585,6 +5855,54 @@
                 "reads_MQ0_percent": 0.29828670973189103,
                 "reads_QC_failed_percent": 0.0
             },
+            "SRR656373": {
+                "raw_total_sequences": 67549847.0,
+                "filtered_sequences": 0.0,
+                "sequences": 67549847.0,
+                "is_sorted": 1.0,
+                "1st_fragments": 33831921.0,
+                "last_fragments": 33717926.0,
+                "reads_mapped": 67549847.0,
+                "reads_mapped_and_paired": 67392574.0,
+                "reads_unmapped": 0.0,
+                "reads_properly_paired": 67392574.0,
+                "reads_paired": 67549847.0,
+                "reads_duplicated": 0.0,
+                "reads_MQ0": 160537.0,
+                "reads_QC_failed": 0.0,
+                "non-primary_alignments": 4298097.0,
+                "total_length": 4994341360.0,
+                "total_first_fragment_length": 2515314943.0,
+                "total_last_fragment_length": 2479026417.0,
+                "bases_mapped": 4994341360.0,
+                "bases_mapped_(cigar)": 4970615399.0,
+                "bases_trimmed": 0.0,
+                "bases_duplicated": 0.0,
+                "mismatches": 0.0,
+                "error_rate": 0.0,
+                "average_length": 73.0,
+                "average_first_fragment_length": 74.0,
+                "average_last_fragment_length": 74.0,
+                "maximum_length": 76.0,
+                "maximum_first_fragment_length": 76.0,
+                "maximum_last_fragment_length": 76.0,
+                "average_quality": 36.1,
+                "insert_size_average": 852.3,
+                "insert_size_standard_deviation": 1716.4,
+                "inward_oriented_pairs": 33620184.0,
+                "outward_oriented_pairs": 76103.0,
+                "pairs_with_other_orientation": 0.0,
+                "pairs_on_different_chromosomes": 0.0,
+                "percentage_of_properly_paired_reads_(%)": 99.8,
+                "reads_mapped_percent": 100.0,
+                "reads_mapped_and_paired_percent": 99.76717489826439,
+                "reads_unmapped_percent": 0.0,
+                "reads_properly_paired_percent": 99.76717489826439,
+                "reads_paired_percent": 100.0,
+                "reads_duplicated_percent": 0.0,
+                "reads_MQ0_percent": 0.2376570889938507,
+                "reads_QC_failed_percent": 0.0
+            },
             "SRR656469": {
                 "raw_total_sequences": 121529381.0,
                 "filtered_sequences": 0.0,
@@ -5631,6 +5949,54 @@
                 "reads_paired_percent": 100.0,
                 "reads_duplicated_percent": 0.0,
                 "reads_MQ0_percent": 0.3251806244285898,
+                "reads_QC_failed_percent": 0.0
+            },
+            "SRR656528": {
+                "raw_total_sequences": 73367582.0,
+                "filtered_sequences": 0.0,
+                "sequences": 73367582.0,
+                "is_sorted": 1.0,
+                "1st_fragments": 36724679.0,
+                "last_fragments": 36642903.0,
+                "reads_mapped": 73367582.0,
+                "reads_mapped_and_paired": 73102498.0,
+                "reads_unmapped": 0.0,
+                "reads_properly_paired": 73102498.0,
+                "reads_paired": 73367582.0,
+                "reads_duplicated": 0.0,
+                "reads_MQ0": 278105.0,
+                "reads_QC_failed": 0.0,
+                "non-primary_alignments": 5460958.0,
+                "total_length": 5381295876.0,
+                "total_first_fragment_length": 2700735049.0,
+                "total_last_fragment_length": 2680560827.0,
+                "bases_mapped": 5381295876.0,
+                "bases_mapped_(cigar)": 5351844215.0,
+                "bases_trimmed": 0.0,
+                "bases_duplicated": 0.0,
+                "mismatches": 0.0,
+                "error_rate": 0.0,
+                "average_length": 73.0,
+                "average_first_fragment_length": 74.0,
+                "average_last_fragment_length": 73.0,
+                "maximum_length": 76.0,
+                "maximum_first_fragment_length": 76.0,
+                "maximum_last_fragment_length": 76.0,
+                "average_quality": 36.1,
+                "insert_size_average": 850.9,
+                "insert_size_standard_deviation": 1690.8,
+                "inward_oriented_pairs": 36297175.0,
+                "outward_oriented_pairs": 254074.0,
+                "pairs_with_other_orientation": 0.0,
+                "pairs_on_different_chromosomes": 0.0,
+                "percentage_of_properly_paired_reads_(%)": 99.6,
+                "reads_mapped_percent": 100.0,
+                "reads_mapped_and_paired_percent": 99.6386905595444,
+                "reads_unmapped_percent": 0.0,
+                "reads_properly_paired_percent": 99.6386905595444,
+                "reads_paired_percent": 100.0,
+                "reads_duplicated_percent": 0.0,
+                "reads_MQ0_percent": 0.37905706092371966,
                 "reads_QC_failed_percent": 0.0
             }
         },
@@ -6580,6 +6946,41 @@
                 "with mate mapped to a different chr (mapQ >= 5)_failed": 0,
                 "flagstat_total": 62893022
             },
+            "SRR656373": {
+                "total_passed": 71847944,
+                "total_failed": 0,
+                "secondary_passed": 4298097,
+                "secondary_failed": 0,
+                "supplementary_passed": 0,
+                "supplementary_failed": 0,
+                "duplicates_passed": 0,
+                "duplicates_failed": 0,
+                "mapped_passed": 71847944,
+                "mapped_failed": 0,
+                "mapped_passed_pct": 100.0,
+                "mapped_failed_pct": NaN,
+                "paired in sequencing_passed": 67549847,
+                "paired in sequencing_failed": 0,
+                "read1_passed": 33831921,
+                "read1_failed": 0,
+                "read2_passed": 33717926,
+                "read2_failed": 0,
+                "properly paired_passed": 67392574,
+                "properly paired_failed": 0,
+                "properly paired_passed_pct": 99.77,
+                "properly paired_failed_pct": NaN,
+                "with itself and mate mapped_passed": 67392574,
+                "with itself and mate mapped_failed": 0,
+                "singletons_passed": 157273,
+                "singletons_failed": 0,
+                "singletons_passed_pct": 0.23,
+                "singletons_failed_pct": NaN,
+                "with mate mapped to a different chr_passed": 0,
+                "with mate mapped to a different chr_failed": 0,
+                "with mate mapped to a different chr (mapQ >= 5)_passed": 0,
+                "with mate mapped to a different chr (mapQ >= 5)_failed": 0,
+                "flagstat_total": 71847944
+            },
             "SRR656469": {
                 "total_passed": 130278084,
                 "total_failed": 0,
@@ -6614,6 +7015,41 @@
                 "with mate mapped to a different chr (mapQ >= 5)_passed": 0,
                 "with mate mapped to a different chr (mapQ >= 5)_failed": 0,
                 "flagstat_total": 130278084
+            },
+            "SRR656528": {
+                "total_passed": 78828540,
+                "total_failed": 0,
+                "secondary_passed": 5460958,
+                "secondary_failed": 0,
+                "supplementary_passed": 0,
+                "supplementary_failed": 0,
+                "duplicates_passed": 0,
+                "duplicates_failed": 0,
+                "mapped_passed": 78828540,
+                "mapped_failed": 0,
+                "mapped_passed_pct": 100.0,
+                "mapped_failed_pct": NaN,
+                "paired in sequencing_passed": 73367582,
+                "paired in sequencing_failed": 0,
+                "read1_passed": 36724679,
+                "read1_failed": 0,
+                "read2_passed": 36642903,
+                "read2_failed": 0,
+                "properly paired_passed": 73102498,
+                "properly paired_failed": 0,
+                "properly paired_passed_pct": 99.64,
+                "properly paired_failed_pct": NaN,
+                "with itself and mate mapped_passed": 73102498,
+                "with itself and mate mapped_failed": 0,
+                "singletons_passed": 265084,
+                "singletons_failed": 0,
+                "singletons_passed_pct": 0.36,
+                "singletons_failed_pct": NaN,
+                "with mate mapped to a different chr_passed": 0,
+                "with mate mapped to a different chr_failed": 0,
+                "with mate mapped to a different chr (mapQ >= 5)_passed": 0,
+                "with mate mapped to a different chr (mapQ >= 5)_failed": 0,
+                "flagstat_total": 78828540
             }
         },
         "multiqc_general_stats": {
@@ -6887,6 +7323,16 @@
                 "Samtools Stats_mqc-generalstats-samtools_stats-reads_MQ0_percent": 0.29828670973189103,
                 "Samtools Stats_mqc-generalstats-samtools_stats-raw_total_sequences": 58641902.0
             },
+            "SRR656373": {
+                "Samtools Flagstat_mqc-generalstats-samtools_flagstat-mapped_passed": 71847944,
+                "Samtools Stats_mqc-generalstats-samtools_stats-error_rate": 0.0,
+                "Samtools Stats_mqc-generalstats-samtools_stats-non_primary_alignments": 4298097.0,
+                "Samtools Stats_mqc-generalstats-samtools_stats-reads_mapped": 67549847.0,
+                "Samtools Stats_mqc-generalstats-samtools_stats-reads_mapped_percent": 100.0,
+                "Samtools Stats_mqc-generalstats-samtools_stats-reads_properly_paired_percent": 99.76717489826439,
+                "Samtools Stats_mqc-generalstats-samtools_stats-reads_MQ0_percent": 0.2376570889938507,
+                "Samtools Stats_mqc-generalstats-samtools_stats-raw_total_sequences": 67549847.0
+            },
             "SRR656469": {
                 "Samtools Flagstat_mqc-generalstats-samtools_flagstat-mapped_passed": 130278084,
                 "Samtools Stats_mqc-generalstats-samtools_stats-error_rate": 0.0,
@@ -6896,6 +7342,16 @@
                 "Samtools Stats_mqc-generalstats-samtools_stats-reads_properly_paired_percent": 99.69734643838925,
                 "Samtools Stats_mqc-generalstats-samtools_stats-reads_MQ0_percent": 0.3251806244285898,
                 "Samtools Stats_mqc-generalstats-samtools_stats-raw_total_sequences": 121529381.0
+            },
+            "SRR656528": {
+                "Samtools Flagstat_mqc-generalstats-samtools_flagstat-mapped_passed": 78828540,
+                "Samtools Stats_mqc-generalstats-samtools_stats-error_rate": 0.0,
+                "Samtools Stats_mqc-generalstats-samtools_stats-non_primary_alignments": 5460958.0,
+                "Samtools Stats_mqc-generalstats-samtools_stats-reads_mapped": 73367582.0,
+                "Samtools Stats_mqc-generalstats-samtools_stats-reads_mapped_percent": 100.0,
+                "Samtools Stats_mqc-generalstats-samtools_stats-reads_properly_paired_percent": 99.6386905595444,
+                "Samtools Stats_mqc-generalstats-samtools_stats-reads_MQ0_percent": 0.37905706092371966,
+                "Samtools Stats_mqc-generalstats-samtools_stats-raw_total_sequences": 73367582.0
             }
         }
     },
@@ -6954,8 +7410,12 @@
         "/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/thyroid/SRR655277/alignment_qc/SRR655277.stats",
         "/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/thyroid/SRR656191/alignment_qc/SRR656191.flagstat",
         "/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/thyroid/SRR656191/alignment_qc/SRR656191.stats",
+        "/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/thyroid/SRR656373/alignment_qc/SRR656373.flagstat",
+        "/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/thyroid/SRR656373/alignment_qc/SRR656373.stats",
         "/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/thyroid/SRR656469/alignment_qc/SRR656469.flagstat",
-        "/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/thyroid/SRR656469/alignment_qc/SRR656469.stats"
+        "/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/thyroid/SRR656469/alignment_qc/SRR656469.stats",
+        "/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/thyroid/SRR656528/alignment_qc/SRR656528.flagstat",
+        "/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/thyroid/SRR656528/alignment_qc/SRR656528.stats"
     ],
     "config_analysis_dir": [
         "./Project/results/bladder/SRR1071717/alignment_qc/SRR1071717.flagstat",
@@ -7012,10 +7472,14 @@
         "./Project/results/thyroid/SRR655277/alignment_qc/SRR655277.stats",
         "./Project/results/thyroid/SRR656191/alignment_qc/SRR656191.flagstat",
         "./Project/results/thyroid/SRR656191/alignment_qc/SRR656191.stats",
+        "./Project/results/thyroid/SRR656373/alignment_qc/SRR656373.flagstat",
+        "./Project/results/thyroid/SRR656373/alignment_qc/SRR656373.stats",
         "./Project/results/thyroid/SRR656469/alignment_qc/SRR656469.flagstat",
-        "./Project/results/thyroid/SRR656469/alignment_qc/SRR656469.stats"
+        "./Project/results/thyroid/SRR656469/alignment_qc/SRR656469.stats",
+        "./Project/results/thyroid/SRR656528/alignment_qc/SRR656528.flagstat",
+        "./Project/results/thyroid/SRR656528/alignment_qc/SRR656528.stats"
     ],
-    "config_creation_date": "2019-04-09, 23:08",
+    "config_creation_date": "2019-04-10, 18:04",
     "config_git_hash": null,
     "config_intro_text": null,
     "config_report_comment": null,
