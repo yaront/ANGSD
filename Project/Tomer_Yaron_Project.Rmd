@@ -21,7 +21,7 @@ However, there are two major problems with the *Tabula Muris* database:
 
 Hence, I believe that NGS data, specifically bulk RNA-seq from different human tissues, can be very valuable in order to test this hypothesis. Practically, I am planning to compare the expression levels of the kinases in the __Tyrosine kinome__ for different Tyrosine kinases' families, and to check whether there is a mutually exclusive expression pattern or not.
 
-In that project, I am testing our hypothesis for the SrcB subfamily tyrosine kinases - BLK, HCK, LCK and LYN - which have similar substrate spcificity. To that end, I will examine 6 different tissues - bladder, blood, brain, liver, lung, skin and thyroid, whereas for each tissue I will be use 5 samples (except for bladder in which I will use 8 samples). I will process and analyze the RNA-seq data, extract the differential expression of my specific genes in different tissue, and test our hypothesis based on those results.
+In that project, I am testing our hypothesis for 7 different kinases families (DDR, SrcA, SrcB, Type III RTK, TAM, INSR/IGF1R and Eph) tyrosine kinases, which each one of the kinases within each family has similar substrate spcificity. To that end, I will examine 6 different tissues - bladder, blood, brain, liver, lung, skin and thyroid, whereas for each tissue I will be use 5 samples (except for bladder in which I will use 8 samples). I will process and analyze the RNA-seq data, extract the differential expression of my specific genes in different tissue, and test our hypothesis based on those results.
 
 
 ## Database
@@ -30,46 +30,14 @@ For targeting this research question, I am planning to use *The Genotype-Tissue 
 
 For the project I chose 7 different tissues (bladder, blood, brain, liver, lung, skin and thyroid), 8 samples from bladder and 5 samples from the rest of the tissues:
 
-| Run        | SRA_Sample | Sample_Name                  | histological_type | is_tumor | sex    | SRA_Study |
-|------------|------------|------------------------------|-------------------|----------|--------|-----------|
-| SRR1071717 | SRS524326  | GTEX-U3ZM-0826-SM-4DXU6      | Bladder           | No       | male   | SRP012682 |
-| SRR1079830 | SRS524681  | GTEX-U4B1-1226-SM-4DXT7      | Bladder           | No       | male   | SRP012682 |
-| SRR1081765 | SRS524765  | GTEX-S4Q7-0926-SM-4AD5D      | Bladder           | No       | male   | SRP012682 |
-| SRR1084917 | SRS524903  | GTEX-SNOS-0526-SM-4DM54      | Bladder           | No       | male   | SRP012682 |
-| SRR1085402 | SRS524923  | GTEX-SNMC-0826-SM-4DM66      | Bladder           | No       | male   | SRP012682 |
-| SRR1086236 | SRS524959  | GTEX-TMMY-1526-SM-4DXST      | Bladder           | No       | female | SRP012682 |
-| SRR1099957 | SRS526556  | GTEX-S3XE-1226-SM-4AD4L      | Bladder           | No       | male   | SRP012682 |
-| SRR1120296 | SRS534674  | GTEX-U3ZN-1226-SM-4DXUD      | Bladder           | No       | female | SRP012682 |
-| SRR613723  | SRS374901  | GTEX-R55F-0005-SM-2TF4W      | Blood             | No       | male   | SRP012682 |
-| SRR614059  | SRS374925  | GTEX-PWN1-0006-SM-2S1NG      | Blood             | No       | female | SRP012682 |
-| SRR614131  | SRS374918  | GTEX-RTLS-0006-SM-2TF58      | Blood             | No       | female | SRP012682 |
-| SRR614167  | SRS374895  | GTEX-RM2N-0006-SM-2TF5H      | Blood             | No       | male   | SRP012682 |
-| SRR615177  | SRS374896  | GTEX-QDVJ-0005-SM-2TC5X      | Blood             | No       | male   | SRP012682 |
-| SRR595926  | SRS332984  | GTEX-N7MS-0011-R10A-SM-2HMJK | Brain             | No       | male   | SRP012682 |
-| SRR598253  | SRS332955  | GTEX-Q2AG-0011-R6A-SM-2HML7  | Brain             | No       | female | SRP012682 |
-| SRR603397  | SRS332972  | GTEX-NPJ7-0011-R2a-SM-2I3GF  | Brain             | No       | female | SRP012682 |
-| SRR627449  | SRS377771  | GTEX-NPJ8-1526-SM-26GMY      | Brain             | No       | male   | SRP012682 |
-| SRR627462  | SRS377775  | GTEX-NPJ8-2626-SM-26GMZ      | Brain             | No       | male   | SRP012682 |
-| SRR1093861 | SRS525377  | GTEX-XXEK-1126-SM-4BRUX      | Liver             | No       | male   | SRP012682 |
-| SRR1095383 | SRS525982  | GTEX-QDVN-0826-SM-48TZ2      | Liver             | No       | male   | SRP012682 |
-| SRR659649  | SRS389590  | GTEX-U3ZN-0226-SM-3DB8D      | Liver             | No       | female | SRP012682 |
-| SRR807971  | SRS408127  | GTEX-OOBJ-0826-SM-3NB2K      | Liver             | No       | male   | SRP012682 |
-| SRR815711  | SRS408539  | GTEX-P78B-1326-SM-3P611      | Liver             | No       | female | SRP012682 |
-| SRR600417  | SRS333244  | GTEX-Q2AI-0526-SM-2I3EJ      | Lung              | No       | male   | SRP012682 |
-| SRR600584  | SRS333222  | GTEX-OHPL-0526-SM-2HMIX      | Lung              | No       | female | SRP012682 |
-| SRR600900  | SRS333156  | GTEX-PX3G-0526-SM-2I3EM      | Lung              | No       | female | SRP012682 |
-| SRR601900  | SRS333310  | GTEX-OHPJ-1026-SM-2HMLE      | Lung              | No       | male   | SRP012682 |
-| SRR665217  | SRS389763  | GTEX-U3ZH-0526-SM-3DB75      | Lung              | No       | male   | SRP012682 |
-| SRR614206  | SRS374955  | GTEX-NPJ8-0126-SM-2YUNR      | Skin              | No       | male   | SRP012682 |
-| SRR614755  | SRS374966  | GTEX-OXRO-0126-SM-2YUN4      | Skin              | No       | female | SRP012682 |
-| SRR614779  | SRS374973  | GTEX-PWCY-1826-SM-2S1OK      | Skin              | No       | female | SRP012682 |
-| SRR615008  | SRS374950  | GTEX-PLZ5-2026-SM-2S1O4      | Skin              | No       | male   | SRP012682 |
-| SRR615623  | SRS374957  | GTEX-OXRL-0126-SM-2YUMP      | Skin              | No       | male   | SRP012682 |
-| SRR655277  | SRS389076  | GTEX-WFG8-0426-SM-3GILD      | Thyroid           | No       | male   | SRP012682 |
-| SRR656191  | SRS389105  | GTEX-S7SE-0726-SM-2XCD7      | Thyroid           | No       | male   | SRP012682 |
-| SRR656373  | SRS389163  | GTEX-WEY5-0526-SM-3GIKZ      | Thyroid           | No       | female | SRP012682 |
-| SRR656469  | SRS389159  | GTEX-OXRP-0326-SM-33HBJ      | Thyroid           | No       | female | SRP012682 |
-| SRR656528  | SRS389160  | GTEX-POYW-0826-SM-2XCEM      | Thyroid           | No       | male   | SRP012682 |
+```{r, PRINT_SAMPLES}
+library(knitr)
+library(kableExtra)
+
+samples <- read.table("./databases/project_samples.txt", sep = '\t', header = TRUE)
+kable(samples) %>% kable_styling() %>% scroll_box(width = "100%", height = "200px")
+
+```
 
 ## QC of the fastq files and choosing samples for analysis
 
@@ -173,46 +141,11 @@ As we can see, 100% of the reads were mapped:
 
 Even though some of them where multi-mapped:
 
-| Sample Name | M Reads Mapped | % Mapped | M Non-Primary | % MapQ 0 Reads | Error rate | % Proper Pairs |
-|-------------|----------------|----------|---------------|----------------|------------|----------------|
-| SRR1071717  | 44.7           | 100.0%   | 2.6           | 0.2%           | 0.00%      | 99.9%          |
-| SRR1079830  | 54.8           | 100.0%   | 2.9           | 0.2%           | 0.00%      | 99.9%          |
-| SRR1081765  | 45.5           | 100.0%   | 2.5           | 0.2%           | 0.00%      | 99.9%          |
-| SRR1084917  | 57.1           | 100.0%   | 4.6           | 0.3%           | 0.00%      | 99.9%          |
-| SRR1085402  | 55.8           | 100.0%   | 3.7           | 0.3%           | 0.00%      | 99.9%          |
-| SRR1086236  | 72.6           | 100.0%   | 4.1           | 0.2%           | 0.00%      | 99.9%          |
-| SRR1093861  | 71.6           | 100.0%   | 4.9           | 0.2%           | 0.00%      | 99.9%          |
-| SRR1095383  | 74.2           | 100.0%   | 5.8           | 0.2%           | 0.00%      | 99.9%          |
-| SRR1099957  | 61.4           | 100.0%   | 3.8           | 0.3%           | 0.00%      | 99.9%          |
-| SRR1120296  | 59.4           | 100.0%   | 3.6           | 0.3%           | 0.00%      | 99.9%          |
-| SRR595926   | 114.7          | 100.0%   | 8.0           | 0.2%           | 0.00%      | 99.7%          |
-| SRR598253   | 116.7          | 100.0%   | 7.2           | 0.2%           | 0.00%      | 99.7%          |
-| SRR600417   | 97.2           | 100.0%   | 6.5           | 0.3%           | 0.00%      | 99.2%          |
-| SRR600584   | 70.7           | 100.0%   | 3.8           | 0.2%           | 0.00%      | 99.7%          |
-| SRR600900   | 93.1           | 100.0%   | 5.6           | 0.2%           | 0.00%      | 99.8%          |
-| SRR601900   | 64.3           | 100.0%   | 3.6           | 0.3%           | 0.00%      | 99.7%          |
-| SRR603397   | 82.1           | 100.0%   | 5.1           | 0.2%           | 0.00%      | 99.8%          |
-| SRR613723   | 78.7           | 100.0%   | 31.7          | 0.5%           | 0.00%      | 99.7%          |
-| SRR614059   | 15.9           | 100.0%   | 4.3           | 0.8%           | 0.00%      | 99.6%          |
-| SRR614131   | 140.7          | 100.0%   | 55.4          | 0.5%           | 0.00%      | 99.8%          |
-| SRR614167   | 65.2           | 100.0%   | 20.4          | 0.6%           | 0.00%      | 99.8%          |
-| SRR614206   | 34.9           | 100.0%   | 2.6           | 0.3%           | 0.00%      | 99.7%          |
-| SRR614755   | 96.9           | 100.0%   | 5.8           | 0.3%           | 0.00%      | 99.8%          |
-| SRR614779   | 11.0           | 100.0%   | 0.8           | 0.3%           | 0.00%      | 99.7%          |
-| SRR615008   | 31.3           | 100.0%   | 2.1           | 0.3%           | 0.00%      | 99.7%          |
-| SRR615177   | 109.2          | 100.0%   | 36.0          | 0.7%           | 0.00%      | 99.7%          |
-| SRR615623   | 69.4           | 100.0%   | 4.4           | 0.3%           | 0.00%      | 99.8%          |
-| SRR627449   | 59.2           | 100.0%   | 9.2           | 0.4%           | 0.00%      | 99.1%          |
-| SRR627462   | 79.9           | 100.0%   | 25.2          | 0.6%           | 0.00%      | 99.1%          |
-| SRR655277   | 94.7           | 100.0%   | 5.6           | 0.2%           | 0.00%      | 99.8%          |
-| SRR656191   | 62.9           | 100.0%   | 4.3           | 0.3%           | 0.00%      | 99.7%          |
-| SRR656373   | 71.8           | 100.0%   | 4.3           | 0.2%           | 0.00%      | 99.8%          |
-| SRR656469   | 130.3          | 100.0%   | 8.7           | 0.3%           | 0.00%      | 99.7%          |
-| SRR656528   | 78.8           | 100.0%   | 5.5           | 0.4%           | 0.00%      | 99.6%          |
-| SRR659649   | 125.5          | 100.0%   | 8.2           | 0.2%           | 0.00%      | 99.8%          |
-| SRR665217   | 139.3          | 100.0%   | 8.6           | 0.3%           | 0.00%      | 99.7%          |
-| SRR807971   | 114.2          | 100.0%   | 9.3           | 0.3%           | 0.00%      | 99.8%          |
-| SRR815711   | 114.4          | 100.0%   | 9.3           | 0.2%           | 0.00%      | 99.9%          |
+```{r, PRINT_ALIGN}
+samples <- read.table("./results/combined/Alignment QC/samples_alignment.txt", sep = '\t', header = TRUE)
+kable(samples) %>% kable_styling() %>% scroll_box(width = "100%", height = "200px")
+
+```
 
 ## Gene count
 
@@ -225,7 +158,7 @@ done
 
 ```
 
-Now we will normalize the counts matries and compare the differential expression.
+I examined the number of mapped reads in every sample:
 
 ```{r, COUNT_STATS}
 
@@ -252,6 +185,10 @@ gene_counts_melt <- melt(gene_counts, value.name="Count", variable.name="Variabl
 ggplot(data=gene_counts_melt, aes(x=Category, y=Count, fill=Variable)) + geom_bar(stat="identity", position=position_dodge()) + ggtitle("Reads Counts Per Gene - No Multi-Mapped Reads") + xlab("Sample") + ylab("Read Counts") + labs(fill = "Type") + theme(axis.text.x = element_text(angle = 90, hjust = 1))
 
 ```
+
+As we can see in the figure above, most of the reads in every sample were assigned uniquely. However, there is a large variance in the amount of reads between samples, which can be a result of different sequencing depth. Therefore, I normalized the counts matrix using `rlog` and compare the differential expression.
+
+
 
 ```{r, GENE_EXP}
 
@@ -291,6 +228,10 @@ plot(hclust(as.dist(1 - corr_coeff)), labels = colnames(rlog.norm.counts), main 
 
 ```
 
+We can see that using euclidian distance and correlation, all the samples are clustered together, expcept for the bladder samples which are clustered in 2 groups of 4.
+
+I ran PCA and Tsne plots over the gene expression of the samples, expecting to get similar samples clustered together (due to similar expression pattern).
+
 ```{r, GENE_EXP_PCA}
 
 library(Rtsne)
@@ -309,6 +250,10 @@ counts_tsne <- Rtsne(t(unique(rlog.norm.counts)), perplexity = 5, dims = 2, chec
 ggplot(as.data.frame(counts_tsne$Y), aes(x = counts_tsne$Y[,1], y = counts_tsne$Y[,2], colour = sample.info$condition)) + geom_point(alpha = 1) + labs(title = "Tsne Plot", x = "Tsne 1", y = "Tsne 2", colour="Tissue") + theme(plot.title = element_text(hjust = 0.5))
 
 ```
+
+As we can see, the different samples are clustered together in the PCA plot, and are even more clustered in the Tsne plot. Interestignly, also here the 8 bladder samples are clustered in 2 groups of 4.
+
+
 
 ```{r, GENE_EXP_STAT, fig.show='asis'}
 
