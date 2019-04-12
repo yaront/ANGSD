@@ -6,7 +6,7 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, error = FALSE)
 ```
 
 ## Introduction
@@ -21,21 +21,24 @@ However, there are two major problems with the *Tabula Muris* database:
 
 Hence, I believe that NGS data, specifically bulk RNA-seq from different human tissues, can be very valuable in order to test this hypothesis. Practically, I am planning to compare the expression levels of the kinases in the __Tyrosine kinome__ for different Tyrosine kinases' families, and to check whether there is a mutually exclusive expression pattern or not.
 
-In that project, I am testing our hypothesis for the SrcB subfamily tyrosine kinases - BLK, HCK, LCK and LYN - which have similar substrate spcificity. To that end, I will examine 6 different tissues - bladder, blood, brain, liver, lung and thyroid, whereas for each tissue I will be use 5 samples. I will process and analyze the RNA-seq data, extract the differential expression of my specific genes in different tissue, and test our hypothesis based on those results.
+In that project, I am testing our hypothesis for the SrcB subfamily tyrosine kinases - BLK, HCK, LCK and LYN - which have similar substrate spcificity. To that end, I will examine 6 different tissues - bladder, blood, brain, liver, lung, skin and thyroid, whereas for each tissue I will be use 5 samples (except for bladder in which I will use 8 samples). I will process and analyze the RNA-seq data, extract the differential expression of my specific genes in different tissue, and test our hypothesis based on those results.
 
 
 ## Database
 
 For targeting this research question, I am planning to use *The Genotype-Tissue Expression (GTEx) database* (https://gtexportal.org/home/), which is a portal for RNA-seq of human tissues of postmortem donors. This database contains 53 different tissues from 714 different donors, and 11688 samples in total. most of the samples (10361) have also genotype information. The raw data (fasta files) are accessible upon request.
 
-For the project I chose 6 different tissues (bladder, blood, brain, liver, lung and thyroid), 5 samples from each:
+For the project I chose 7 different tissues (bladder, blood, brain, liver, lung, skin and thyroid), 8 samples from bladder and 5 samples from the rest of the tissues:
 
 | Run        | SRA_Sample | Sample_Name                  | histological_type | is_tumor | sex    | SRA_Study |
 |------------|------------|------------------------------|-------------------|----------|--------|-----------|
 | SRR1071717 | SRS524326  | GTEX-U3ZM-0826-SM-4DXU6      | Bladder           | No       | male   | SRP012682 |
 | SRR1079830 | SRS524681  | GTEX-U4B1-1226-SM-4DXT7      | Bladder           | No       | male   | SRP012682 |
+| SRR1081765 | SRS524765  | GTEX-S4Q7-0926-SM-4AD5D      | Bladder           | No       | male   | SRP012682 |
+| SRR1084917 | SRS524903  | GTEX-SNOS-0526-SM-4DM54      | Bladder           | No       | male   | SRP012682 |
 | SRR1085402 | SRS524923  | GTEX-SNMC-0826-SM-4DM66      | Bladder           | No       | male   | SRP012682 |
 | SRR1086236 | SRS524959  | GTEX-TMMY-1526-SM-4DXST      | Bladder           | No       | female | SRP012682 |
+| SRR1099957 | SRS526556  | GTEX-S3XE-1226-SM-4AD4L      | Bladder           | No       | male   | SRP012682 |
 | SRR1120296 | SRS534674  | GTEX-U3ZN-1226-SM-4DXUD      | Bladder           | No       | female | SRP012682 |
 | SRR613723  | SRS374901  | GTEX-R55F-0005-SM-2TF4W      | Blood             | No       | male   | SRP012682 |
 | SRR614059  | SRS374925  | GTEX-PWN1-0006-SM-2S1NG      | Blood             | No       | female | SRP012682 |
@@ -57,6 +60,11 @@ For the project I chose 6 different tissues (bladder, blood, brain, liver, lung 
 | SRR600900  | SRS333156  | GTEX-PX3G-0526-SM-2I3EM      | Lung              | No       | female | SRP012682 |
 | SRR601900  | SRS333310  | GTEX-OHPJ-1026-SM-2HMLE      | Lung              | No       | male   | SRP012682 |
 | SRR665217  | SRS389763  | GTEX-U3ZH-0526-SM-3DB75      | Lung              | No       | male   | SRP012682 |
+| SRR614206  | SRS374955  | GTEX-NPJ8-0126-SM-2YUNR      | Skin              | No       | male   | SRP012682 |
+| SRR614755  | SRS374966  | GTEX-OXRO-0126-SM-2YUN4      | Skin              | No       | female | SRP012682 |
+| SRR614779  | SRS374973  | GTEX-PWCY-1826-SM-2S1OK      | Skin              | No       | female | SRP012682 |
+| SRR615008  | SRS374950  | GTEX-PLZ5-2026-SM-2S1O4      | Skin              | No       | male   | SRP012682 |
+| SRR615623  | SRS374957  | GTEX-OXRL-0126-SM-2YUMP      | Skin              | No       | male   | SRP012682 |
 | SRR655277  | SRS389076  | GTEX-WFG8-0426-SM-3GILD      | Thyroid           | No       | male   | SRP012682 |
 | SRR656191  | SRS389105  | GTEX-S7SE-0726-SM-2XCD7      | Thyroid           | No       | male   | SRP012682 |
 | SRR656373  | SRS389163  | GTEX-WEY5-0526-SM-3GIKZ      | Thyroid           | No       | female | SRP012682 |
@@ -167,10 +175,44 @@ Even though some of them where multi-mapped:
 
 | Sample Name | M Reads Mapped | % Mapped | M Non-Primary | % MapQ 0 Reads | Error rate | % Proper Pairs |
 |-------------|----------------|----------|---------------|----------------|------------|----------------|
+| SRR1071717  | 44.7           | 100.0%   | 2.6           | 0.2%           | 0.00%      | 99.9%          |
+| SRR1079830  | 54.8           | 100.0%   | 2.9           | 0.2%           | 0.00%      | 99.9%          |
+| SRR1081765  | 45.5           | 100.0%   | 2.5           | 0.2%           | 0.00%      | 99.9%          |
+| SRR1084917  | 57.1           | 100.0%   | 4.6           | 0.3%           | 0.00%      | 99.9%          |
 | SRR1085402  | 55.8           | 100.0%   | 3.7           | 0.3%           | 0.00%      | 99.9%          |
+| SRR1086236  | 72.6           | 100.0%   | 4.1           | 0.2%           | 0.00%      | 99.9%          |
+| SRR1093861  | 71.6           | 100.0%   | 4.9           | 0.2%           | 0.00%      | 99.9%          |
+| SRR1095383  | 74.2           | 100.0%   | 5.8           | 0.2%           | 0.00%      | 99.9%          |
+| SRR1099957  | 61.4           | 100.0%   | 3.8           | 0.3%           | 0.00%      | 99.9%          |
+| SRR1120296  | 59.4           | 100.0%   | 3.6           | 0.3%           | 0.00%      | 99.9%          |
 | SRR595926   | 114.7          | 100.0%   | 8.0           | 0.2%           | 0.00%      | 99.7%          |
+| SRR598253   | 116.7          | 100.0%   | 7.2           | 0.2%           | 0.00%      | 99.7%          |
+| SRR600417   | 97.2           | 100.0%   | 6.5           | 0.3%           | 0.00%      | 99.2%          |
 | SRR600584   | 70.7           | 100.0%   | 3.8           | 0.2%           | 0.00%      | 99.7%          |
+| SRR600900   | 93.1           | 100.0%   | 5.6           | 0.2%           | 0.00%      | 99.8%          |
+| SRR601900   | 64.3           | 100.0%   | 3.6           | 0.3%           | 0.00%      | 99.7%          |
+| SRR603397   | 82.1           | 100.0%   | 5.1           | 0.2%           | 0.00%      | 99.8%          |
+| SRR613723   | 78.7           | 100.0%   | 31.7          | 0.5%           | 0.00%      | 99.7%          |
+| SRR614059   | 15.9           | 100.0%   | 4.3           | 0.8%           | 0.00%      | 99.6%          |
+| SRR614131   | 140.7          | 100.0%   | 55.4          | 0.5%           | 0.00%      | 99.8%          |
+| SRR614167   | 65.2           | 100.0%   | 20.4          | 0.6%           | 0.00%      | 99.8%          |
+| SRR614206   | 34.9           | 100.0%   | 2.6           | 0.3%           | 0.00%      | 99.7%          |
+| SRR614755   | 96.9           | 100.0%   | 5.8           | 0.3%           | 0.00%      | 99.8%          |
+| SRR614779   | 11.0           | 100.0%   | 0.8           | 0.3%           | 0.00%      | 99.7%          |
+| SRR615008   | 31.3           | 100.0%   | 2.1           | 0.3%           | 0.00%      | 99.7%          |
+| SRR615177   | 109.2          | 100.0%   | 36.0          | 0.7%           | 0.00%      | 99.7%          |
+| SRR615623   | 69.4           | 100.0%   | 4.4           | 0.3%           | 0.00%      | 99.8%          |
+| SRR627449   | 59.2           | 100.0%   | 9.2           | 0.4%           | 0.00%      | 99.1%          |
+| SRR627462   | 79.9           | 100.0%   | 25.2          | 0.6%           | 0.00%      | 99.1%          |
+| SRR655277   | 94.7           | 100.0%   | 5.6           | 0.2%           | 0.00%      | 99.8%          |
+| SRR656191   | 62.9           | 100.0%   | 4.3           | 0.3%           | 0.00%      | 99.7%          |
+| SRR656373   | 71.8           | 100.0%   | 4.3           | 0.2%           | 0.00%      | 99.8%          |
+| SRR656469   | 130.3          | 100.0%   | 8.7           | 0.3%           | 0.00%      | 99.7%          |
+| SRR656528   | 78.8           | 100.0%   | 5.5           | 0.4%           | 0.00%      | 99.6%          |
+| SRR659649   | 125.5          | 100.0%   | 8.2           | 0.2%           | 0.00%      | 99.8%          |
+| SRR665217   | 139.3          | 100.0%   | 8.6           | 0.3%           | 0.00%      | 99.7%          |
 | SRR807971   | 114.2          | 100.0%   | 9.3           | 0.3%           | 0.00%      | 99.8%          |
+| SRR815711   | 114.4          | 100.0%   | 9.3           | 0.2%           | 0.00%      | 99.9%          |
 
 ## Gene count
 
@@ -223,20 +265,24 @@ counts_matrix <- data.frame(m)
 colnames(counts_matrix) <- lapply(strsplit(file_names,'/'), function(x) paste(x[2:3], collapse = '/'))
 rownames(counts_matrix) <- rownames(sample_matrix)
 
-for (f in file_names){
-  sample <- paste(strsplit(f,'/')[[1]][2:3], collapse = '/')
-  sample_matrix <- read.table(f, row.names = 1, header = TRUE)
-  counts_matrix[,sample] <- sample_matrix[,ncol(sample_matrix)]
-}
+# for (f in file_names){
+#   sample <- paste(strsplit(f,'/')[[1]][2:3], collapse = '/')
+#   sample_matrix <- read.table(f, row.names = 1, header = TRUE)
+#   counts_matrix[,sample] <- sample_matrix[,ncol(sample_matrix)]
+# }
+# write.table(counts_matrix, file = './results/combined/Combined counts/counts_samples.txt', sep = '\t')
+counts_matrix <- read.table('./results/combined/Combined counts/counts_samples.txt', sep = '\t')
+colnames(counts_matrix) <- gsub('\\.','/',colnames(counts_matrix))
 
 sample.info <- DataFrame(condition = sapply(strsplit(names(counts_matrix),'/'), function(x) x[1]), row.names = names(counts_matrix))
 DESeq.ds <- DESeqDataSetFromMatrix(countData = counts_matrix, colData = sample.info, design = ~ condition)
-DESeq.rlog <- rlog(DESeq.ds, blind = TRUE)
-rlog.norm.counts <- assay(DESeq.rlog)
+# DESeq.rlog <- rlog(DESeq.ds, blind = TRUE)
+# rlog.norm.counts <- assay(DESeq.rlog)
 
 #write.table(rlog.norm.counts, file = './results/combined/Combined counts/rlog_counts_samples.txt', sep = '\t')
-#rlog.norm.counts <- read.table('./results/combined/Combined counts/rlog_counts_samples.txt', sep = '\t')
-#colnames(rlog.norm.counts) <- gsub('\\.','/',colnames(rlog.norm.counts))
+rlog.norm.counts <- read.table('./results/combined/Combined counts/rlog_counts_samples.txt', sep = '\t')
+colnames(rlog.norm.counts) <- gsub('\\.','/',colnames(rlog.norm.counts))
+rlog.norm.counts <- as.matrix(rlog.norm.counts)
 
 plot(hclust(dist(t(rlog.norm.counts))), labels = colnames(rlog.norm.counts), main = "rlog transformed read counts - Euclidean distance")
 
@@ -248,14 +294,19 @@ plot(hclust(as.dist(1 - corr_coeff)), labels = colnames(rlog.norm.counts), main 
 ```{r, GENE_EXP_PCA}
 
 library(Rtsne)
+library(scatterplot3d)
 
 rv <- rowVars(rlog.norm.counts)
 top_variable <- order(rv, decreasing = TRUE)
-pca <- prcomp(t(assay(DESeq.rlog)[top_variable, ]))
-plotPCA(DESeq.rlog)
+pca <- prcomp(t(rlog.norm.counts))
+pca.prop.var <- ((pca$sdev^2) / (sum(pca$sdev^2)))*100
+df_pca_data <- data.frame(PC1 = pca$x[,1], PC2 = pca$x[,2], sample = sample.info$condition, condition = sample.info$condition)
 
-counts_tsne <- Rtsne(t(unique(assay(DESeq.rlog))), perplexity = 5, dims = 2, check_duplicates = FALSE)
-ggplot(as.data.frame(counts_tsne$Y), aes(x = counts_tsne$Y[,1], y = counts_tsne$Y[,2], colour = sample.info$condition)) + geom_point(alpha = 1) + theme_bw()
+ggplot(df_pca_data, aes(PC1,PC2, color = sample)) + geom_point(size=2) + labs(title = "PCA plot", x = paste0("PC1 (",pca.prop.var[1],")"), y = paste0("PC2 (",pca.prop.var[2],")"), colour="Tissue") + theme(plot.title = element_text(hjust = 0.5))
+
+set.seed(1)
+counts_tsne <- Rtsne(t(unique(rlog.norm.counts)), perplexity = 5, dims = 2, check_duplicates = FALSE)
+ggplot(as.data.frame(counts_tsne$Y), aes(x = counts_tsne$Y[,1], y = counts_tsne$Y[,2], colour = sample.info$condition)) + geom_point(alpha = 1) + labs(title = "Tsne Plot", x = "Tsne 1", y = "Tsne 2", colour="Tissue") + theme(plot.title = element_text(hjust = 0.5))
 
 ```
 
@@ -265,30 +316,32 @@ library(biomaRt)
 library(reshape2)
 library(ggsignif)
 library(gridExtra)
+library(gplots)
 
 ensembl <- useDataset("hsapiens_gene_ensembl", useMart("ensembl"))
 
-#kinases <- sort(c("DDR1","DDR2"))
-# kinases <- sort(c("SRC","FYN","YES1","FGR"))
-kinases <- sort(c("LCK","HCK","BLK","LYN"))
+# kinases_family <- "DDR Family"
+# kinases <- sort(c("DDR1","DDR2"))
+kinases_family <- "SrcA Family"
+kinases <- sort(c("SRC","FYN","YES1","FGR"))
+# kinases_family <- "SrcB Family"
+# kinases <- sort(c("LCK","HCK","BLK","LYN"))
+# kinases_family <- "Type III RTK Family"
 # kinases <- sort(c("CSF1R","KIT"))
+# kinases_family <- "TAM Family"
 # kinases <- sort(c("TYRO3","AXL","MERTK"))
+# kinases_family <- "INSR/IGF1R Receptor Family"
 # kinases <- sort(c("INSR","IGF1R"))
+# kinases_family <- "Eph Family"
 # kinases <- c(paste0("EphA",1:8), paste0("EphB",c(1,2,4)))
-
-# targets <- sort(c("ELMO1","ELMO2"))
 
 kin_ensembl <- getBM(attributes = "ensembl_gene_id", filters="hgnc_symbol", values=kinases, mart=ensembl)
 kin_ensembl <- kin_ensembl$ensembl_gene_id[unlist(lapply(kin_ensembl, function(x) x %in% rownames(rlog.norm.counts)))]
-# tar_ensembl <- getBM(attributes = "ensembl_gene_id", filters="hgnc_symbol", values=targets, mart=ensembl)
 
 kin_exp <- rlog.norm.counts[kin_ensembl,]
 kin_exp <- kin_exp[rowSums(kin_exp) > 0,]
 rownames(kin_exp) <- kinases
 colnames(kin_exp) <- sapply(strsplit(colnames(kin_exp),'/'), function(x) x[1])
-# tar_exp <- rlog.norm.counts[tar_ensembl,]
-# rownames(tar_exp) <- targets
-# colnames(tar_exp) <- sapply(strsplit(colnames(tar_exp),'/'), function(x) x[1])
 
 tissues <- sort(unique(sapply(strsplit(colnames(DESeq.ds),'/'), function(x) x[1])))
 sample_exp <- melt(kin_exp)[,c(2,1,3)]
@@ -299,14 +352,19 @@ plots <- list()
 for (i in 1:length(tissues)){
   t <- tissues[i]
   tissue_exp <- sample_exp[sample_exp$tissue == t,]
-  plots[[i]] <- ggplot(tissue_exp, aes(x=kinase, y=exp_value, fill=kinase)) + geom_boxplot() + geom_dotplot(binaxis='y', stackdir='center', binwidth = 0.3) + ggtitle(t) + theme(plot.title = element_text(hjust = 0.5)) + geom_signif(comparisons = split(combn(kinases,2), rep(1:ncol(combn(kinases,2)), each = nrow(combn(kinases,2)))), map_signif_level=TRUE, step_increase = 0.1, vjust = 0.5, textsize = 1) + xlab("Kinase") + ylab("Expression Level (rlog)")
-  # plot(plt)
+  plots[[i]] <- ggplot(tissue_exp, aes(x=kinase, y=exp_value, fill=kinase)) + geom_boxplot() + geom_dotplot(binaxis='y', stackdir='center', binwidth = 0.3) + ggtitle(t) + theme(plot.title = element_text(hjust = 0.5)) + geom_signif(comparisons = split(combn(kinases,2), rep(1:ncol(combn(kinases,2)), each = nrow(combn(kinases,2)))), map_signif_level=TRUE, step_increase = 0.1, vjust = 0.5, textsize = , margin_top = 0.1) + xlab("Kinase") + ylab("Expression Level (rlog)")
+  plot(plots[[i]])
 }
 
-pdf(paste0('./figures/', paste0(kinases, sep = "_", collapse = ""), 'exp_levels.pdf'), width = 10, height = 5, paper = 'special')
-do.call(grid.arrange,plots)
-dev.off()
+# pdf(paste0('./figures/', paste0(kinases, sep = "_", collapse = ""), 'exp_levels.pdf'), width = 10, height = 5, paper = 'special')
+# do.call(grid.arrange,plots)
+# dev.off()
 
-ggplot(sample_exp, aes(x=tissue, y=exp_value, fill=kinase)) + geom_boxplot() + ggtitle(t) + theme(plot.title = element_text(hjust = 0.5)) + xlab("Tissue") + ylab("Expression Level (rlog)") + geom_vline(xintercept = (1:5 + 0.5), linetype = "dashed")
+ggplot(sample_exp, aes(x=tissue, y=exp_value, fill=kinase)) + geom_boxplot() + ggtitle(kinases_family) + theme(plot.title = element_text(hjust = 0.5)) + xlab("Tissue") + ylab("Expression Level (rlog)") + geom_vline(xintercept = (1:6 + 0.5), linetype = "dashed")
+
+```
+
+```{r, GENE_HEATMAP}
+heatmap.2(t(kin_exp), Colv = FALSE, Rowv = FALSE, dendrogram = 'none', col = bluered(25), trace = 'column', density.info = 'density', cexCol = 1, srtCol = 45, cexRow = 1, rowsep=c(8,13,18,23,28,33), sepcolor="black", sepwidth=c(5,0.2), labRow = c(NA,NA,NA,"Bladder",NA,NA,NA,NA,NA,NA,"Blood",NA,NA,NA,NA,"Brain",NA,NA,NA,NA,"Liver",NA,NA,NA,NA,"Lung",NA,NA,NA,NA,"Skin",NA,NA,NA,NA,"Thyroid",NA,NA), tracecol = "black", key.title = NA, main = kinases_family, xlab = "Kinase", ylab = "Tissue")
 
 ```
