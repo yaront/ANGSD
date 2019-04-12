@@ -1,8 +1,11 @@
 Module	Section	Sample Name	Source
 Samtools	stats	SRR1071717	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/bladder/SRR1071717/alignment_qc/SRR1071717.stats
 Samtools	stats	SRR1079830	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/bladder/SRR1079830/alignment_qc/SRR1079830.stats
+Samtools	stats	SRR1081765	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/bladder/SRR1081765/alignment_qc/SRR1081765.stats
+Samtools	stats	SRR1084917	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/bladder/SRR1084917/alignment_qc/SRR1084917.stats
 Samtools	stats	SRR1085402	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/bladder/SRR1085402/alignment_qc/SRR1085402.stats
 Samtools	stats	SRR1086236	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/bladder/SRR1086236/alignment_qc/SRR1086236.stats
+Samtools	stats	SRR1099957	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/bladder/SRR1099957/alignment_qc/SRR1099957.stats
 Samtools	stats	SRR1120296	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/bladder/SRR1120296/alignment_qc/SRR1120296.stats
 Samtools	stats	SRR613723	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/blood/SRR613723/alignment_qc/SRR613723.stats
 Samtools	stats	SRR614059	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/blood/SRR614059/alignment_qc/SRR614059.stats
@@ -24,6 +27,11 @@ Samtools	stats	SRR600584	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next 
 Samtools	stats	SRR600900	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/lung/SRR600900/alignment_qc/SRR600900.stats
 Samtools	stats	SRR601900	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/lung/SRR601900/alignment_qc/SRR601900.stats
 Samtools	stats	SRR665217	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/lung/SRR665217/alignment_qc/SRR665217.stats
+Samtools	stats	SRR614206	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/skin/SRR614206/alignment_qc/SRR614206.stats
+Samtools	stats	SRR614755	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/skin/SRR614755/alignment_qc/SRR614755.stats
+Samtools	stats	SRR614779	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/skin/SRR614779/alignment_qc/SRR614779.stats
+Samtools	stats	SRR615008	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/skin/SRR615008/alignment_qc/SRR615008.stats
+Samtools	stats	SRR615623	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/skin/SRR615623/alignment_qc/SRR615623.stats
 Samtools	stats	SRR655277	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/thyroid/SRR655277/alignment_qc/SRR655277.stats
 Samtools	stats	SRR656191	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/thyroid/SRR656191/alignment_qc/SRR656191.stats
 Samtools	stats	SRR656373	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/thyroid/SRR656373/alignment_qc/SRR656373.stats
@@ -31,8 +39,11 @@ Samtools	stats	SRR656469	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next 
 Samtools	stats	SRR656528	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/thyroid/SRR656528/alignment_qc/SRR656528.stats
 Samtools	flagstat	SRR1071717	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/bladder/SRR1071717/alignment_qc/SRR1071717.flagstat
 Samtools	flagstat	SRR1079830	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/bladder/SRR1079830/alignment_qc/SRR1079830.flagstat
+Samtools	flagstat	SRR1081765	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/bladder/SRR1081765/alignment_qc/SRR1081765.flagstat
+Samtools	flagstat	SRR1084917	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/bladder/SRR1084917/alignment_qc/SRR1084917.flagstat
 Samtools	flagstat	SRR1085402	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/bladder/SRR1085402/alignment_qc/SRR1085402.flagstat
 Samtools	flagstat	SRR1086236	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/bladder/SRR1086236/alignment_qc/SRR1086236.flagstat
+Samtools	flagstat	SRR1099957	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/bladder/SRR1099957/alignment_qc/SRR1099957.flagstat
 Samtools	flagstat	SRR1120296	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/bladder/SRR1120296/alignment_qc/SRR1120296.flagstat
 Samtools	flagstat	SRR613723	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/blood/SRR613723/alignment_qc/SRR613723.flagstat
 Samtools	flagstat	SRR614059	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/blood/SRR614059/alignment_qc/SRR614059.flagstat
@@ -54,6 +65,11 @@ Samtools	flagstat	SRR600584	/Users/tomer/Google Drive/PhD/Courses/Analysis of Ne
 Samtools	flagstat	SRR600900	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/lung/SRR600900/alignment_qc/SRR600900.flagstat
 Samtools	flagstat	SRR601900	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/lung/SRR601900/alignment_qc/SRR601900.flagstat
 Samtools	flagstat	SRR665217	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/lung/SRR665217/alignment_qc/SRR665217.flagstat
+Samtools	flagstat	SRR614206	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/skin/SRR614206/alignment_qc/SRR614206.flagstat
+Samtools	flagstat	SRR614755	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/skin/SRR614755/alignment_qc/SRR614755.flagstat
+Samtools	flagstat	SRR614779	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/skin/SRR614779/alignment_qc/SRR614779.flagstat
+Samtools	flagstat	SRR615008	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/skin/SRR615008/alignment_qc/SRR615008.flagstat
+Samtools	flagstat	SRR615623	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/skin/SRR615623/alignment_qc/SRR615623.flagstat
 Samtools	flagstat	SRR655277	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/thyroid/SRR655277/alignment_qc/SRR655277.flagstat
 Samtools	flagstat	SRR656191	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/thyroid/SRR656191/alignment_qc/SRR656191.flagstat
 Samtools	flagstat	SRR656373	/Users/tomer/Google Drive/PhD/Courses/Analysis of Next Generation Sequencing Data/Project/results/thyroid/SRR656373/alignment_qc/SRR656373.flagstat
