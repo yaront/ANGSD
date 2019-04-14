@@ -3,8 +3,6 @@ title: "ANGSD - Project"
 author: "Tomer M. Yaron"
 date: "2/15/2019"
 output: html_document
-pandoc_args: ["--natbib"]
-biblio-style: plain
 bibliography: bibliography.bib
 ---
 
