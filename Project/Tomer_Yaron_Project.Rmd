@@ -12,7 +12,13 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, error = FAL
 
 ## Introduction
 
-Cancer is a term for uncontrolled proliferation of cells in our body. At the heart of uncontrolled cell proliferation are cellular signaling events. Virtually every aspect of the cell is regulated by post-translational modifications (PTMs). The most extensively-studied PTM is phosphorylation. The phosphorylation state of the proteome differs significantly between normal and cancer cells [@evan2001proliferation, @easty2000protein, @blume2001oncogenic]. Those phosphorylations are being carried out by protein kianses. Each kinase has 
+Cancer is a term for uncontrolled proliferation of cells in our body. At the heart of uncontrolled cell proliferation are cellular signaling events. Virtually every aspect of the cell is regulated by post-translational modifications (PTMs). The most extensively-studied PTM is phosphorylation. The phosphorylation state of the proteome differs significantly between normal and cancer cells [@evan2001proliferation, @easty2000protein, @blume2001oncogenic]. Those phosphorylations are being carried out by protein kianses.
+
+Tyrosine kinases are involved in numerous biological processes, with their most widely recognized role as mediators of intercellular communication and, more specifically, permission for cellular growth and proliferation [@hunter2009tyrosine]. The evolutionary origin of tyrosine kinases occurred prior to the entrance into metazoa [@mayer2008clues]. This was a major prerequisite for multicellularity and tissue diversification, as it became more important than ever to control cell numbers and tissue proportions. The tyrosine kinase family diversified in parallel to the tissues and as a result, many, if not all, of the tyrosine kinases are uniquely distributed across mammalian tissues.
+ 
+The tissue-specificity of the tyrosine kinome dictates the cell types that respond to external stimuli and the downstream processes carried out. For example, endothelial cells, those composing our vasculature, uniquely express the receptor tyrosine kinases VEGFR1, KDR, and VEGFR3. As a result, only these cells will respond and proliferate in the presence of their ligand family members, the vascular endothelial growth factors (VEGF) [@ferrara2004vascular]. This is delineated further to the types of vasculature. Blood vessels express mostly KDR and VEGFR1 and lymphatic vessels express mostly VEGFR3, and as a consequence respond to unique subsets of the VEGF family and vascularize different parts of the body.
+ 
+Nonreceptor tyrosine kinases are also uniquely segregated across tissues. Cell of the adaptive immune system, the T-cells and B-cells, require an exclusive set of nonreceptor tyrosine kinases to initiate similar responses to antigens. The cell types use closely related paralogs, yet keep their expression strictly demarcated. Tissues customize kinases this way to promote common signaling processes under their own expression control. Furthermore, it would be wasteful and even detrimental to express redundant kinases in the same cell. For these reasons, tissue and cell types often choose one paralog from a related group tyrosine kinases to carry out similar tasks.
 
 Our laboratory has developed a precision technique that measures the core substrate specificities of individual protein kinases with high reproducibility [@turk2001determination, @hutti2004rapid]. This assay focuses on the 4-6 amino acids neighboring the serine, threonine or tyrosine of interest, a region kinases are exquisitely selective of. The probability matrix describing the favorability for each amino-acid in every position called the *substrate specificy* or the *motif* of the kinase.
 
@@ -63,7 +69,9 @@ and indeed, when we test the GTEx database, we can see that FYN and YES1 are hig
 
 ![](./figures/srca_expression.png)
 
-![](./figures/srca_heatmap.png) ![](./figures/srca_tissues.png)
+![](./figures/srca_heatmap.png)
+
+![](./figures/srca_tissues.png)
 
 We can observe the same conclusion for the SrcB family (BLK, HCK, LCK and LYN). Also here, their substrate specificties matrices are very similar:
 
@@ -75,11 +83,13 @@ and according to *Tabula Muris*, HCK and LYN are highly expressed in brain tissu
 
 According to the analysis, also in human bulk RNA-seq, HCK and LYN are much higher expressed in the brain than BLK and LCK:
 
-![](./figures/srcb_expression.png) ![](./figures/srcb_tissues.png)
+![](./figures/srcb_expression.png)
 
 and also in that case, the kinases are usually expressed in different tissues for one another:
 
 ![](./figures/srcb_heatmap.png)
+
+![](./figures/srcb_tissues.png)
 
 #### Future analysis
 
